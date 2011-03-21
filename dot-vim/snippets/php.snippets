@@ -165,21 +165,28 @@ snippet number_format
 
 # CodeIgniter stuff
 snippet load model
-	$this->load->model('${1}');${2}
+	$this->load->model('${1}');
+	${2}
 snippet load view
-	$this->load->view('${1}');${2}
+	$this->load->view('${1}');
+	${2}
 snippet load library
-	$this->load->library('${1}');${2}
+	$this->load->library('${1}');
+	${2}
 snippet load helper
-	$this->load->helper('${1}');${2}
+	$this->load->helper('${1}');
+	${2}
 snippet load config
-	$this->config->load('${1}');${2}
+	$this->config->load('${1}');
+	${2}
 snippet post
-	$this->input->post('${1}')${2}
+	$this->input->post(${1})${2}
 snippet dump
-	$this->dbug->dump(${1});${2}
+	$this->dbug->dump(${1});
+	${2}
 snippet view
-	$this->load->view('${1}', $data);${2}
+	$this->load->view('${1}', $data);
+	${2}
 snippet db
 	$this->db->${1}(${2})${3}
 snippet config
@@ -192,3 +199,11 @@ snippet form dropdown
 	<?=form_dropdown('${1:name}', $${2:options}, ${3:default})?>${4}
 snippet form submit
 	<?=form_submit('${1:name}', ${2:label}${3:, javascript})?>${4}
+snippet flash Set
+	$this->session->set_flashdata(${1:item}, ${2:value});
+	${3}
+snippet flash Get
+	$this->session->flashdata(${1:item})${2}
+snippet flash Keep
+	$this->session->keep_flashdata(${1:item});
+	${2}
