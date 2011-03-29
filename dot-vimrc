@@ -78,12 +78,16 @@ if has("gui_running")
 endif
 
 let g:netrw_liststyle=1
-let g:netrw_browse_split = 0
+let g:netrw_browse_split = 4
 let g:netrw_silent = 1
 let g:netrw_listhide='\.pyc'
 " let g:netrw_sort_sequence=[\/]$,\.py$,\.h$,\.c$,\.cpp$,*,\.o$,\.scpt$,\.obj$,\.info$,\.txt$,\.swp$,\.bak$,\~$
 let g:netrw_sort_sequence='[\/]$,TODO$,INSTALLATION$,README$,\<core\%(\.\d\+\)\=\>,^\.,\.h$,\.c$,\.cpp$,\.php$,\.py$,\.html$,*,\.o$,\.obj$,\.txt$,\.info$,\.swp$,\.bak$,\.pyc$,\~$,\.[dmg|xcf|jpg|png]$'
 let g:explHideFiles='^\.,.*\.pyc$'
+let g:netrw_alto = 1 " open o-splits at the bottom
+let g:netrw_altv = 1 " open v-splits to the right
+"let g:netrw_winsize = 35
+let g:netrw_preview = 1
 
 if has('gui_macvim')
     behave xterm

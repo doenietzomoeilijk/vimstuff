@@ -1,5 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =3
-let g:netrw_dirhist_1='/Volumes/max.hotels.local/svn/hotelveiling/branches/hotelveiling-2.0/Application/config'
-let g:netrw_dirhist_2='/Volumes/max.hotels.local/svn/hotelveiling/branches/hotelveiling-2.0/Application/views/admin'
-let g:netrw_dirhist_3='/home/max/svn/hotelveiling/trunk/webroot/include'
