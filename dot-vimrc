@@ -86,7 +86,8 @@ let g:netrw_sort_sequence='[\/]$,TODO$,INSTALLATION$,README$,\<core\%(\.\d\+\)\=
 let g:explHideFiles='^\.,.*\.pyc$'
 let g:netrw_alto = 1 " open o-splits at the bottom
 let g:netrw_altv = 1 " open v-splits to the right
-let g:netrw_winsize = 35
+"let g:netrw_winsize = 35
+let g:netrw_preview = 1
 
 if has('gui_macvim')
     behave xterm

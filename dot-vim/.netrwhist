@@ -1,11 +1,2 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =9
-let g:netrw_dirhist_1='/Volumes/max.hotels.local/svn/hotelveiling/branches/hotelveiling-2.0/Application/controllers/admin'
-let g:netrw_dirhist_2='/Volumes/max.hotels.local/svn/hotelveiling/branches/hotelveiling-2.0/Application/controllers'
-let g:netrw_dirhist_3='/Users/max/Downloads/flexigrid'
-let g:netrw_dirhist_4='/Volumes/max.hotels.local/svn/hotelveiling/branches/hotelveiling-2.0/Application/views/admin'
-let g:netrw_dirhist_5='/Volumes/max.hotels.local/svn/hotelveiling/branches/hotelveiling-2.0/Application'
-let g:netrw_dirhist_6='/Volumes/max.hotels.local/svn/hotelveiling/branches/hotelveiling-2.0/Application/controllers'
-let g:netrw_dirhist_7='/Volumes/max.hotels.local/svn/hotelveiling/branches/hotelveiling-2.0/Application/controllers/admin'
-let g:netrw_dirhist_8='/Users/max'
-let g:netrw_dirhist_9='/Applications/MacVim.app/Contents/Resources/vim/runtime/doc'
+let g:netrw_dirhist_cnt =0
