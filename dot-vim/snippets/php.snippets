@@ -22,7 +22,7 @@ snippet $_ ENV['...']
 	$_ENV['${1:variable}']${2}
 snippet $_ FILES['...']
 	$_FILES['${1:variable}']${2}
-snippet $_ Get['...']
+snippet $_ GET['...']
 	$_GET['${1:variable}']${2}
 snippet $_ POST['...']
 	$_POST['${1:variable}']${2}
@@ -116,24 +116,24 @@ snippet t
 snippet switch
 	switch ($${1:variable}) {
 		case '${2:value}':
-			${3:// code...}
+			${3}
 			break;
 		${5}
 		default:
-			${4:// code...}
+			${4}
 			break;
 	}
 snippet case
 	case '${1:value}':
-		${2:// code...}
+		${2}
 		break;${3}
 snippet for
 	for ($${2:i} = 0; $$2 < ${1:count}; $$2${3:++}) {
-		${4: // code...}
+		${4}
 	}
 snippet foreach
 	foreach ($${1:variable} as $${2:key}) {
-		${3:// code...}
+		${3}
 	}
 # $... = array (...)
 snippet array
@@ -159,7 +159,7 @@ snippet stripos
 snippet substr
 	substr(${1:string}, ${2:start}${3:, length})${4}
 snippet str_replace
-	str_replace(${1:search}, ${2:replace}, ${3:subject}${4:count})${5}
+	str_replace(${1:search}, ${2:replace}, ${3:subject}${4:, count})${5}
 snippet number_format
 	number_format(${1:number}, ${2:decimals}, ${3:dec_point}, ${4:thousands_sep})${5}
 
@@ -182,8 +182,7 @@ snippet load config
 snippet post
 	$this->input->post(${1})${2}
 snippet dump
-	$this->dbug->dump(${1});
-	${2}
+	$this->dbug->dump(${1});${2}
 snippet view
 	$this->load->view('${1}', $data);
 	${2}
@@ -200,10 +199,10 @@ snippet form dropdown
 snippet form submit
 	<?=form_submit('${1:name}', ${2:label}${3:, javascript})?>${4}
 snippet flash Set
-	$this->session->set_flashdata(${1:item}, ${2:value});
-	${3}
+	$this->session->set_flashdata(${1:item}, ${2:value});${3}
 snippet flash Get
 	$this->session->flashdata(${1:item})${2}
 snippet flash Keep
-	$this->session->keep_flashdata(${1:item});
-	${2}
+	$this->session->keep_flashdata(${1:item});${2}
+snippet mark
+	$this->benchmark->mark('${1:my_mark_start}');${2}
