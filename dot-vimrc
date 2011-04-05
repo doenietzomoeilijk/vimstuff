@@ -60,6 +60,7 @@ colorscheme molokai
 "colorscheme wombat256
 map <silent><F2> :PREVCOLOR<cr>
 map <silent><F3> :NEXTCOLOR<cr>
+let g:CSApprox_verbose_level = 0
 " if &background == "dark"
 " 	hi Normal guibg=#111111 gui=none
 " 	hi Comment gui=italic
