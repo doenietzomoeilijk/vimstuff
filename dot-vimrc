@@ -55,7 +55,11 @@ filetype plugin indent on
 syntax enable
 
 set bg=dark
-colorscheme mustang
+"colorscheme mustang
+colorscheme molokai
+"colorscheme wombat256
+map <silent><F2> :PREVCOLOR<cr>
+map <silent><F3> :NEXTCOLOR<cr>
 " if &background == "dark"
 " 	hi Normal guibg=#111111 gui=none
 " 	hi Comment gui=italic
@@ -83,7 +87,7 @@ let g:netrw_silent = 1
 let g:netrw_listhide='\.pyc'
 " let g:netrw_sort_sequence=[\/]$,\.py$,\.h$,\.c$,\.cpp$,*,\.o$,\.scpt$,\.obj$,\.info$,\.txt$,\.swp$,\.bak$,\~$
 let g:netrw_sort_sequence='[\/]$,TODO$,INSTALLATION$,README$,\<core\%(\.\d\+\)\=\>,^\.,\.h$,\.c$,\.cpp$,\.php$,\.py$,\.html$,*,\.o$,\.obj$,\.txt$,\.info$,\.swp$,\.bak$,\.pyc$,\~$,\.[dmg|xcf|jpg|png]$'
-let g:explHideFiles='^\.,.*\.pyc$'
+let g:explHideFiles='^\.,.*\.pyc$,.svn'
 let g:netrw_alto = 1 " open o-splits at the bottom
 let g:netrw_altv = 1 " open v-splits to the right
 "let g:netrw_winsize = 35
