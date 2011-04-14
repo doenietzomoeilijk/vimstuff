@@ -85,7 +85,7 @@ endif
 let g:netrw_liststyle=1
 let g:netrw_browse_split = 4
 let g:netrw_silent = 1
-let g:netrw_listhide='\.pyc'
+let g:netrw_list_hide='\.pyc,^\..*'
 " let g:netrw_sort_sequence=[\/]$,\.py$,\.h$,\.c$,\.cpp$,*,\.o$,\.scpt$,\.obj$,\.info$,\.txt$,\.swp$,\.bak$,\~$
 let g:netrw_sort_sequence='[\/]$,TODO$,INSTALLATION$,README$,\<core\%(\.\d\+\)\=\>,^\.,\.h$,\.c$,\.cpp$,\.php$,\.py$,\.html$,*,\.o$,\.obj$,\.txt$,\.info$,\.swp$,\.bak$,\.pyc$,\~$,\.[dmg|xcf|jpg|png]$'
 let g:explHideFiles='^\.,.*\.pyc$,.svn'
@@ -239,7 +239,7 @@ let Tlist_Use_Right_Window = 0
 let Tlist_Process_File_Always=1
 let Tlist_Show_One_File=1
 
-map ,t :TlistToggle<CR>
+map <leader>t :TlistToggle<CR>
 map <silent><A-Right> :bnext!<CR> 
 map <silent><A-Left> :bprevious!<CR> 
 
@@ -268,3 +268,9 @@ set vb t_vb=".
 :inoremap <Esc>OR *
 :inoremap <Esc>Ol +
 :inoremap <Esc>OS -
+
+" NERDCommenter stuff
+let g:NERDRemoveExtraSpaces=1
+let g:NERDSpaceDelims=1
+" let g:NERDComInsertMap='<c-c>'
+map <c-c> <leader>c 
