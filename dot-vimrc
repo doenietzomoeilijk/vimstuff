@@ -1,28 +1,22 @@
 " vim:tw=0:ts=8:norl:
 
+" Set leader to comma
+let mapleader = ","
+
+" Generic settings
+set encoding=utf-8
 set mouse=a
-set tabstop=4
-set shiftwidth=4
+set tabstop=2
+set shiftwidth=2
 set smarttab
-" set smartindent " this conflicts with filetype
-set nosmartindent
+set nosmartindent " As smartindent conflicts with filetype
 set nocindent
 set smartcase
 set wrap
 set linebreak
-
 set noequalalways " Don't resize splits when closing windows
-
 set backspace=indent,eol,start
 set whichwrap+=<,>,h,l
-
-set foldmethod=indent
-set foldlevel=100
-
-set showmatch
-set hlsearch
-" set incsearch
-
 set number
 set ruler
 set laststatus=2
@@ -34,8 +28,16 @@ set novisualbell
 set noerrorbells
 set nohidden
 
-set encoding=utf-8
-"set autochdir
+" Folding
+nnoremap <space> za
+set foldmethod=indent
+set foldlevel=100
+
+" Highlighting search
+set showmatch
+set hlsearch
+noremap <leader>h :let @/ = ""<CR> " clear search pattern to disable hlsearch
+map <leader>n :noh<CR> " Turn off hlsearch until the next search
 
 " Status line
 set laststatus=2
@@ -44,37 +46,31 @@ set statusline+=%-3.3n\                      " buffer number
 set statusline+=%f\                          " filename
 set statusline+=%h%m%r%w                     " status flags
 set statusline+=\[%{strlen(&ft)?&ft:'none'}] " file type
-"set statusline+=\[%{Tlist_Get_Tagname_By_Line()}] " file type
+set statusline+=\[%{Tlist_Get_Tagname_By_Line()}] " file type
 set statusline+=%=                           " right align remainder
 set statusline+=\%4.8b                       " character value
 set statusline+=\ 0x%-8B                       " character value
 set statusline+=%-14(%l,%c%V%)               " line, character
 set statusline+=%<%P/%L                         " file position
 
+" Syntax stuff
 filetype plugin indent on
 syntax enable
+map <leader>s :syntax enable<CR>
+map <leader>hi :so $VIMRUNTIME/syntax/hitest.vim<CR>
 
-set bg=dark
-"colorscheme mustang
-colorscheme molokai
-"colorscheme wombat256
-map <silent><F2> :PREVCOLOR<cr>
-map <silent><F3> :NEXTCOLOR<cr>
+" PURDY COLORZ
 let g:CSApprox_verbose_level = 0
-" if &background == "dark"
-" 	hi Normal guibg=#111111 gui=none
-" 	hi Comment gui=italic
-" 	hi CursorLine guibg=#333333
-" 	hi CursorColumn guibg=#333333
-" 	hi LineNr guibg=#111111 guifg=#666666 gui=italic
-" 	hi PMenu guibg=#666666 guifg=#111111 gui=None
-" 	hi PMenuSel guibg=#cccccc guifg=#111111 gui=Bold
-" endif
+set bg=dark
+colorscheme molokai
+"colorscheme mustang
+"colorscheme wombat256
+" map <silent><F2> :PREVCOLOR<cr>
+" map <silent><F3> :NEXTCOLOR<cr>
 
 if has("gui_running")
     set guioptions-=T
     set guitablabel=%M%t
-    "set cursorline cursorcolumn
     set cursorline
 
     " We only want this for GUI vim
@@ -82,17 +78,17 @@ if has("gui_running")
     " autocmd BufWinEnter *.* silent loadview
 endif
 
+" Netrw stuff
 let g:netrw_liststyle=1
-let g:netrw_browse_split = 4
+" let g:netrw_browse_split = 4
 let g:netrw_silent = 1
 let g:netrw_list_hide='\.pyc,^\..*'
-" let g:netrw_sort_sequence=[\/]$,\.py$,\.h$,\.c$,\.cpp$,*,\.o$,\.scpt$,\.obj$,\.info$,\.txt$,\.swp$,\.bak$,\~$
 let g:netrw_sort_sequence='[\/]$,TODO$,INSTALLATION$,README$,\<core\%(\.\d\+\)\=\>,^\.,\.h$,\.c$,\.cpp$,\.php$,\.py$,\.html$,*,\.o$,\.obj$,\.txt$,\.info$,\.swp$,\.bak$,\.pyc$,\~$,\.[dmg|xcf|jpg|png]$'
 let g:explHideFiles='^\.,.*\.pyc$,.svn'
 let g:netrw_alto = 1 " open o-splits at the bottom
 let g:netrw_altv = 1 " open v-splits to the right
-"let g:netrw_winsize = 35
-let g:netrw_preview = 1
+" let g:netrw_winsize = 35
+" let g:netrw_preview = 1
 
 if has('gui_macvim')
     behave xterm
@@ -109,42 +105,21 @@ if has('gui_macvim')
     let macvim_skip_cmd_opt_movement = 1
     let macvim_hig_shift_movement = 1
     let g:netrw_browsex_viewer='open'
-    map <D-[> :tabprevious<CR>
-    map <D-]> :tabnext<CR>
-    set linespace=3
+    map <S-D-[> :tabprevious<CR>
+    map <S-D-]> :tabnext<CR>
+    set linespace=4
 
-    set fuoptions=maxvert,background:Normal
+    set fuoptions=maxvert,maxhorz,background:Normal " Fullscreen options
 
     let g:netrw_ctags='/opt/local/bin/ctags'
     let Tlist_Ctags_Cmd='/opt/local/bin/ctags'
-    " http://www.sontek.net/Python-with-a-modular-IDE-(Vim)
-    python << EOF
-import os
-import sys
-import vim
-for p in sys.path:
-    if os.path.isdir(p):
-	vim.command(r"set path+=%s" % (p.replace(" ", r"\ ")))
-EOF
 else
     let g:netrw_ctags='/usr/bin/ctags'
     let Tlist_Ctags_Cmd='/usr/bin/ctags -v'
-
 endif
 
-nnoremap <space> za
-
-" Quick jumping between splits
-map <C-J> <C-W>j<C-W>_
-map <C-K> <C-W>k<C-W>_
-map <S-C-H> :bp<CR>
-map <S-C-L> :bn<CR>
-" vmap ' c'<c-r>"'<esc>
-" vmap " c"<c-r>""<esc>
-" vmap ( c(<c-r>")<esc>
-
 " set textwidth=90
-set formatoptions=tcqn
+set formatoptions=tcqn " see :help fo-table for letter meaning
 
 " Move temporary files to ~/.vimtmp/ instead of current dir
 if ! isdirectory(expand('~/.vimtmp'))
@@ -159,26 +134,15 @@ endif
 " Lets :GLVS actually install stuff
 let g:GetLatestVimScripts_allowautoinstall=1
 
-
-" From http://github.com/devjj/vim-config/blob/master/.vimrc 
-
-" Set leader to comma
-let mapleader = ","
-
-" After editing, run :source %
-autocmd! bufwritepost .vimrc source ~/.vimrc
+" From http://github.com/devjj/vim-config/blob/master/.vimrc After editing, run
 autocmd FileType html set ft=html.javascript.css.smarty
 autocmd BufRead,BufNewFile *.smarty set ft=smarty.html.javascript
 
+autocmd! bufwritepost .vimrc source ~/.vimrc
 map <leader>v :tabe ~/.vimrc<CR>
 map <leader>V :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
 
-map <leader>s :syntax enable<CR>
-
-" clear search pattern to disable hlsearch
-map <leader>h :let @/ = ""<CR>
-map <leader>n :noh<CR>
-
+" SnippetsEmu stuff
 function! ReloadSnippets( snippets_dir, ft )
     if strlen( a:ft ) == 0
         let filetype = "_"
@@ -190,13 +154,14 @@ function! ReloadSnippets( snippets_dir, ft )
     call GetSnippets( a:snippets_dir, filetype )
 endfunction
 
-nmap ,rr :call ReloadSnippets(snippets_dir, &filetype)<CR>
+nmap <leader>rr :call ReloadSnippets(snippets_dir, &filetype)<CR>
 let g:snips_author="Max Roeleveld"
 " autocmd bufwritepost snippet :call ReloadSnippets(snippets_dir, &filetype)<CR>
 
 " Add a status line by default
-"set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [ASCII=\%03.3b]\ [HEX=\%02.2B]\ [POS=%04l,%04v][%p%%]\ [LEN=%L]
-"set laststatus=2
+" set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [ASCII=\%03.3b]\ [HEX=\%02.2B]\ [POS=%04l,%04v][%p%%]\ [LEN=%L]
+" set laststatus=2
+
 " Session saving
 " set sessionoptions=blank,buffers,curdir,folds,help,resize,tabpages,winsize 
 " set sessionoptions=resize,winsize 
@@ -204,12 +169,12 @@ let g:snips_author="Max Roeleveld"
 " Invisible characters *********************************************************
 set listchars=trail:.,tab:>-,eol:$
 set nolist
-noremap ,i :set list!<CR> " Toggle invisible chars"
-map ,cd :cd %:p:h<CR>
-map ,hi :so $VIMRUNTIME/syntax/hitest.vim<CR>
+noremap <leader>i :set list!<CR> " Toggle invisible chars"
 
-nnoremap <Leader>c :set cursorline!<CR>
-nnoremap <Leader>C :set cursorcolumn!<CR>
+map <leader>cd :cd %:p:h<CR>
+
+nnoremap <leader>c :set cursorline!<CR>
+nnoremap <leader>C :set cursorcolumn!<CR>
 
 " Hightlight the end of long lines (>120 chars)
 " http://blog.ezyang.com/2010/03/vim-textwidth/
@@ -220,8 +185,6 @@ nnoremap <Leader>C :set cursorcolumn!<CR>
 "     map <Leader>L :highlight OverLength none<CR>
 " augroup END
 
-
-
 " http://www.sontek.net/Python-with-a-modular-IDE-(Vim)
 autocmd FileType python set omnifunc=pythoncomplete#Complete
 autocmd BufRead *.py set makeprg=python\ -c\ \"import\ py_compile,sys;\ sys.stderr=sys.stdout;\ py_compile.compile(r'%')\" 
@@ -229,27 +192,33 @@ autocmd BufRead *.py set efm=%C\ %.%#,%A\ \ File\ \"%f\"\\,\ line\ %l%.%#,%Z%[%^
 set suffixes=.bak,~,.o,.h,.info,.swp,.obj,.pyc,.pyo
 set tags+=tags;/
 set tags+=$HOME/.vim/tags/python.ctags
+
+" TagList
+map <leader>t :TlistToggle<CR>
 let Tlist_Sort_Type = "order"
 let Tlist_Use_SingleClick = 1
 let Tlist_Show_Menu = 1
 let Tlist_Exit_OnlyWindow = 1
-let Tlist_Enable_Fold_Column = 0
+let Tlist_Enable_Fold_Column = 1
 let Tlist_Close_On_Select = 0
 let Tlist_Use_Right_Window = 0
 let Tlist_Process_File_Always=1
 let Tlist_Show_One_File=1
+let Tlist_Display_Prototype=1
+let Tlist_Max_Submenu_Items=50
+let Tlist_Max_Tag_Length=30
 
-map <leader>t :TlistToggle<CR>
 map <silent><A-Right> :bnext!<CR> 
 map <silent><A-Left> :bprevious!<CR> 
 
+" MiniBufExplorer -- currently not used
 let g:miniBufExplMapWindowNavVim = 1 
 let g:miniBufExplMapWindowNavArrows = 1 
 let g:miniBufExplModSelTarget = 1 
 let g:miniBufExplUseSingleClick = 1
 let g:miniBufExplMapCTabSwitchBufs = 1
 
-" Stop the beeping
+" Stop the beeping AND flashing
 set vb t_vb=".
 
 " Remap num island to proper numbers
@@ -272,5 +241,28 @@ set vb t_vb=".
 " NERDCommenter stuff
 let g:NERDRemoveExtraSpaces=1
 let g:NERDSpaceDelims=1
-" let g:NERDComInsertMap='<c-c>'
-map <c-c> <leader>c 
+let g:NERDComInsertMap='<c-c>'
+let g:NERDCustomDelimiters = { 'html': { 'left': '<!--', 'right': '-->'}}
+
+" WinManager
+map <c-w><c-b> :BottomExplorerWindow<cr>
+map <c-w><c-f> :FirstExplorerWindow<cr>
+map <c-w><c-t> :WMToggle<cr>
+let g:winManagerWidth=35
+let g:winManagerWindowLayout = "FileExplorer,TagList|BufExplorer"
+
+" Cycling between buffers
+map <c-tab> :bn<cr>
+map <s-c-tab> :bp<cr>
+
+" Quick jumping between splits
+map <C-J> <C-W>j<C-W>_
+map <C-K> <C-W>k<C-W>_
+map <S-C-H> :bp<CR>
+map <S-C-L> :bn<CR>
+" vmap ' c'<c-r>"'<esc>
+" vmap " c"<c-r>""<esc>
+" vmap ( c(<c-r>")<esc>
+
+" Favourites for file-explorer
+let g:favDirs+='/Volumes/max.hotels.local/svn/hotelveiling/branches/hotelveiling-2.0/Application/'."\n"
