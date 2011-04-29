@@ -265,4 +265,4 @@ map <S-C-L> :bn<CR>
 " vmap ( c(<c-r>")<esc>
 
 " Favourites for file-explorer
-let g:favDirs+='/Volumes/max.hotels.local/svn/hotelveiling/branches/hotelveiling-2.0/Application/'."\n"
+let g:favDirs='/Volumes/max.hotels.local/svn/hotelveiling/branches/hotelveiling-2.0/Application/'."\n"
