@@ -14,6 +14,7 @@ set nocindent
 set smartcase
 set wrap
 set linebreak
+set showbreak=~\ \ \ 
 set noequalalways " Don't resize splits when closing windows
 set backspace=indent,eol,start
 set whichwrap+=<,>,h,l
@@ -28,8 +29,11 @@ set novisualbell
 set noerrorbells
 set nohidden
 
+" For browser weenies
+nnoremap <space> 
+nnoremap <S-space> 
+
 " Folding
-nnoremap <space> za
 set foldmethod=indent
 set foldlevel=100
 
@@ -137,6 +141,8 @@ let g:GetLatestVimScripts_allowautoinstall=1
 " From http://github.com/devjj/vim-config/blob/master/.vimrc After editing, run
 autocmd FileType html set ft=html.javascript.css.smarty
 autocmd BufRead,BufNewFile *.smarty set ft=smarty.html.javascript
+
+autocmd BufRead,BufNewFile,BufEnter *.json set ft=javascript
 
 autocmd! bufwritepost .vimrc source ~/.vimrc
 map <leader>v :tabe ~/.vimrc<CR>
