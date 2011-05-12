@@ -1,5 +1,3 @@
-" vim:tw=0:ts=8:norl:
-
 " Set leader to comma
 let mapleader = ","
 
@@ -45,17 +43,17 @@ map <leader>n :noh<CR> " Turn off hlsearch until the next search
 
 " Status line
 set laststatus=2
-set statusline=
-set statusline+=%-3.3n\                      " buffer number
-set statusline+=%f\                          " filename
-set statusline+=%h%m%r%w                     " status flags
+" set statusline=
+set statusline=%-3.3n " buffer number
+set statusline+=%f " filename
+set statusline+=%h%m%r%w " status flags
 set statusline+=\[%{strlen(&ft)?&ft:'none'}] " file type
 set statusline+=\[%{Tlist_Get_Tagname_By_Line()}] " file type
-set statusline+=%=                           " right align remainder
-set statusline+=\%4.8b                       " character value
-set statusline+=\ 0x%-8B                       " character value
-set statusline+=%-14(%l,%c%V%)               " line, character
-set statusline+=%<%P/%L                         " file position
+set statusline+=%= " right align remainder
+set statusline+=\%4.8b " character value
+set statusline+=/0x%-8B " character value
+set statusline+=%-14(%l,%c%V%) " line, character
+set statusline+=%<%P/%L " file position
 
 " Syntax stuff
 filetype plugin indent on
@@ -73,13 +71,13 @@ colorscheme molokai
 " map <silent><F3> :NEXTCOLOR<cr>
 
 if has("gui_running")
-    set guioptions-=T
-    set guitablabel=%M%t
-    set cursorline
+	set guioptions-=T
+	set guitablabel=%M%t
+	set cursorline
 
-    " We only want this for GUI vim
-    " autocmd BufWinLeave *.* silent mkview
-    " autocmd BufWinEnter *.* silent loadview
+	" We only want this for GUI vim
+	" autocmd BufWinLeave *.* silent mkview
+	" autocmd BufWinEnter *.* silent loadview
 endif
 
 " Netrw stuff
@@ -95,31 +93,31 @@ let g:netrw_altv = 1 " open v-splits to the right
 " let g:netrw_preview = 1
 
 if has('gui_macvim')
-    behave xterm
-    set selectmode=
-    set keymodel=
-    set mousemodel=popup_setpos
-    " set noantialias
-    set gfn=Inconsolata-dz:h12
-    set gfn=EnvyCodeR:h13
-    " set gfn=Monaco:h10
-    " set antialias
-    " set gfn=Consolas:h12
-    " set transp=2
-    let macvim_skip_cmd_opt_movement = 1
-    let macvim_hig_shift_movement = 1
-    let g:netrw_browsex_viewer='open'
-    map <S-D-[> :tabprevious<CR>
-    map <S-D-]> :tabnext<CR>
-    set linespace=4
+	behave xterm
+	set selectmode=
+	set keymodel=
+	set mousemodel=popup_setpos
+	" set noantialias
+	set gfn=Inconsolata-dz:h12
+	set gfn=EnvyCodeR:h13
+	" set gfn=Monaco:h10
+	" set antialias
+	" set gfn=Consolas:h12
+	" set transp=2
+	let macvim_skip_cmd_opt_movement = 1
+	let macvim_hig_shift_movement = 1
+	let g:netrw_browsex_viewer='open'
+	map <S-D-[> :tabprevious<CR>
+	map <S-D-]> :tabnext<CR>
+	set linespace=4
 
-    set fuoptions=maxvert,maxhorz,background:Normal " Fullscreen options
+	set fuoptions=maxvert,maxhorz,background:Normal " Fullscreen options
 
-    let g:netrw_ctags='/opt/local/bin/ctags'
-    let Tlist_Ctags_Cmd='/opt/local/bin/ctags'
+	let g:netrw_ctags='/opt/local/bin/ctags'
+	let Tlist_Ctags_Cmd='/opt/local/bin/ctags'
 else
-    let g:netrw_ctags='/usr/bin/ctags'
-    let Tlist_Ctags_Cmd='/usr/bin/ctags -v'
+	let g:netrw_ctags='/usr/bin/ctags'
+	let Tlist_Ctags_Cmd='/usr/bin/ctags -v'
 endif
 
 " set textwidth=90
@@ -150,14 +148,14 @@ map <leader>V :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloade
 
 " SnippetsEmu stuff
 function! ReloadSnippets( snippets_dir, ft )
-    if strlen( a:ft ) == 0
-        let filetype = "_"
-    else
-        let filetype = a:ft
-    endif
+	if strlen( a:ft ) == 0
+		let filetype = "_"
+	else
+		let filetype = a:ft
+	endif
 
-    call ResetSnippets()
-    call GetSnippets( a:snippets_dir, filetype )
+	call ResetSnippets()
+	call GetSnippets( a:snippets_dir, filetype )
 endfunction
 
 nmap <leader>rr :call ReloadSnippets(snippets_dir, &filetype)<CR>
@@ -185,10 +183,10 @@ nnoremap <leader>C :set cursorcolumn!<CR>
 " Hightlight the end of long lines (>120 chars)
 " http://blog.ezyang.com/2010/03/vim-textwidth/
 " augroup vimrc_autocmds
-"     autocmd BufRead * match OverLength /\%120v.*/
-"     autocmd BufRead * highlight OverLength none
-"     map <Leader>l :highlight OverLength ctermbg=darkgrey guibg=#592929<CR>
-"     map <Leader>L :highlight OverLength none<CR>
+"	 autocmd BufRead * match OverLength /\%120v.*/
+"	 autocmd BufRead * highlight OverLength none
+"	 map <Leader>l :highlight OverLength ctermbg=darkgrey guibg=#592929<CR>
+"	 map <Leader>L :highlight OverLength none<CR>
 " augroup END
 
 " http://www.sontek.net/Python-with-a-modular-IDE-(Vim)
@@ -272,3 +270,7 @@ map <S-C-L> :bn<CR>
 
 " Favourites for file-explorer
 let g:favDirs='/Volumes/max.hotels.local/svn/hotelveiling/branches/hotelveiling-2.0/Application/'."\n"
+
+" SVN stuff
+command! Svnadd execute "!svn add %" | execute "!svn propset svn:keywords Id %"
+

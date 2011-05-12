@@ -12,7 +12,7 @@ snippet php
 
 	${2}
 
-	?>
+	/* EOF */
 # $GLOBALS['...']
 snippet globals
 	$GLOBALS['${1:variable}']${2: = }${3:something}${4:;}${5}
@@ -90,13 +90,13 @@ snippet wh
 snippet do
 	do {
 		${2:// code... }
-	} while (${1:/* condition */});
+	} while (${1:condition});
 snippet if
-	if (${1:/* condition */}) {
+	if (${1:condition}) {
 		${2:// code...}
 	}
 snippet ife
-	if (${1:/* condition */}) {
+	if (${1:condition}) {
 		${2:// code...}
 	} else {
 		${3:// code...}
@@ -107,7 +107,7 @@ snippet else
 		${1:// code...}
 	}
 snippet elseif
-	elseif (${1:/* condition */}) {
+	elseif (${1:condition}) {
 		${2:// code...}
 	}
 # Tertiary conditional
@@ -128,7 +128,7 @@ snippet case
 		${2}
 		break;${3}
 snippet for
-	for ($${2:i} = 0; $$2 < ${1:count}; $$2${3:++}) {
+	for ($${2:i}=0; $$2<${1:count}; $$2${3:++}) {
 		${4}
 	}
 snippet foreach
@@ -165,27 +165,21 @@ snippet number_format
 
 # CodeIgniter stuff
 snippet load model
-	$this->load->model('${1}');
-	${2}
+	$this->load->model('${1}');${2}
 snippet load view
-	$this->load->view('${1}');
-	${2}
+	$this->load->view('${1}');${2}
 snippet load library
-	$this->load->library('${1}');
-	${2}
+	$this->load->library('${1}');${2}
 snippet load helper
-	$this->load->helper('${1}');
-	${2}
+	$this->load->helper('${1}');${2}
 snippet load config
-	$this->config->load('${1}');
-	${2}
+	$this->config->load('${1}'); ${2}
 snippet post
 	$this->input->post(${1})${2}
 snippet dump
 	$this->dbug->dump(${1});${2}
 snippet view
-	$this->load->view('${1}', $data);
-	${2}
+	$this->load->view('${1}', $${2}data);${3}
 snippet db
 	$this->db->${1}(${2})${3}
 snippet config
