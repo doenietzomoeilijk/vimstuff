@@ -408,6 +408,7 @@ function! s:BEDisplayBufferList()
   setlocal modifiable
   setlocal noswapfile
   setlocal nowrap
+	setlocal nonumber
 
   " Delete all previous lines to the black hole register
   call cursor(1,1)

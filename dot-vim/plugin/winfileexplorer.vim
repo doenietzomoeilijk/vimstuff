@@ -262,6 +262,7 @@ function! s:EditDir(...)
 	setlocal bufhidden=delete
 	" Don't wrap around long lines
 	setlocal nowrap
+	setlocal nonumber
 
 
 	" Get the complete path to the directory to look at with a slash at

@@ -37,6 +37,7 @@ set foldlevel=100
 
 " Highlighting search
 set showmatch
+set matchpairs+=<:>
 set hlsearch
 noremap <leader>h :let @/ = ""<CR> " clear search pattern to disable hlsearch
 map <leader>n :noh<CR> " Turn off hlsearch until the next search
@@ -47,8 +48,8 @@ set laststatus=2
 set statusline=%-3.3n " buffer number
 set statusline+=%f " filename
 set statusline+=%h%m%r%w " status flags
-set statusline+=\[%{strlen(&ft)?&ft:'none'}] " file type
-set statusline+=\[%{Tlist_Get_Tagname_By_Line()}] " file type
+set statusline+=\ ft=%{strlen(&ft)?&ft:'none'} " file type
+set statusline+=\ [%{Tlist_Get_Tagname_By_Line()}] " file type
 set statusline+=%= " right align remainder
 set statusline+=\%4.8b " character value
 set statusline+=/0x%-8B " character value
@@ -74,7 +75,6 @@ if has("gui_running")
 	set guioptions-=T
 	set guitablabel=%M%t
 	set cursorline
-
 	" We only want this for GUI vim
 	" autocmd BufWinLeave *.* silent mkview
 	" autocmd BufWinEnter *.* silent loadview
@@ -136,14 +136,14 @@ endif
 " Lets :GLVS actually install stuff
 let g:GetLatestVimScripts_allowautoinstall=1
 
-" From http://github.com/devjj/vim-config/blob/master/.vimrc After editing, run
 autocmd FileType html set ft=html.javascript.css.smarty
 autocmd BufRead,BufNewFile *.smarty set ft=smarty.html.javascript
-
 autocmd BufRead,BufNewFile,BufEnter *.json set ft=javascript
+autocmd FileType php setlocal makeprg=php\ -l\ #<
 
+" From http://github.com/devjj/vim-config/blob/master/.vimrc After editing, run
 autocmd! bufwritepost .vimrc source ~/.vimrc
-map <leader>v :tabe ~/.vimrc<CR>
+map <leader>vv :tabe ~/.vimrc<CR>
 map <leader>V :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
 
 " SnippetsEmu stuff
@@ -171,7 +171,7 @@ let g:snips_author="Max Roeleveld"
 " set sessionoptions=resize,winsize 
 
 " Invisible characters *********************************************************
-set listchars=trail:.,tab:>-,eol:$
+set listchars=trail:.,tab:>-,eol:$,extends:>,precedes:<
 set nolist
 noremap <leader>i :set list!<CR> " Toggle invisible chars"
 
@@ -252,7 +252,7 @@ let g:NERDCustomDelimiters = { 'html': { 'left': '<!--', 'right': '-->'}}
 map <c-w><c-b> :BottomExplorerWindow<cr>
 map <c-w><c-f> :FirstExplorerWindow<cr>
 map <c-w><c-t> :WMToggle<cr>
-let g:winManagerWidth=35
+let g:winManagerWidth=40
 let g:winManagerWindowLayout = "FileExplorer,TagList|BufExplorer"
 
 " Cycling between buffers

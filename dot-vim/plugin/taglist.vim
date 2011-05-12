@@ -1443,6 +1443,7 @@ function! s:Tlist_Window_Init()
     " used, then the 'readonly' option is set for all the buffers.
     " Unset it for the taglist buffer
     setlocal noreadonly
+		setlocal nonumber
 
     " Set the taglist buffer filetype to taglist
     setlocal filetype=taglist
