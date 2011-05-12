@@ -117,7 +117,8 @@ if has('gui_macvim')
 	let Tlist_Ctags_Cmd='/opt/local/bin/ctags'
 else
 	let g:netrw_ctags='/usr/bin/ctags'
-	let Tlist_Ctags_Cmd='/usr/bin/ctags -v'
+	let Tlist_Ctags_Cmd='/usr/bin/ctags'
+	" let Tlist_Ctags_Cmd='/usr/bin/ctags -v'
 endif
 
 " set textwidth=90
