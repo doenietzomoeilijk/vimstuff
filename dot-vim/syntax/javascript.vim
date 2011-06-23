@@ -23,6 +23,7 @@ let b:javascript_fold='true'
 if version < 600    " Don't support the old version
   unlet! b:javascript_fold
 endif
+unlet! b:javascript_fold
 
 "" dollar sigh is permittd anywhere in an identifier
 setlocal iskeyword+=$
@@ -55,7 +56,7 @@ if !exists("javascript_ignore_javaScriptdoc")
   " tags containing references
   syntax match  javaScriptDocTags         contained "@\(lends\|link\|see\)\>" nextgroup=javaScriptDocSeeTag skipwhite
   " other tags (no extra syntax)
-  syntax match  javaScriptDocTags         contained "@\(access\|addon\|alias\|author\|beta\|constant\|constructor\|copyright\|deprecated\|description\|event\|example\|exec\|field\|fileOverview\|fileoverview\|function\|global\|ignore\|inner\|license\|overview\|private\|protected\|project\|public\|readonly\|since\|static\)\>"
+  syntax match  javaScriptDocTags         contained "@\(access\|addon\|alias\|author\|beta\|constant\|constructor\|copyright\|deprecated\|description\|event\|example\|exec\|field\|fileOverview\|fileoverview\|function\|global\|ignore\|inner\|license\|overview\|private\|protected\|project\|public\|readonly\|since\|static\|api\|date\)\>"
 
   syntax match  javaScriptDocType         contained "\%(#\|\"\|{\|}\|\w\|\.\|:\|\/\)\+" nextgroup=javaScriptDocParam skipwhite
   syntax match  javaScriptDocTypeNoParam  contained "\%(#\|\"\|{\|}\|\w\|\.\|:\|\/\)\+"
