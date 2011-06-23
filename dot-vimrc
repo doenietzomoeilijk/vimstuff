@@ -75,6 +75,8 @@ if has("gui_running")
 	set guioptions-=T
 	set guitablabel=%M%t
 	set cursorline
+	set colorcolumn=80
+	hi ColorColumn ctermbg=darkgrey guibg=#232526
 	" We only want this for GUI vim
 	" autocmd BufWinLeave *.* silent mkview
 	" autocmd BufWinEnter *.* silent loadview
@@ -123,6 +125,7 @@ endif
 
 " set textwidth=90
 set formatoptions=tcqn " see :help fo-table for letter meaning
+
 
 " Move temporary files to ~/.vimtmp/ instead of current dir
 if ! isdirectory(expand('~/.vimtmp'))
