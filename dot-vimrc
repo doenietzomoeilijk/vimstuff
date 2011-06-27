@@ -75,11 +75,14 @@ if has("gui_running")
 	set guioptions-=T
 	set guitablabel=%M%t
 	set cursorline
-	set colorcolumn=80
 	hi ColorColumn ctermbg=darkgrey guibg=#232526
 	" We only want this for GUI vim
 	" autocmd BufWinLeave *.* silent mkview
 	" autocmd BufWinEnter *.* silent loadview
+endif
+
+if version >= 730
+	set colorcolumn=80
 endif
 
 " Netrw stuff
@@ -143,7 +146,6 @@ let g:GetLatestVimScripts_allowautoinstall=1
 autocmd FileType html set ft=html.javascript.css.smarty
 autocmd BufRead,BufNewFile *.smarty set ft=smarty.html.javascript
 autocmd BufRead,BufNewFile,BufEnter *.json set ft=javascript
-autocmd FileType php setlocal makeprg=php\ -l\ #<
 autocmd BufRead,BufNewFile,BufEnter *.ejs set ft=javascript
 
 " From http://github.com/devjj/vim-config/blob/master/.vimrc After editing, run
