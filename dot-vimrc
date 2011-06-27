@@ -81,8 +81,17 @@ if has("gui_running")
 	" autocmd BufWinEnter *.* silent loadview
 endif
 
-if version >= 730
+if exists("&colorcolumn")
 	set colorcolumn=80
+else
+	" Hightlight the end of long lines (>120 chars)
+	" http://blog.ezyang.com/2010/03/vim-textwidth/
+	" augroup vimrc_autocmds
+	"	 autocmd BufRead * match OverLength /\%120v.*/
+	"	 autocmd BufRead * highlight OverLength none
+	"	 map <Leader>l :highlight OverLength ctermbg=darkgrey guibg=#592929<CR>
+	"	 map <Leader>L :highlight OverLength none<CR>
+	" augroup END
 endif
 
 " Netrw stuff
@@ -178,7 +187,7 @@ let g:snips_author="Max Roeleveld"
 " set sessionoptions=resize,winsize 
 
 " Invisible characters *********************************************************
-set listchars=trail:.,tab:>-,eol:$,extends:>,precedes:<
+set listchars=trail:.,tab:>-,eol:¬,extends:>,precedes:<
 set nolist
 noremap <leader>i :set list!<CR> " Toggle invisible chars"
 
@@ -186,15 +195,6 @@ map <leader>cd :cd %:p:h<CR>
 
 nnoremap <leader>c :set cursorline!<CR>
 nnoremap <leader>C :set cursorcolumn!<CR>
-
-" Hightlight the end of long lines (>120 chars)
-" http://blog.ezyang.com/2010/03/vim-textwidth/
-" augroup vimrc_autocmds
-"	 autocmd BufRead * match OverLength /\%120v.*/
-"	 autocmd BufRead * highlight OverLength none
-"	 map <Leader>l :highlight OverLength ctermbg=darkgrey guibg=#592929<CR>
-"	 map <Leader>L :highlight OverLength none<CR>
-" augroup END
 
 " http://www.sontek.net/Python-with-a-modular-IDE-(Vim)
 autocmd FileType python set omnifunc=pythoncomplete#Complete
@@ -232,6 +232,19 @@ let g:miniBufExplMapCTabSwitchBufs = 1
 " Stop the beeping AND flashing
 set vb t_vb=".
 
+" Cycling between buffers
+map <c-tab> :bn<cr>
+map <s-c-tab> :bp<cr>
+
+" Quick jumping between splits
+map <C-J> <C-W>j<C-W>_
+map <C-K> <C-W>k<C-W>_
+map <S-C-H> :bp<CR>
+map <S-C-L> :bn<CR>
+" vmap ' c'<c-r>"'<esc>
+" vmap " c"<c-r>""<esc>
+" vmap ( c(<c-r>")<esc>
+
 " Remap num island to proper numbers
 :inoremap <Esc>Oq 1
 :inoremap <Esc>Or 2
@@ -249,6 +262,10 @@ set vb t_vb=".
 :inoremap <Esc>Ol +
 :inoremap <Esc>OS -
 
+" If I want help, I'll ask for it (instead of inadvertly hit my F1 when I
+" actually wanted ESC)
+nmap <F1> <Esc>
+
 " NERDCommenter stuff
 let g:NERDRemoveExtraSpaces=1
 let g:NERDSpaceDelims=1
@@ -261,19 +278,6 @@ map <c-w><c-f> :FirstExplorerWindow<cr>
 map <c-w><c-t> :WMToggle<cr>
 let g:winManagerWidth=40
 let g:winManagerWindowLayout = "FileExplorer,TagList|BufExplorer"
-
-" Cycling between buffers
-map <c-tab> :bn<cr>
-map <s-c-tab> :bp<cr>
-
-" Quick jumping between splits
-map <C-J> <C-W>j<C-W>_
-map <C-K> <C-W>k<C-W>_
-map <S-C-H> :bp<CR>
-map <S-C-L> :bn<CR>
-" vmap ' c'<c-r>"'<esc>
-" vmap " c"<c-r>""<esc>
-" vmap ( c(<c-r>")<esc>
 
 " Favourites for file-explorer
 let g:favDirs='/Volumes/max.hotels.local/svn/hotelveiling/branches/hotelveiling-2.0/Application/'."\n"
