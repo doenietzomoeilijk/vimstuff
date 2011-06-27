@@ -173,10 +173,19 @@ function! ReloadSnippets( snippets_dir, ft )
 	call ResetSnippets()
 	call GetSnippets( a:snippets_dir, filetype )
 endfunction
-
 nmap <leader>rr :call ReloadSnippets(snippets_dir, &filetype)<CR>
 let g:snips_author="Max Roeleveld"
 " autocmd bufwritepost snippet :call ReloadSnippets(snippets_dir, &filetype)<CR>
+
+" Allow me to switch between number and relativenumber
+function! SwitchNumbering()
+	if &number && ! &relativenumber
+		set relativenumber
+	elseif ! &number && &relativenumber
+		set number
+	endif
+endfunction
+nmap <leader>nn :call SwitchNumbering()<CR>
 
 " Add a status line by default
 " set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [ASCII=\%03.3b]\ [HEX=\%02.2B]\ [POS=%04l,%04v][%p%%]\ [LEN=%L]
