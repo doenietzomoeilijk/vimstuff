@@ -4,28 +4,53 @@ let mapleader = ","
 " Generic settings
 set encoding=utf-8
 set mouse=a
+
+" Indenting stuff
 set tabstop=2
 set shiftwidth=2
-set smarttab
 set nosmartindent " As smartindent conflicts with filetype
 set nocindent
+set smarttab
+
 set smartcase
 set wrap
+set whichwrap+=<,>,h,l
 set linebreak
 set showbreak=~\ \ \ 
-set noequalalways " Don't resize splits when closing windows
+
 set backspace=indent,eol,start
-set whichwrap+=<,>,h,l
-set number
+
+" UI, mostly
+set number " We'll default to this. <Leader>nn switches to relativenumber
 set ruler
-set laststatus=2
 set cmdheight=3
 set showcmd
 set showmode
-set scrolloff=5
+set scrolloff=2
 set novisualbell
 set noerrorbells
 set nohidden
+
+" Status line
+set laststatus=2
+" set statusline=
+set statusline=%-3.3n " buffer number
+set statusline+=%f " filename
+set statusline+=%h%m%r%w " status flags
+set statusline+=\ ft=%{strlen(&ft)?&ft:'none'} " file type
+if exists("*Tlist_Get_Tagname_By_Line")
+	set statusline+=\ [%{Tlist_Get_Tagname_By_Line()}] " file type
+endif
+set statusline+=%= " right align remainder
+set statusline+=\%4.8b " character value
+set statusline+=/0x%-8B " character value
+set statusline+=%-14(%l,%c%V%) " line, character
+set statusline+=%<%P/%L " file position
+
+" Split stuff
+set noequalalways " Don't resize splits when closing windows
+set splitright
+" set splitbelow
 
 " For browser weenies
 nnoremap <space> 
@@ -41,20 +66,6 @@ set matchpairs+=<:>
 set hlsearch
 noremap <leader>h :let @/ = ""<CR> " clear search pattern to disable hlsearch
 map <leader>n :noh<CR> " Turn off hlsearch until the next search
-
-" Status line
-set laststatus=2
-" set statusline=
-set statusline=%-3.3n " buffer number
-set statusline+=%f " filename
-set statusline+=%h%m%r%w " status flags
-set statusline+=\ ft=%{strlen(&ft)?&ft:'none'} " file type
-set statusline+=\ [%{Tlist_Get_Tagname_By_Line()}] " file type
-set statusline+=%= " right align remainder
-set statusline+=\%4.8b " character value
-set statusline+=/0x%-8B " character value
-set statusline+=%-14(%l,%c%V%) " line, character
-set statusline+=%<%P/%L " file position
 
 " Syntax stuff
 filetype plugin indent on
@@ -76,6 +87,10 @@ if has("gui_running")
 	set guitablabel=%M%t
 	set cursorline
 	hi ColorColumn ctermbg=darkgrey guibg=#232526
+	hi SpecialKey guifg=#444444
+	hi NonText guifg=#444444 guibg=bg
+	hi Todo gui=undercurl
+	" @TODO muk
 	" We only want this for GUI vim
 	" autocmd BufWinLeave *.* silent mkview
 	" autocmd BufWinEnter *.* silent loadview
@@ -196,7 +211,7 @@ nmap <leader>nn :call SwitchNumbering()<CR>
 " set sessionoptions=resize,winsize 
 
 " Invisible characters *********************************************************
-set listchars=trail:.,tab:>-,eol:¬,extends:>,precedes:<
+set listchars=trail:·,tab:‣‒,eol:¬,extends:«,precedes:»
 set nolist
 noremap <leader>i :set list!<CR> " Toggle invisible chars"
 
