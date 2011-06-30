@@ -36,19 +36,18 @@ set nohidden
 
 " Status line
 set laststatus=2
-" set statusline=
-set statusline=%-3.3n " buffer number
-set statusline+=%f " filename
-set statusline+=%h%m%r%w " status flags
-set statusline+=\ ft=%{strlen(&ft)?&ft:'none'} " file type
-if exists("*Tlist_Get_Tagname_By_Line")
-	set statusline+=\ [%{Tlist_Get_Tagname_By_Line()}] " file type
-endif
-set statusline+=%= " right align remainder
-set statusline+=\%4.8b " character value
-set statusline+=/0x%-8B " character value
-set statusline+=%-14(%l,%c%V%) " line, character
-set statusline+=%<%P/%L " file position
+" set statusline=%-3.3n " buffer number
+" set statusline+=%f " filename
+" set statusline+=%h%m%r%w " status flags
+" set statusline+=\ ft=%{strlen(&ft)?&ft:'none'} " file type
+" if exists("*Tlist_Get_Tagname_By_Line")
+" 	set statusline+=\ [%{Tlist_Get_Tagname_By_Line()}] " file type
+" endif
+" set statusline+=%= " right align remainder
+" set statusline+=\%4.8b " character value
+" set statusline+=/0x%-8B " character value
+" set statusline+=%-14(%l,%c%V%) " line, character
+" set statusline+=%<%P/%L " file position
 
 " Split stuff
 set noequalalways " Don't resize splits when closing windows
@@ -337,6 +336,9 @@ function! MyStatusLine(mode)
 		let statusline.="%*%r"
 	elseif a:mode == 'Enter'
 		let statusline.="%r%*"
+	endif
+	if exists("*Tlist_Get_Tagname_By_Line")
+		let statusline .= "\ [%{Tlist_Get_Tagname_By_Line()}]" " file type
 	endif
 	let statusline .= "\ (%l/%L,\ %c)\ %P%=%h%w\ %y\ [%{&encoding}:%{&fileformat}]\ \ "
 	return statusline
