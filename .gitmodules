@@ -1,0 +1,12 @@
+[submodule "dot-vim/bundle/vim-css-color"]
+	path = dot-vim/bundle/vim-css-color
+	url = https://github.com/skammer/vim-css-color.git
+[submodule "dot-vim/bundle/vim-surround"]
+	path = dot-vim/bundle/vim-surround
+	url = https://github.com/tpope/vim-surround.git
+[submodule "dot-vim/bundle/delimitMate"]
+	path = dot-vim/bundle/delimitMate
+	url = https://github.com/Raimondi/delimitMate.git
+[submodule "dot-vim/bundle/supertab"]
+	path = dot-vim/bundle/supertab
+	url = https://github.com/ervandew/supertab.git
