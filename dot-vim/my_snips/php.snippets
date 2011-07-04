@@ -1,0 +1,204 @@
+snippet php
+	<?php
+	
+	/**
+	 * @file
+	 * ${1:A short description of what this file does.}
+	 *
+	 * @author `g:snips_author`
+	 * @date `strftime('%c')`
+	 * @version $Id:$
+	 */
+
+	${2}
+
+	/* EOF */
+# $GLOBALS['...']
+snippet globals
+	$GLOBALS['${1:variable}']${2: = }${3:something}${4:;}${5}
+snippet $_ COOKIE['...']
+	$_COOKIE['${1:variable}']${2}
+snippet $_ ENV['...']
+	$_ENV['${1:variable}']${2}
+snippet $_ FILES['...']
+	$_FILES['${1:variable}']${2}
+snippet $_ GET['...']
+	$_GET['${1:variable}']${2}
+snippet $_ POST['...']
+	$_POST['${1:variable}']${2}
+snippet $_ REQUEST['...']
+	$_REQUEST['${1:variable}']${2}
+snippet $_ SERVER['...']
+	$_SERVER['${1:variable}']${2}
+snippet $_ SESSION['...']
+	$_SESSION['${1:variable}']${2}
+# Start Docblock
+snippet /*
+	/**
+	 * ${1}
+	 **/
+# Constant Definition
+snippet define
+	/**
+	 * ${3:undocumented constant}
+	 **/
+	define(${1}, ${2});${4}
+# Class
+snippet class
+	/**
+	 * ${3:undocumented class}
+	 *
+	 * @author `g:snips_author`
+	 * @date `strftime('%c')`
+	 **/
+	${1:}class ${2:} {
+		${4}
+	} // END $1class $2
+# Function
+snippet fun
+	/**
+	 * ${4:undocumented function}
+	 *
+	 * @author `g:snips_author`
+	 * @date `strftime('%c')`
+	 * ${5}
+	 **/
+	${1}function ${2}(${3}) {
+		${6}
+	}
+snippet var
+	/**
+	 * @var $2
+	 * ${3:Variable description}
+	 */
+	${1:private|public|protected }$${2:varname}
+snippet @author
+	@author `g:snips_author`
+snippet @date
+	@date `strftime('%c')`
+snippet @param
+	@param ${1:bool|int|string|array|object} $${2:paramname} ${3:description}
+snippet @return
+	@return ${1:Description of the return value}
+snippet def?
+	${1}defined('${2}')${3}
+snippet wh
+	while (${1:/* condition */}) {
+		${2:// code...}
+	}
+# do ... while
+snippet do
+	do {
+		${2:// code... }
+	} while (${1:condition});
+snippet if
+	if (${1:condition}) {
+		${2:// code...}
+	}
+snippet ife
+	if (${1:condition}) {
+		${2:// code...}
+	} else {
+		${3:// code...}
+	}
+	${4}
+snippet else
+	else {
+		${1:// code...}
+	}
+snippet elseif
+	elseif (${1:condition}) {
+		${2:// code...}
+	}
+# Tertiary conditional
+snippet t
+	$${1:retVal} = (${2:condition}) ? ${3:a} : ${4:b};${5}
+snippet switch
+	switch ($${1:variable}) {
+		case '${2:value}':
+			${3}
+			break;
+		${5}
+		default:
+			${4}
+			break;
+	}
+snippet case
+	case '${1:value}':
+		${2}
+		break;${3}
+snippet for
+	for ($${2:i}=0; $$2<${1:count}; $$2${3:++}) {
+		${4}
+	}
+snippet foreach
+	foreach ($${1:variable} as $${2:key}) {
+		${3}
+	}
+# $... = array (...)
+snippet array
+	$${1:arrayName} = array(
+		'${2}' => ${3},${4}
+	);${5}
+snippet in_array
+	in_array(${1:needle}, ${2:haystack}${3:, strict})${4}
+snippet ec
+	echo "${1:string}"${2};
+snippet inc
+	include '${1:file}';${2}
+snippet inc1
+	include_once '${1:file}';${2}
+snippet req
+	require '${1:file}';${2}
+snippet req1
+	require_once '${1:file}';${2}
+snippet strpos
+	strpos(${1:haystack}, ${2:needle}${3:, offset})${4}
+snippet stripos
+	stripos(${1:haystack}, ${2:needle}${3:, offset})${4}
+snippet substr
+	substr(${1:string}, ${2:start}${3:, length})${4}
+snippet str_replace
+	str_replace(${1:search}, ${2:replace}, ${3:subject}${4:, count})${5}
+snippet number_format
+	number_format(${1:number}, ${2:decimals}, ${3:dec_point}, ${4:thousands_sep})${5}
+
+# CodeIgniter stuff
+snippet load model
+	$this->load->model('${1}');${2}
+snippet load view
+	$this->load->view('${1}');${2}
+snippet load library
+	$this->load->library('${1}');${2}
+snippet load helper
+	$this->load->helper('${1}');${2}
+snippet load config
+	$this->config->load('${1}'); ${2}
+snippet post
+	$this->input->post(${1})${2}
+snippet dump
+	$this->dbug->dump(${1});${2}
+snippet view
+	$this->load->view('${1}', $${2}data);${3}
+snippet db
+	$this->db->${1}(${2})${3}
+snippet config
+	$this->config->item('${1}')${2}
+snippet form open
+	<?=form_open('${1:action}', ${2:attributes_array}, ${3:hidden_fields})?>${4}
+snippet form close
+	<?=form_close()?>${1}
+snippet form dropdown
+	<?=form_dropdown('${1:name}', $${2:options}, ${3:default})?>${4}
+snippet form submit
+	<?=form_submit('${1:name}', ${2:label}${3:, javascript})?>${4}
+snippet flash Set
+	$this->session->set_flashdata(${1:item}, ${2:value});${3}
+snippet flash Get
+	$this->session->flashdata(${1:item})${2}
+snippet flash Keep
+	$this->session->keep_flashdata(${1:item});${2}
+snippet mark
+	$this->benchmark->mark('${1:my_mark}_start');
+	${2}
+	$this->benchmark->mark('$1_end}');
