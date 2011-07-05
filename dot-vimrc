@@ -300,6 +300,7 @@ map <S-C-L> :bn<CR>
 " actually wanted ESC)
 nmap <F1> <Esc>
 inoremap jj <Esc>
+inoremap JJ <Esc>
 
 " NERDCommenter stuff
 let g:NERDRemoveExtraSpaces=1
