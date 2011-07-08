@@ -86,6 +86,7 @@ colorscheme molokai
 
 if has("gui_running")
 	set guioptions-=T
+	set guioptions-=r
 	set guitablabel=%M%t
 	set cursorline
 	hi ColorColumn ctermbg=darkgrey guibg=#232526
@@ -173,6 +174,7 @@ autocmd FileType html set ft=html.javascript.css.smarty
 autocmd BufRead,BufNewFile *.smarty set ft=smarty.html.javascript
 autocmd BufRead,BufNewFile,BufEnter *.json set ft=javascript
 autocmd BufRead,BufNewFile,BufEnter *.ejs set ft=javascript
+autocmd BufRead,BufEnter */hotelmodules-*/*.class set ft=php
 
 " From http://github.com/devjj/vim-config/blob/master/.vimrc After editing, run
 autocmd! bufwritepost .vimrc source ~/.vimrc
@@ -369,3 +371,18 @@ endfunction
 au InsertEnter * call InsertStatuslineColor(v:insertmode)
 au InsertLeave * hi StatColor guibg=#95e454 guifg=black ctermbg=lightgreen ctermfg=black
 
+function! FixLeCode()
+	" Vervang in PHP =/==/===/=> zonder spaties eromheen door versie MET spaties.
+	:%s/\(!\|+\|-\|\.\|=\|<\|>\)\@<!\(=\|==\|===\|=>\)\( \|>\|=\)\@!/ \2 /g
+	:g/function/s/ = /=/g
+
+	" Zet verdomme spaties achter je komma's:
+	" @TODO moet nog een beetje getweaked worden voor binnen explode() etc
+	" :%s/, \@!/, /g
+
+	" Geen spaties aan het einde van regels
+	:%s/\s\+$//g
+
+	" Wat nou, braces op de volgende regel
+	:g/^\s*function .\+)$/j
+endfunction
