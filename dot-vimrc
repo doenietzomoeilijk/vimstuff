@@ -321,7 +321,7 @@ let g:winManagerWindowLayout = "FileExplorer,TagList|BufExplorer"
 let g:DisableAutoPHPFolding=1
 
 " Favourites for file-explorer
-let g:favDirs='/Volumes/max.hotels.local/svn/hotelveiling/branches/hotelveiling-2.0/Application/'."\n"
+let g:favDirs='/Volumes/max.hotels.local/svn/hotelveiling/branches/hotelveiling-2.0/application/'."\n"
 
 " SVN stuff
 command! Svnadd execute "!svn add %" | execute "!svn propset svn:keywords Id %"
