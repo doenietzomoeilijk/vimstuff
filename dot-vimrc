@@ -174,9 +174,12 @@ set undolevels=1000
 if ! isdirectory(expand('~/.vimundo'))
 	call mkdir(expand('~/.vimundo'))
 endif
-" Set persistent undo
-set undodir=~/.vimundo
-set undofile
+"
+" Set persistent undo, only works on >73
+if exists("&undodir") && exists("&undofile")
+	set undodir=~/.vimundo
+	set undofile
+endif
 
 " Lets :GLVS actually install stuff
 let g:GetLatestVimScripts_allowautoinstall=1
