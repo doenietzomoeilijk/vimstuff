@@ -167,6 +167,17 @@ else
    set directory=.,/var/tmp,/tmp
 endif
 
+" Save tons of history and undo (Thanks, Arnout)
+set history=1000
+set undolevels=1000
+" Setup persistently store the undo folder
+if ! isdirectory(expand('~/.vimundo'))
+	call mkdir(expand('~/.vimundo'))
+endif
+" Set persistent undo
+set undodir=~/.vimundo
+set undofile
+
 " Lets :GLVS actually install stuff
 let g:GetLatestVimScripts_allowautoinstall=1
 
@@ -378,7 +389,7 @@ function! FixLeCode()
 
 	" Zet verdomme spaties achter je komma's:
 	" @TODO moet nog een beetje getweaked worden voor binnen explode() etc
-	" :%s/, \@!/, /g
+	:v/\(explode\|implode\)/s/, \@!/, /g
 
 	" Geen spaties aan het einde van regels
 	:%s/\s\+$//g
