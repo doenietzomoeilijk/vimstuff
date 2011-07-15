@@ -385,14 +385,15 @@ endfunction
 au InsertEnter * call InsertStatuslineColor(v:insertmode)
 au InsertLeave * hi StatColor guibg=#95e454 guifg=black ctermbg=lightgreen ctermfg=black
 
+vmap <Leader>,, :s/, \@!/, /g<CR>
 function! FixLeCode()
 	" Vervang in PHP =/==/===/=> zonder spaties eromheen door versie MET spaties.
-	:%s/\(!\|+\|-\|\.\|=\|<\|>\)\@<!\(=\|==\|===\|=>\)\( \|>\|=\)\@!/ \2 /g
+	:%s/\(!\|+\|-\|\.\|=\|<\|>\)\@<!\(=\|==\|===\|=>\|+=\|-=\)\( \|>\|=\)\@!/ \2 /g
 	:g/function/s/ = /=/g
 
 	" Zet verdomme spaties achter je komma's:
 	" @TODO moet nog een beetje getweaked worden voor binnen explode() etc
-	:v/\(explode\|implode\)/s/, \@!/, /g
+	" :v/\(explode\|implode\)/s/, \@!/, /g
 
 	" Geen spaties aan het einde van regels
 	:%s/\s\+$//g
