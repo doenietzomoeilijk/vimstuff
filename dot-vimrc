@@ -200,10 +200,14 @@ let g:snips_author="Max Roeleveld"
 
 " Allow me to switch between number and relativenumber
 function! SwitchNumbering()
-	if &number && ! &relativenumber
-		set relativenumber
-	elseif ! &number && &relativenumber
-		set number
+	if exists("&relativenumber")
+		if &number && ! &relativenumber
+			set relativenumber
+		elseif ! &number && &relativenumber
+			set number
+		endif
+	else
+		echo "Your VIM doesn't support relativenumber!"
 	endif
 endfunction
 nmap <leader>nn :call SwitchNumbering()<CR>
