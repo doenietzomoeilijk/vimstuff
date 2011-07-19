@@ -171,11 +171,8 @@ autocmd BufRead,BufNewFile *.smarty set ft=smarty.html.javascript
 autocmd BufRead,BufNewFile,BufEnter *.json set ft=javascript
 autocmd BufRead,BufNewFile,BufEnter *.ejs set ft=javascript
 autocmd BufRead,BufEnter */hotelmodules-*/*.class set ft=php
-<<<<<<< HEAD
 autocmd FileType javascript set expandtabs
-=======
 autocmd FileType markdown set formatoptions += t
->>>>>>> b58b387f2ab17366d0e93d91c46b97e8f5a36681
 
 " From http://github.com/devjj/vim-config/blob/master/.vimrc After editing, run
 autocmd! bufwritepost .vimrc source ~/.vimrc
