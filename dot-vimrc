@@ -36,18 +36,6 @@ set nohidden
 
 " Status line
 set laststatus=2
-" set statusline=%-3.3n " buffer number
-" set statusline+=%f " filename
-" set statusline+=%h%m%r%w " status flags
-" set statusline+=\ ft=%{strlen(&ft)?&ft:'none'} " file type
-" if exists("*Tlist_Get_Tagname_By_Line")
-" 	set statusline+=\ [%{Tlist_Get_Tagname_By_Line()}] " file type
-" endif
-" set statusline+=%= " right align remainder
-" set statusline+=\%4.8b " character value
-" set statusline+=/0x%-8B " character value
-" set statusline+=%-14(%l,%c%V%) " line, character
-" set statusline+=%<%P/%L " file position
 
 " Split stuff
 set noequalalways " Don't resize splits when closing windows
@@ -89,18 +77,14 @@ if has("gui_running")
 	set guioptions-=r
 	set guitablabel=%M%t
 	set cursorline
-	hi ColorColumn ctermbg=darkgrey guibg=#232526
 	hi SpecialKey guifg=#444444
 	hi NonText guifg=#444444 guibg=bg
 	hi Todo gui=undercurl
-	" @TODO muk
-	" We only want this for GUI vim
-	" autocmd BufWinLeave *.* silent mkview
-	" autocmd BufWinEnter *.* silent loadview
 endif
 
 if exists("&colorcolumn")
 	set colorcolumn=80
+	hi ColorColumn ctermbg=234 guibg=#232526
 else
 	" Hightlight the end of long lines (>120 chars)
 	" http://blog.ezyang.com/2010/03/vim-textwidth/
@@ -150,12 +134,10 @@ if has('gui_macvim')
 else
 	let g:netrw_ctags='/usr/bin/ctags'
 	let Tlist_Ctags_Cmd='/usr/bin/ctags'
-	" let Tlist_Ctags_Cmd='/usr/bin/ctags -v'
 endif
 
-" set textwidth=90
-set formatoptions=tcqn " see :help fo-table for letter meaning
-
+set textwidth=80
+set formatoptions=lcqn " see :help fo-table for letter meaning
 
 " Move temporary files to ~/.vimtmp/ instead of current dir
 if ! isdirectory(expand('~/.vimtmp'))
@@ -189,7 +171,11 @@ autocmd BufRead,BufNewFile *.smarty set ft=smarty.html.javascript
 autocmd BufRead,BufNewFile,BufEnter *.json set ft=javascript
 autocmd BufRead,BufNewFile,BufEnter *.ejs set ft=javascript
 autocmd BufRead,BufEnter */hotelmodules-*/*.class set ft=php
+<<<<<<< HEAD
 autocmd FileType javascript set expandtabs
+=======
+autocmd FileType markdown set formatoptions += t
+>>>>>>> b58b387f2ab17366d0e93d91c46b97e8f5a36681
 
 " From http://github.com/devjj/vim-config/blob/master/.vimrc After editing, run
 autocmd! bufwritepost .vimrc source ~/.vimrc
@@ -218,10 +204,14 @@ let g:snips_author="Max Roeleveld"
 
 " Allow me to switch between number and relativenumber
 function! SwitchNumbering()
-	if &number && ! &relativenumber
-		set relativenumber
-	elseif ! &number && &relativenumber
-		set number
+	if exists("&relativenumber")
+		if &number && ! &relativenumber
+			set relativenumber
+		elseif ! &number && &relativenumber
+			set number
+		endif
+	else
+		echo "Your VIM doesn't support relativenumber!"
 	endif
 endfunction
 nmap <leader>nn :call SwitchNumbering()<CR>
@@ -336,7 +326,7 @@ let g:winManagerWindowLayout = "FileExplorer,TagList|BufExplorer"
 let g:DisableAutoPHPFolding=1
 
 " Favourites for file-explorer
-let g:favDirs='/Volumes/max.hotels.local/svn/hotelveiling/branches/hotelveiling-2.0/application/'."\n"
+let g:favDirs='/Volumes/max.hotels.local/git/hotelveiling/'."\n"
 
 " SVN stuff
 command! Svnadd execute "!svn add %" | execute "!svn propset svn:keywords Id %"
@@ -363,6 +353,7 @@ function! MyStatusLine(mode)
 	if exists("*Tlist_Get_Tagname_By_Line")
 		let statusline .= "\ [%{Tlist_Get_Tagname_By_Line()}]" " file type
 	endif
+	let statusline .= "%{fugitive#statusline()}"
 	let statusline .= "\ (%l/%L,\ %c)\ %P%=%h%w\ %y\ [%{&encoding}:%{&fileformat}]\ \ "
 	return statusline
 endfunction
