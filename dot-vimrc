@@ -388,5 +388,5 @@ function! FixLeCode()
 	:%s/\s\+$//g
 
 	" Wat nou, braces op de volgende regel
-	:g/^\s*function .\+)$/j
+	:g/^\s*\(\(public\|private\) \)\?function .\+)$/j
 endfunction
