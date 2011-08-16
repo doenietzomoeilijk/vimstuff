@@ -33,6 +33,7 @@ set scrolloff=2
 set novisualbell
 set noerrorbells
 set nohidden
+set equalalways
 
 " Status line
 set laststatus=2
@@ -139,26 +140,29 @@ endif
 set textwidth=80
 set formatoptions=lcqn " see :help fo-table for letter meaning
 
+" Directories that have // at the end will be expanded to the full file path
+" See: http://stackoverflow.com/questions/4331776/change-vim-swap-backup-undo-file-name/4331812#4331812
+
 " Move temporary files to ~/.vimtmp/ instead of current dir
 if ! isdirectory(expand('~/.vimtmp'))
    call mkdir(expand('~/.vimtmp'))
 endif
 if isdirectory(expand('~/.vimtmp'))
-   set directory=~/.vimtmp
+   set directory=~/.vimtmp//
 else
-   set directory=.,/var/tmp,/tmp
+   set directory=.,/var/tmp//,/tmp//
 endif
 
 " Save tons of history and undo (Thanks, Arnout)
 set history=1000
 set undolevels=1000
-" Setup persistently store the undo folder
-if ! isdirectory(expand('~/.vimundo'))
-	call mkdir(expand('~/.vimundo'))
-endif
-"
+
 " Set persistent undo, only works on >73
 if exists("&undodir") && exists("&undofile")
+	" Setup persistently store the undo folder
+	if ! isdirectory(expand('~/.vimundo'))
+		call mkdir(expand('~/.vimundo'))
+	endif
 	set undodir=~/.vimundo
 	set undofile
 endif
@@ -166,13 +170,15 @@ endif
 " Lets :GLVS actually install stuff
 let g:GetLatestVimScripts_allowautoinstall=1
 
-autocmd FileType html set ft=html.javascript.css.smarty
 autocmd BufRead,BufNewFile *.smarty set ft=smarty.html.javascript
 autocmd BufRead,BufNewFile,BufEnter *.json set ft=javascript
 autocmd BufRead,BufNewFile,BufEnter *.ejs set ft=javascript
 autocmd BufRead,BufEnter */hotelmodules-*/*.class set ft=php
-autocmd FileType javascript set expandtabs
+autocmd FileType html set ft=html.javascript.css.php
 autocmd FileType markdown set formatoptions += t
+
+" Seems to cause errors in console vim.
+" autocmd FileType javascript setlocal expandtab
 
 " From http://github.com/devjj/vim-config/blob/master/.vimrc After editing, run
 autocmd! bufwritepost .vimrc source ~/.vimrc
@@ -350,7 +356,7 @@ function! MyStatusLine(mode)
 	if exists("*Tlist_Get_Tagname_By_Line")
 		let statusline .= "\ [%{Tlist_Get_Tagname_By_Line()}]" " file type
 	endif
-	let statusline .= "%{fugitive#statusline()}"
+	" let statusline .= "%{fugitive#statusline()}"
 	let statusline .= "\ (%l/%L,\ %c)\ %P%=%h%w\ %y\ [%{&encoding}:%{&fileformat}]\ \ "
 	return statusline
 endfunction
