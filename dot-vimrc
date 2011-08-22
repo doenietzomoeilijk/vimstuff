@@ -16,7 +16,7 @@ set nocindent
 set smarttab
 
 set smartcase
-set wrap
+set nowrap " We just CODE to the correct width, bitches!
 set whichwrap+=<,>,h,l
 set linebreak
 set showbreak=~\ \ \ 
