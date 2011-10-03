@@ -314,6 +314,9 @@ nmap <F1> <Esc>
 inoremap jj <Esc>
 inoremap JJ <Esc>
 
+" Search for diff separater stuff
+nnoremap <Leader>fd /^<<<<<<<\|=======\|>>>>>>><CR>
+
 " NERDCommenter stuff
 let g:NERDRemoveExtraSpaces=1
 let g:NERDSpaceDelims=1
@@ -397,6 +400,14 @@ function! FixLeCode()
 
 	" Wat nou, braces op de volgende regel
 	:g/^\s*\(\(public\|private\) \)\?function .\+)$/j
+endfunction
+
+" Keep some space between if/for/foreach/while and the paren'd part, also keep
+" some space between the closing paren and the opening brace
+function! FixSpaceBrace()
+	:%s/\(if\|elseif\|for\|foreach\|while\)(/\1 (/g
+	:%s/){/) {/g
+	:%s/function \(\w\+\) (/function \1(/g
 endfunction
 
 function! DeEscapeCodify()

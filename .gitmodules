@@ -19,3 +19,6 @@
 [submodule "dot-vim/bundle/vim-fugitive"]
 	path = dot-vim/bundle/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive.git
+[submodule "dot-vim/bundle/vim-javascript"]
+	path = dot-vim/bundle/vim-javascript
+	url = https://github.com/pangloss/vim-javascript.git
