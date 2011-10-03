@@ -315,7 +315,7 @@ inoremap jj <Esc>
 inoremap JJ <Esc>
 
 " Search for diff separater stuff
-nnoremap <Leader>fd /^<<<<<<<\|=======\|>>>>>>><CR>
+nnoremap <Leader>fd /^<<<<<<<\\|^=======\\|^>>>>>>><CR>
 
 " NERDCommenter stuff
 let g:NERDRemoveExtraSpaces=1
