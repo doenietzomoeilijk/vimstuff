@@ -315,6 +315,9 @@ nmap <F1> <Esc>
 inoremap jj <Esc>
 inoremap JJ <Esc>
 
+" Hey, F5 wasn't used yet. Let's map :make to that!
+map <F5> :make<cr>
+
 " Search for diff separater stuff
 nnoremap <Leader>fd /^<<<<<<<\\|^=======\\|^>>>>>>><CR>
 
