@@ -173,9 +173,12 @@ let g:GetLatestVimScripts_allowautoinstall=1
 autocmd BufRead,BufNewFile *.smarty set ft=smarty.html.javascript
 autocmd BufRead,BufNewFile,BufEnter *.json set ft=javascript
 autocmd BufRead,BufNewFile,BufEnter *.ejs set ft=javascript
+autocmd BufRead,BufNewFile,BufEnter *.md set ft=markdown
 autocmd BufRead,BufEnter */hotelmodules-*/*.class set ft=php
 autocmd FileType html set ft=html.javascript.css.php
-autocmd FileType markdown set formatoptions += t
+autocmd FileType markdown set formatoptions+=t
+autocmd FileType javascript set expandtab
+autocmd FileType perl set expandtab tabstop=4 shiftwidth=4 shiftround
 
 " Seems to cause errors in console vim.
 " autocmd FileType javascript setlocal expandtab
@@ -315,6 +318,9 @@ inoremap JJ <Esc>
 " Hey, F5 wasn't used yet. Let's map :make to that!
 map <F5> :make<cr>
 
+" Search for diff separater stuff
+nnoremap <Leader>fd /^<<<<<<<\\|^=======\\|^>>>>>>><CR>
+
 " NERDCommenter stuff
 let g:NERDRemoveExtraSpaces=1
 let g:NERDSpaceDelims=1
@@ -383,7 +389,7 @@ endfunction
 au InsertEnter * call InsertStatuslineColor(v:insertmode)
 au InsertLeave * hi StatColor guibg=#95e454 guifg=black ctermbg=lightgreen ctermfg=black
 
-vmap <Leader>,, :s/, \@!/, /g<CR>
+vmap <Leader>,, :s/, \@!\(.\+\)/, \1/g<CR>
 function! FixLeCode()
 	" Vervang in PHP =/==/===/=> zonder spaties eromheen door versie MET spaties.
 	:%s/\(!\|+\|-\|\.\|=\|<\|>\)\@<!\(=\|==\|===\|=>\|+=\|-=\)\( \|>\|=\)\@!/ \2 /g
@@ -399,3 +405,25 @@ function! FixLeCode()
 	" Wat nou, braces op de volgende regel
 	:g/^\s*\(\(public\|private\) \)\?function .\+)$/j
 endfunction
+
+" Keep some space between if/for/foreach/while and the paren'd part, also keep
+" some space between the closing paren and the opening brace
+function! FixSpaceBrace()
+	:%s/\(if\|elseif\|for\|foreach\|while\)(/\1 (/g
+	:%s/){/) {/g
+	:%s/function \(\w\+\) (/function \1(/g
+endfunction
+
+function! DeEscapeCodify()
+	" Removes escape codes, at least from Javascript
+	:%s/\\x1b\[\(\d\+;\)*\d\+m//g
+endfunction
+
+" Remove whitespace from code files on save
+function! StripTrailingWhite()
+	let l:winview = winsaveview()
+	silent! %s/\s\+$//
+	call winrestview(l:winview)
+endfunction
+autocmd BufWritePre *.{php,py,pl,js} call StripTrailingWhite()
+
