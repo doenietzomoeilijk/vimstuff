@@ -179,6 +179,8 @@ autocmd FileType html set ft=html.javascript.css.php
 autocmd FileType markdown set formatoptions+=t
 autocmd FileType javascript set expandtab
 autocmd FileType perl set expandtab tabstop=4 shiftwidth=4 shiftround
+autocmd BufRead,BufNewFile,BufEnter *.tt2 set ft=tt2html
+autocmd BufRead,BufNewFile,BufEnter */frags/**.html set ft=tt2
 
 " Seems to cause errors in console vim.
 " autocmd FileType javascript setlocal expandtab
