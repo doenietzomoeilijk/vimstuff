@@ -1,4 +1,4 @@
-" Run Pathogen
+" Run Pathogen. Always has to be run first.
 call pathogen#infect()
 
 " Set leader to comma
@@ -26,20 +26,21 @@ set backspace=indent,eol,start
 " UI, mostly
 set number " We'll default to this. <Leader>nn switches to relativenumber
 set ruler
-set cmdheight=3
+set cmdheight=3 " Give us some room for feedback. Prevents 90% of 'Press enter
+                " to continue'.
 set showcmd
 set showmode
 set scrolloff=2
 set novisualbell
 set noerrorbells
 set nohidden
-set equalalways
 
 " Status line
 set laststatus=2
 
 " Split stuff
-set noequalalways " Don't resize splits when closing windows
+set equalalways
+set eadirection=hor
 set splitright
 " set splitbelow
 
@@ -83,6 +84,7 @@ if has("gui_running")
 	hi Todo gui=undercurl
 endif
 
+" A nice EOL guide column.
 if exists("&colorcolumn")
 	set colorcolumn=80
 	hi ColorColumn ctermbg=234 guibg=#232526
@@ -290,9 +292,14 @@ map <C-J> <C-W>j<C-W>_
 map <C-K> <C-W>k<C-W>_
 map <S-C-H> :bp<CR>
 map <S-C-L> :bn<CR>
-" vmap ' c'<c-r>"'<esc>
-" vmap " c"<c-r>""<esc>
-" vmap ( c(<c-r>")<esc>
+
+" Why didn't I think of these earlier?
+imap <C-E> <End>
+imap <C-A> <Home>
+
+" Uppercase / lowercase current word
+nmap <Leader>U viwU
+nmap <Leader>u viwu
 
 " Remap num island to proper numbers
 :inoremap <Esc>Oq 1
@@ -314,6 +321,8 @@ map <S-C-L> :bn<CR>
 " If I want help, I'll ask for it (instead of inadvertly hit my F1 when I
 " actually wanted ESC)
 nmap <F1> <Esc>
+
+" j is on the home row, Esc isn't, and we don't use j all that much anyway.
 inoremap jj <Esc>
 inoremap JJ <Esc>
 
@@ -336,11 +345,27 @@ map <c-w><c-t> :WMToggle<cr>
 let g:winManagerWidth=40
 let g:winManagerWindowLayout = "FileExplorer,TagList|BufExplorer"
 
+" Gundo
+map <c-w><c-g> :GundoToggle<cr>
+
+" Ctrl-P
+" I'll manage my own paths
+let g:ctrlp_working_path_mode = 0
+
+" Surround all the things! Requires the Surround plugin.
+" For parens and the like we use the CLOSING symbol, otherwise we get extra
+" spaces. Yuk.
+vmap ' S'<ESC>
+vmap " S"<ESC>
+vmap ( S)<ESC>
+vmap [ S]<ESC>
+vmap { S}<ESC>
+
 " Disable auto-php-folding if PIV is plugged in
 let g:DisableAutoPHPFolding=1
 
 " Favourites for file-explorer
-let g:favDirs='/Volumes/max.hotels.local/git/hotelveiling/'."\n"
+let g:favDirs='/Volumes/Home Directory/git/'."\n"
 
 " SVN stuff
 command! Svnadd execute "!svn add %" | execute "!svn propset svn:keywords Id %"
@@ -391,20 +416,18 @@ endfunction
 au InsertEnter * call InsertStatuslineColor(v:insertmode)
 au InsertLeave * hi StatColor guibg=#95e454 guifg=black ctermbg=lightgreen ctermfg=black
 
+" Fix commas
 vmap <Leader>,, :s/, \@!\(.\+\)/, \1/g<CR>
+
 function! FixLeCode()
-	" Vervang in PHP =/==/===/=> zonder spaties eromheen door versie MET spaties.
+	" Add surrounding spaces to <=, =>, == etc.
 	:%s/\(!\|+\|-\|\.\|=\|<\|>\)\@<!\(=\|==\|===\|=>\|+=\|-=\)\( \|>\|=\)\@!/ \2 /g
 	:g/function/s/ = /=/g
 
-	" Zet verdomme spaties achter je komma's:
-	" @TODO moet nog een beetje getweaked worden voor binnen explode() etc
-	" :v/\(explode\|implode\)/s/, \@!/, /g
-
-	" Geen spaties aan het einde van regels
+	" No line should end in a space, ever
 	:%s/\s\+$//g
 
-	" Wat nou, braces op de volgende regel
+	" Pull braces to the same line where the funciton started
 	:g/^\s*\(\(public\|private\) \)\?function .\+)$/j
 endfunction
 
@@ -417,7 +440,7 @@ function! FixSpaceBrace()
 endfunction
 
 function! DeEscapeCodify()
-	" Removes escape codes, at least from Javascript
+	" Removes ANSI escape codes, at least from Javascript
 	:%s/\\x1b\[\(\d\+;\)*\d\+m//g
 endfunction
 
@@ -427,5 +450,5 @@ function! StripTrailingWhite()
 	silent! %s/\s\+$//
 	call winrestview(l:winview)
 endfunction
-autocmd BufWritePre *.{php,py,pl,js} call StripTrailingWhite()
+autocmd BufWritePre *.{php,py,pl,js,html} call StripTrailingWhite()
 
