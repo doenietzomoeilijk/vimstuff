@@ -189,8 +189,8 @@ autocmd BufRead,BufNewFile,BufEnter *.tt2 set ft=tt2html
 
 " From http://github.com/devjj/vim-config/blob/master/.vimrc After editing, run
 autocmd! bufwritepost .vimrc source ~/.vimrc
-map <leader>vv :tabe ~/.vimrc<CR>
-map <leader>V :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
+map <leader>vv :vsplit $MYVIMRC<CR>
+map <leader>V :source $MYVIMRC<CR>:filetype detect<CR>:echom 'vimrc reloaded'<CR>
 
 " I like my own php snippets better
 " call ResetSnippets('php')
