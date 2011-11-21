@@ -483,5 +483,5 @@ function! StripTrailingWhite()
 	silent! %s/\s\+$//
 	call winrestview(l:winview)
 endfunction
-autocmd BufWritePre *.{php,py,pl,js,html} call StripTrailingWhite()
+autocmd BufWritePre *.{php,py,pl,js,css,html} call StripTrailingWhite()
 
