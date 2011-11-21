@@ -2,6 +2,7 @@
 
 " Run Pathogen. Always has to be run first.
 call pathogen#infect()
+call pathogen#helptags()
 
 " Set leader to comma
 let mapleader = ","
