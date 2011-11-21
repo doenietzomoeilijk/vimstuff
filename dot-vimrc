@@ -1,12 +1,15 @@
+" :vim filetype=vim foldmethod=marker foldlevel=0:
+
 " Run Pathogen. Always has to be run first.
 call pathogen#infect()
 
 " Set leader to comma
 let mapleader = ","
 
-" Generic settings
+" Generic settings {{{
 set encoding=utf-8
 set mouse=a
+" }}}
 
 " Indenting stuff
 set tabstop=2
@@ -35,6 +38,14 @@ set novisualbell
 set noerrorbells
 set nohidden
 
+" Wildmenu {{{
+set wildmenu
+set wildmode=list:longest
+set wildignore+=.hg,.git,.svn
+set wildignore+=.DS_Store
+set wildignore+=.pyc
+" }}}
+
 " Status line
 set laststatus=2
 
@@ -42,7 +53,8 @@ set laststatus=2
 set equalalways
 set eadirection=hor
 set splitright
-" set splitbelow
+" Resize windows on metawindow resize
+au VimResized * exe "normal! \<c-w>="
 
 " For browser weenies
 nnoremap <space> 
@@ -57,13 +69,13 @@ set showmatch
 set matchpairs+=<:>
 set hlsearch
 noremap <leader>h :let @/ = ""<CR> " clear search pattern to disable hlsearch
-map <leader>n :noh<CR> " Turn off hlsearch until the next search
+noremap <leader>n :noh<CR> " Turn off hlsearch until the next search
 
 " Syntax stuff
 filetype plugin indent on
 syntax enable
-map <leader>s :syntax enable<CR>
-map <leader>hi :so $VIMRUNTIME/syntax/hitest.vim<CR>
+noremap <leader>s :syntax enable<CR>
+noremap <leader>hi :so $VIMRUNTIME/syntax/hitest.vim<CR>
 
 " PURDY COLORZ
 let g:CSApprox_verbose_level = 0
@@ -84,22 +96,14 @@ if has("gui_running")
 	hi Todo gui=undercurl
 endif
 
-" A nice EOL guide column.
+" A nice EOL guide column. {{{
 if exists("&colorcolumn")
 	set colorcolumn=80
 	hi ColorColumn ctermbg=234 guibg=#232526
-else
-	" Hightlight the end of long lines (>120 chars)
-	" http://blog.ezyang.com/2010/03/vim-textwidth/
-	" augroup vimrc_autocmds
-	"	 autocmd BufRead * match OverLength /\%120v.*/
-	"	 autocmd BufRead * highlight OverLength none
-	"	 map <Leader>l :highlight OverLength ctermbg=darkgrey guibg=#592929<CR>
-	"	 map <Leader>L :highlight OverLength none<CR>
-	" augroup END
 endif
+" }}}
 
-" Netrw stuff
+" Netrw stuff {{{
 let g:netrw_liststyle=1
 " let g:netrw_browse_split = 4
 let g:netrw_silent = 1
@@ -110,6 +114,7 @@ let g:netrw_alto = 1 " open o-splits at the bottom
 let g:netrw_altv = 1 " open v-splits to the right
 " let g:netrw_winsize = 35
 " let g:netrw_preview = 1
+" }}}
 
 if has('gui_macvim')
 	behave xterm
@@ -119,10 +124,6 @@ if has('gui_macvim')
 	" set noantialias
 	set gfn=Inconsolata-dz:h12
 	set gfn=EnvyCodeR:h13
-	" set gfn=Monaco:h10
-	" set antialias
-	" set gfn=Consolas:h12
-	" set transp=2
 	let macvim_skip_cmd_opt_movement = 1
 	let macvim_hig_shift_movement = 1
 	let g:netrw_browsex_viewer='open'
@@ -141,6 +142,8 @@ endif
 
 set textwidth=80
 set formatoptions=lcqn " see :help fo-table for letter meaning
+
+" BACKUP STUFF {{{
 
 " Directories that have // at the end will be expanded to the full file path
 " See: http://stackoverflow.com/questions/4331776/change-vim-swap-backup-undo-file-name/4331812#4331812
@@ -169,6 +172,11 @@ if exists("&undodir") && exists("&undofile")
 	set undofile
 endif
 
+set backupskip=/tmp/*,/private/tmp/*" 
+"
+
+" }}}
+
 " Lets :GLVS actually install stuff
 let g:GetLatestVimScripts_allowautoinstall=1
 
@@ -177,10 +185,10 @@ autocmd BufRead,BufNewFile,BufEnter *.json set ft=javascript
 autocmd BufRead,BufNewFile,BufEnter *.ejs set ft=javascript
 autocmd BufRead,BufNewFile,BufEnter *.md set ft=markdown
 autocmd BufRead,BufEnter */hotelmodules-*/*.class set ft=php
-autocmd FileType html set ft=html.javascript.css.php
-autocmd FileType markdown set formatoptions+=t
-autocmd FileType javascript,css set expandtab
-autocmd FileType perl set expandtab tabstop=4 shiftwidth=4 shiftround
+autocmd FileType html setlocal ft=html.javascript.css.php
+autocmd FileType markdown setlocal formatoptions+=t
+autocmd FileType javascript setlocal expandtab
+autocmd FileType perl setlocal expandtab tabstop=4 shiftwidth=4 shiftround
 autocmd BufRead,BufNewFile,BufEnter *.tt2 set ft=tt2html
 " autocmd BufRead,BufNewFile,BufEnter */frags/**.html set ft=tt2
 
@@ -188,26 +196,54 @@ autocmd BufRead,BufNewFile,BufEnter *.tt2 set ft=tt2html
 " autocmd FileType javascript setlocal expandtab
 
 " From http://github.com/devjj/vim-config/blob/master/.vimrc After editing, run
-autocmd! bufwritepost .vimrc source ~/.vimrc
-map <leader>vv :tabe ~/.vimrc<CR>
-map <leader>V :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
+autocmd! bufwritepost $MYVIMRC source $MYVIMRC | exec 'echom "vimrc reloaded after save."'
+noremap <leader>vv :vsplit $MYVIMRC<CR>
+noremap <leader>V :source $MYVIMRC<CR>:filetype detect<CR>:echom 'vimrc reloaded'<CR>
 
 " I like my own php snippets better
 " call ResetSnippets('php')
 " call ExtractSnipsFile('~/.vim/my_snips/php.snippets', 'php')
 
-" SnippetsEmu stuff
-" function! ReloadSnippets( snippets_dir, ft )
-	" if strlen( a:ft ) == 0
-		" let filetype = "_"
-	" else
-		" let filetype = a:ft
-	" endif
 
-	" call ResetSnippets()
-	" call GetSnippets( a:snippets_dir, filetype )
-" endfunction
-" nmap <leader>rr :call ReloadSnippets(snippets_dir, &filetype)<CR>
+function! MakeDashed(symbol)
+
+	" @TODO zoeken naar *enige* whitespace aan het begin van de regel, en daar
+	" onze x mee vullen.
+	" 
+	" Dan de x aanvullen met overige muk.
+
+
+	" We start with an empty string
+	let @x = ''
+
+	" Let's figure out how long this line is, anyway
+	let linelength = col("$")
+
+	" Get to the start of the line, and record its position.
+	normal ^
+	let startOfLine = col('.')
+	echom 'startOfLine=' . startOfLine
+
+	" Now get to the end and enter to the next line. If this line's commented,
+	" we'll continue the comment.
+	normal A
+	let cursorpos = getpos('.')
+
+	" If the column we're on *now* is lower than the start-of-line of our previous
+	" line, we're NOT in a comment. Vim collapses a line with just spaces/tabs on
+	" it, so we'll need to account for that.
+	if cursorpos[2] < startOfLine
+		@x = repeat(' ', startOfLine)
+	endif
+
+	" moet iets met getpos('.') worden om begin vorige regel te vinden
+	echom 'currentcolumn='.cursorpos[2]
+	let @x = @x . repeat(a:symbol, linelength - cursorpos[2] - 1)
+	normal "xp
+endfunction
+nnoremap <Leader>== :call MakeDashed('=')<CR>
+nnoremap <Leader>-- :call MakeDashed('-')<CR>
+
 let g:snippets_dir="~/.vim/my_snips/"
 let g:snips_author="Max Roeleveld"
 " autocmd bufwritepost snippet :call ReloadSnippets(snippets_dir, &filetype)<CR>
@@ -224,22 +260,15 @@ function! SwitchNumbering()
 		echo "Your VIM doesn't support relativenumber!"
 	endif
 endfunction
-nmap <leader>nn :call SwitchNumbering()<CR>
+nnoremap <leader>nn :call SwitchNumbering()<CR>
 
-" Add a status line by default
-" set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [ASCII=\%03.3b]\ [HEX=\%02.2B]\ [POS=%04l,%04v][%p%%]\ [LEN=%L]
-" set laststatus=2
-
-" Session saving
-" set sessionoptions=blank,buffers,curdir,folds,help,resize,tabpages,winsize 
-" set sessionoptions=resize,winsize 
-
-" Invisible characters *********************************************************
+" Invisible characters {{{
 set listchars=trail:·,tab:‣‒,eol:¬,extends:«,precedes:»
 set nolist
 noremap <leader>i :set list!<CR> " Toggle invisible chars"
+" }}}
 
-map <leader>cd :cd %:p:h<CR>
+noremap <leader>cd :cd %:p:h<CR>
 
 nnoremap <leader>c :set cursorline!<CR>
 nnoremap <leader>C :set cursorcolumn!<CR>
@@ -252,8 +281,8 @@ set suffixes=.bak,~,.o,.h,.info,.swp,.obj,.pyc,.pyo
 set tags+=tags;/
 set tags+=$HOME/.vim/tags/python.ctags
 
-" TagList
-map <leader>t :TlistToggle<CR>
+" TagList {{{
+noremap <leader>t :TlistToggle<CR>
 let Tlist_Sort_Type = "order"
 let Tlist_Use_SingleClick = 1
 let Tlist_Show_Menu = 1
@@ -266,9 +295,10 @@ let Tlist_Show_One_File=1
 let Tlist_Display_Prototype=1
 let Tlist_Max_Submenu_Items=50
 let Tlist_Max_Tag_Length=30
+" }}}
 
-map <silent><A-Right> :bnext!<CR> 
-map <silent><A-Left> :bprevious!<CR> 
+noremap <silent><A-Right> :bnext!<CR> 
+noremap <silent><A-Left> :bprevious!<CR> 
 
 " MiniBufExplorer -- currently not used
 let g:miniBufExplMapWindowNavVim = 1 
@@ -284,22 +314,22 @@ set vb t_vb=".
 nnoremap <leader>q gqip
 
 " Cycling between buffers
-map <c-tab> :bn<cr>
-map <s-c-tab> :bp<cr>
+noremap <c-tab> :bn<cr>
+noremap <s-c-tab> :bp<cr>
 
 " Quick jumping between splits
-map <C-J> <C-W>j<C-W>_
-map <C-K> <C-W>k<C-W>_
-map <S-C-H> :bp<CR>
-map <S-C-L> :bn<CR>
+noremap <C-J> <C-W>j<C-W>_
+noremap <C-K> <C-W>k<C-W>_
+noremap <S-C-H> :bp<CR>
+noremap <S-C-L> :bn<CR>
 
 " Why didn't I think of these earlier?
-imap <C-E> <End>
-imap <C-A> <Home>
+inoremap <C-E> <End>
+inoremap <C-A> <Home>
 
 " Uppercase / lowercase current word
-nmap <Leader>U viwU
-nmap <Leader>u viwu
+nnoremap <Leader>U viwU
+nnoremap <Leader>u viwu
 
 " Remap num island to proper numbers
 :inoremap <Esc>Oq 1
@@ -320,33 +350,33 @@ nmap <Leader>u viwu
 
 " If I want help, I'll ask for it (instead of inadvertly hit my F1 when I
 " actually wanted ESC)
-nmap <F1> <Esc>
+noremap <F1> <Esc>
 
 " j is on the home row, Esc isn't, and we don't use j all that much anyway.
 inoremap jj <Esc>
 inoremap JJ <Esc>
 
 " Hey, F5 wasn't used yet. Let's map :make to that!
-map <F5> :make<cr>
+noremap <F5> :make<cr>
 
 " Search for diff separater stuff
 nnoremap <Leader>fd /^<<<<<<<\\|^=======\\|^>>>>>>><CR>
 
-" NERDCommenter stuff
+" NERDCommenter
 let g:NERDRemoveExtraSpaces=1
 let g:NERDSpaceDelims=1
 let g:NERDComInsertMap='<c-c>'
 let g:NERDCustomDelimiters = { 'html': { 'left': '<!--', 'right': '-->'}}
 
 " WinManager
-map <c-w><c-b> :BottomExplorerWindow<cr>
-map <c-w><c-f> :FirstExplorerWindow<cr>
-map <c-w><c-t> :WMToggle<cr>
+noremap <c-w><c-b> :BottomExplorerWindow<cr>
+noremap <c-w><c-f> :FirstExplorerWindow<cr>
+noremap <c-w><c-t> :WMToggle<cr>
 let g:winManagerWidth=40
 let g:winManagerWindowLayout = "FileExplorer,TagList|BufExplorer"
 
 " Gundo
-map <c-w><c-g> :GundoToggle<cr>
+noremap <c-w><c-g> :GundoToggle<cr>
 
 " Ctrl-P
 " I'll manage my own paths
@@ -357,11 +387,11 @@ let g:ctrlp_working_path_mode = 0
 " spaces. Yuk.
 " For quotes, we use doubles, otherwise it'd interfere with movements or
 " registers.
-vmap '' S'<ESC>
-vmap "" S"<ESC>
-vmap ( S)<ESC>
-vmap [ S]<ESC>
-vmap { S}<ESC>
+vnoremap '' S'<ESC>
+vnoremap "" S"<ESC>
+vnoremap ( S)<ESC>
+vnoremap [ S]<ESC>
+vnoremap { S}<ESC>
 
 " Disable auto-php-folding if PIV is plugged in
 let g:DisableAutoPHPFolding=1
@@ -419,7 +449,7 @@ au InsertEnter * call InsertStatuslineColor(v:insertmode)
 au InsertLeave * hi StatColor guibg=#95e454 guifg=black ctermbg=lightgreen ctermfg=black
 
 " Fix commas
-vmap <Leader>,, :s/, \@!\(.\+\)/, \1/g<CR>
+vnoremap <Leader>,, :s/, \@!\(.\+\)/, \1/g<CR>
 
 function! FixLeCode()
 	" Add surrounding spaces to <=, =>, == etc.
