@@ -142,6 +142,10 @@ else
 	let Tlist_Ctags_Cmd='/usr/bin/ctags'
 endif
 
+" Disable that slow stuff for now, it really chokes a bitch on larger minified
+" javascript files:
+let Tlist_javascript_Ctags_Cmd='ctags'
+
 set textwidth=80
 set formatoptions=lcqn " see :help fo-table for letter meaning
 
@@ -188,8 +192,9 @@ autocmd BufRead,BufNewFile,BufEnter *.ejs set ft=javascript
 autocmd BufRead,BufNewFile,BufEnter *.md set ft=markdown
 autocmd BufRead,BufEnter */hotelmodules-*/*.class set ft=php
 autocmd FileType html setlocal ft=html.javascript.css.php expandtab
-autocmd FileType markdown setlocal formatoptions+=t
+autocmd FileType markdown setlocal expandtab formatoptions+=t
 autocmd FileType javascript setlocal expandtab
+autocmd FileType css setlocal expandtab
 autocmd FileType perl setlocal expandtab tabstop=4 shiftwidth=4 shiftround
 autocmd BufRead,BufNewFile,BufEnter *.tt2 set ft=tt2html
 " autocmd BufRead,BufNewFile,BufEnter */frags/**.html set ft=tt2
