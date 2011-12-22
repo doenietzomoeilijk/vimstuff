@@ -77,6 +77,8 @@ snippet $
 	$(${1})${2}
 snippet log
 	console.log(${1});${2}
+snippet slog
+	sly.log.${1:debug|info|error}(${2});
 snippet /*
 	/**
 	 * ${1}
