@@ -322,8 +322,8 @@ noremap <C-Tab> :bn<CR>
 noremap <S-C-Tab> :bp<CR>
 
 " Quick jumping between splits and buffers
-noremap <C-J> <C-W>j<C-W>_
-noremap <C-K> <C-W>k<C-W>_
+noremap <C-J> <C-W>j
+noremap <C-K> <C-W>k
 noremap <C-H> <C-W>h
 noremap <C-L> <C-W>l
 " noremap <S-C-H> :bp<CR>
