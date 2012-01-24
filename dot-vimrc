@@ -187,7 +187,7 @@ autocmd BufRead,BufNewFile,BufEnter *.json set ft=javascript
 autocmd BufRead,BufNewFile,BufEnter *.ejs set ft=javascript
 autocmd BufRead,BufNewFile,BufEnter *.md set ft=markdown
 autocmd BufRead,BufEnter */hotelmodules-*/*.class set ft=php
-autocmd FileType html setlocal ft=html expandtab
+autocmd FileType html setlocal expandtab
 autocmd FileType markdown setlocal expandtab formatoptions+=t
 autocmd FileType javascript setlocal expandtab
 autocmd FileType css setlocal expandtab
