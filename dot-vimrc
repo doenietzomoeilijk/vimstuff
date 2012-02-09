@@ -179,9 +179,6 @@ set backupskip=/tmp/*,/private/tmp/*"
 
 " }}}
 
-" Lets :GLVS actually install stuff
-let g:GetLatestVimScripts_allowautoinstall=1
-
 autocmd BufRead,BufNewFile *.smarty set ft=smarty.html
 autocmd BufRead,BufNewFile,BufEnter *.json set ft=javascript
 autocmd BufRead,BufNewFile,BufEnter *.ejs set ft=javascript
