@@ -34,3 +34,6 @@
 [submodule "dot-vim/bundle/vim-taglist-plus"]
 	path = dot-vim/bundle/vim-taglist-plus
 	url = https://github.com/int3/vim-taglist-plus.git
+[submodule "dot-vim/bundle/syntastic"]
+	path = dot-vim/bundle/syntastic
+	url = https://github.com/scrooloose/syntastic.git

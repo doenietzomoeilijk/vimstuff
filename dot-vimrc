@@ -88,20 +88,20 @@ colorscheme molokai
 " map <silent><F3> :NEXTCOLOR<CR>
 
 if has("gui_running")
-	set guioptions-=T
-	set guioptions-=r
-	set guitablabel=%M%t
-	set cursorline
-	hi SpecialKey guifg=#444444
-	hi NonText guifg=#444444 guibg=bg
-	hi VertSplit guifg=#000000 guibg=#000000
-	hi Todo gui=undercurl
+  set guioptions-=T
+  set guioptions-=r
+  set guitablabel=%M%t
+  set cursorline
+  hi SpecialKey guifg=#444444
+  hi NonText guifg=#444444 guibg=bg
+  hi VertSplit guifg=#000000 guibg=#000000
+  hi Todo gui=undercurl
 endif
 
 " A nice EOL guide column. {{{
 if exists("&colorcolumn")
-	set colorcolumn=80
-	hi ColorColumn ctermbg=234 guibg=#232526
+  set colorcolumn=80
+  hi ColorColumn ctermbg=234 guibg=#232526
 endif
 " }}}
 
@@ -119,27 +119,27 @@ let g:explHideFiles='^\.,.*\.pyc$,.svn'
 " }}}
 
 if has('gui_macvim')
-	behave xterm
-	set selectmode=
-	set keymodel=
-	set mousemodel=popup_setpos
-	" set noantialias
-	set gfn=Inconsolata-dz:h12
-	set gfn=EnvyCodeR:h13
-	let macvim_skip_cmd_opt_movement = 1
-	let macvim_hig_shift_movement = 1
-	let g:netrw_browsex_viewer='open'
-	map <S-D-[> :tabprevious<CR>
-	map <S-D-]> :tabnext<CR>
-	set linespace=4
+  behave xterm
+  set selectmode=
+  set keymodel=
+  set mousemodel=popup_setpos
+  " set noantialias
+  set gfn=Inconsolata-dz:h12
+  set gfn=EnvyCodeR:h13
+  let macvim_skip_cmd_opt_movement = 1
+  let macvim_hig_shift_movement = 1
+  let g:netrw_browsex_viewer='open'
+  map <S-D-[> :tabprevious<CR>
+  map <S-D-]> :tabnext<CR>
+  set linespace=4
 
-	set fuoptions=maxvert,maxhorz,background:Normal " Fullscreen options
+  set fuoptions=maxvert,maxhorz,background:Normal " Fullscreen options
 
-	let g:netrw_ctags='/opt/local/bin/ctags'
-	let Tlist_Ctags_Cmd='/opt/local/bin/ctags'
+  let g:netrw_ctags='/opt/local/bin/ctags'
+  let Tlist_Ctags_Cmd='/opt/local/bin/ctags'
 else
-	let g:netrw_ctags='/usr/bin/ctags'
-	let Tlist_Ctags_Cmd='/usr/bin/ctags'
+  let g:netrw_ctags='/usr/bin/ctags'
+  let Tlist_Ctags_Cmd='/usr/bin/ctags'
 endif
 
 set textwidth=80
@@ -166,12 +166,12 @@ set undolevels=1000
 
 " Set persistent undo, only works on >73
 if exists("&undodir") && exists("&undofile")
-	" Setup persistently store the undo folder
-	if ! isdirectory(expand('~/.vimundo'))
-		call mkdir(expand('~/.vimundo'))
-	endif
-	set undodir=~/.vimundo
-	set undofile
+  " Setup persistently store the undo folder
+  if ! isdirectory(expand('~/.vimundo'))
+    call mkdir(expand('~/.vimundo'))
+  endif
+  set undodir=~/.vimundo
+  set undofile
 endif
 
 set backupskip=/tmp/*,/private/tmp/*" 
@@ -207,39 +207,39 @@ noremap <leader>V :source $MYVIMRC<CR>:filetype detect<CR>:echom 'vimrc reloaded
 
 function! MakeDashed(symbol)
 
-	" @TODO zoeken naar *enige* whitespace aan het begin van de regel, en daar
-	" onze x mee vullen.
-	" 
-	" Dan de x aanvullen met overige muk.
+  " @TODO zoeken naar *enige* whitespace aan het begin van de regel, en daar
+  " onze x mee vullen.
+  " 
+  " Dan de x aanvullen met overige muk.
 
 
-	" We start with an empty string
-	let @x = ''
+  " We start with an empty string
+  let @x = ''
 
-	" Let's figure out how long this line is, anyway
-	let linelength = col("$")
+  " Let's figure out how long this line is, anyway
+  let linelength = col("$")
 
-	" Get to the start of the line, and record its position.
-	normal ^
-	let startOfLine = col('.')
-	echom 'startOfLine=' . startOfLine
+  " Get to the start of the line, and record its position.
+  normal ^
+  let startOfLine = col('.')
+  echom 'startOfLine=' . startOfLine
 
-	" Now get to the end and enter to the next line. If this line's commented,
-	" we'll continue the comment.
-	normal A
-	let cursorpos = getpos('.')
+  " Now get to the end and enter to the next line. If this line's commented,
+  " we'll continue the comment.
+  normal A
+  let cursorpos = getpos('.')
 
-	" If the column we're on *now* is lower than the start-of-line of our previous
-	" line, we're NOT in a comment. Vim collapses a line with just spaces/tabs on
-	" it, so we'll need to account for that.
-	if cursorpos[2] < startOfLine
-		@x = repeat(' ', startOfLine)
-	endif
+  " If the column we're on *now* is lower than the start-of-line of our previous
+  " line, we're NOT in a comment. Vim collapses a line with just spaces/tabs on
+  " it, so we'll need to account for that.
+  if cursorpos[2] < startOfLine
+    @x = repeat(' ', startOfLine)
+  endif
 
-	" moet iets met getpos('.') worden om begin vorige regel te vinden
-	echom 'currentcolumn='.cursorpos[2]
-	let @x = @x . repeat(a:symbol, linelength - cursorpos[2] - 1)
-	normal "xp
+  " moet iets met getpos('.') worden om begin vorige regel te vinden
+  echom 'currentcolumn='.cursorpos[2]
+  let @x = @x . repeat(a:symbol, linelength - cursorpos[2] - 1)
+  normal "xp
 endfunction
 nnoremap <Leader>== :call MakeDashed('=')<CR>
 nnoremap <Leader>-- :call MakeDashed('-')<CR>
@@ -250,15 +250,15 @@ let g:snips_author="Max Roeleveld"
 
 " Allow me to switch between number and relativenumber. Vim >= 7.3
 function! SwitchNumbering()
-	if exists("&relativenumber")
-		if &number && ! &relativenumber
-			set relativenumber
-		elseif ! &number && &relativenumber
-			set number
-		endif
-	else
-		echo "Your VIM doesn't support relativenumber!"
-	endif
+  if exists("&relativenumber")
+    if &number && ! &relativenumber
+      set relativenumber
+    elseif ! &number && &relativenumber
+      set number
+    endif
+  else
+    echo "Your VIM doesn't support relativenumber!"
+  endif
 endfunction
 nnoremap <leader>nn :call SwitchNumbering()<CR>
 
@@ -300,6 +300,18 @@ let Tlist_Max_Tag_Length=30
 " javascript files:
 let Tlist_javascript_Ctags_Cmd='ctags'
 " }}}
+
+
+" Syntastic {{{
+let g:syntastic_mode_map={ 'mode': 'active',
+                           \ 'active_filetypes': ['php', 'javascript'],
+                           \ 'passive_filetypes': ['puppet'] }
+let g:syntastic_check_on_open=1
+let g:syntastic_enable_signs=1
+let g:syntastic_enable_balloons=1
+let g:syntastic_enable_highlighting=1
+" }}}
+
 
 " MiniBufExplorer -- currently not used
 let g:miniBufExplMapWindowNavVim = 1 
@@ -420,26 +432,29 @@ hi StatColor guibg=#95e454 guifg=black ctermbg=lightgreen ctermfg=black
 hi Modified guibg=orange guifg=black ctermbg=lightred ctermfg=black
 
 function! MyStatusLine(mode)
-	let statusline=""
-	if a:mode == 'Enter'
-		let statusline.="%#StatColor#"
-	endif
-	let statusline.="\(%n\)\ %f\ "
-	if a:mode == 'Enter'
-		let statusline.="%*"
-	endif
-	let statusline.="%#Modified#%m"
-	if a:mode == 'Leave'
-		let statusline.="%*%r"
-	elseif a:mode == 'Enter'
-		let statusline.="%r%*"
-	endif
-	if exists("*Tlist_Get_Tagname_By_Line")
-		let statusline .= "\ [%{Tlist_Get_Tagname_By_Line()}]" " file type
-	endif
-	" let statusline .= "%{fugitive#statusline()}"
-	let statusline .= "\ (%l/%L,\ %c)\ %P%=%h%w\ %y\ [%{&encoding}:%{&fileformat}]\ \ "
-	return statusline
+  let statusline=""
+  if a:mode == 'Enter'
+    let statusline.="%#StatColor#"
+  endif
+  let statusline.="\(%n\)\ %f\ "
+  if a:mode == 'Enter'
+    let statusline.="%*"
+  endif
+  let statusline.="%#Modified#%m"
+  if a:mode == 'Leave'
+    let statusline.="%*%r"
+  elseif a:mode == 'Enter'
+    let statusline.="%r%*"
+  endif
+  if exists("*Tlist_Get_Tagname_By_Line")
+    let statusline .= "\ [%{Tlist_Get_Tagname_By_Line()}]" " file type
+  endif
+  " let statusline .= "%{fugitive#statusline()}"
+  let statusline .= "\ (%l/%L,\ %c)\ %P%=%h%w\ %y\ [%{&encoding}:%{&fileformat}]\ \ "
+	if exists("*SyntasticStatuslineFlag")
+    let statusline .= "%{SyntasticStatuslineFlag()}"
+	endif		
+  return statusline
 endfunction
 
 au WinEnter * setlocal statusline=%!MyStatusLine('Enter')
@@ -465,35 +480,35 @@ au InsertLeave * hi StatColor guibg=#95e454 guifg=black ctermbg=lightgreen cterm
 vnoremap <Leader>,, :s/, \@!\(.\+\)/, \1/g<CR>
 
 function! FixLeCode()
-	" Add surrounding spaces to <=, =>, == etc.
-	:%s/\(!\|+\|-\|\.\|=\|<\|>\)\@<!\(=\|==\|===\|=>\|+=\|-=\)\( \|>\|=\)\@!/ \2 /g
-	:g/function/s/ = /=/g
+  " Add surrounding spaces to <=, =>, == etc.
+  :%s/\(!\|+\|-\|\.\|=\|<\|>\)\@<!\(=\|==\|===\|=>\|+=\|-=\)\( \|>\|=\)\@!/ \2 /g
+  :g/function/s/ = /=/g
 
-	" No line should end in a space, ever
-	:%s/\s\+$//g
+  " No line should end in a space, ever
+  :%s/\s\+$//g
 
-	" Pull braces to the same line where the funciton started
-	:g/^\s*\(\(public\|private\) \)\?function .\+)$/j
+  " Pull braces to the same line where the funciton started
+  :g/^\s*\(\(public\|private\) \)\?function .\+)$/j
 endfunction
 
 " Keep some space between if/for/foreach/while and the paren'd part, also keep
 " some space between the closing paren and the opening brace
 function! FixSpaceBrace()
-	:%s/\(if\|elseif\|for\|foreach\|while\)(/\1 (/g
-	:%s/){/) {/g
-	:%s/function \(\w\+\) (/function \1(/g
+  :%s/\(if\|elseif\|for\|foreach\|while\)(/\1 (/g
+  :%s/){/) {/g
+  :%s/function \(\w\+\) (/function \1(/g
 endfunction
 
 function! DeEscapeCodify()
-	" Removes ANSI escape codes, at least from Javascript
-	:%s/\\x1b\[\(\d\+;\)*\d\+m//g
+  " Removes ANSI escape codes, at least from Javascript
+  :%s/\\x1b\[\(\d\+;\)*\d\+m//g
 endfunction
 
 " Remove whitespace from code files on save
 function! StripTrailingWhite()
-	let l:winview = winsaveview()
-	silent! %s/\s\+$//
-	call winrestview(l:winview)
+  let l:winview = winsaveview()
+  silent! %s/\s\+$//
+  call winrestview(l:winview)
 endfunction
 autocmd BufWritePre *.{php,py,pl,js,css,html} call StripTrailingWhite()
 
