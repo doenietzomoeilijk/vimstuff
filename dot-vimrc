@@ -304,12 +304,14 @@ let Tlist_javascript_Ctags_Cmd='ctags'
 
 " Syntastic {{{
 let g:syntastic_mode_map={ 'mode': 'active',
-                           \ 'active_filetypes': ['php', 'javascript'],
-                           \ 'passive_filetypes': ['puppet'] }
+													 \ 'active_filetypes': [],
+													 \ 'passive_filetypes': ['html'] }
 let g:syntastic_check_on_open=1
 let g:syntastic_enable_signs=1
 let g:syntastic_enable_balloons=1
 let g:syntastic_enable_highlighting=1
+let g:syntastic_echo_current_error=0
+let g:syntastic_stl_format = '[%E{Err:%e}%B{, }%W{Warn:%w}]'
 " }}}
 
 
@@ -452,7 +454,7 @@ function! MyStatusLine(mode)
   " let statusline .= "%{fugitive#statusline()}"
   let statusline .= "\ (%l/%L,\ %c)\ %P%=%h%w\ %y\ [%{&encoding}:%{&fileformat}]\ \ "
 	if exists("*SyntasticStatuslineFlag")
-    let statusline .= "%{SyntasticStatuslineFlag()}"
+		let statusline .= "%{SyntasticStatuslineFlag()}"
 	endif		
   return statusline
 endfunction
