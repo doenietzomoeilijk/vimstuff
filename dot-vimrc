@@ -61,6 +61,10 @@ au VimResized * exe "normal! \<c-w>="
 nnoremap <space> 
 nnoremap <S-space> 
 
+" For everyone who uses wrap
+nnoremap j gj
+nnoremap k gk
+
 " Folding
 set foldmethod=indent
 set foldlevel=100
@@ -192,61 +196,16 @@ autocmd FileType perl setlocal expandtab tabstop=4 shiftwidth=4 shiftround
 autocmd BufRead,BufNewFile,BufEnter *.tt2 set ft=tt2html
 " autocmd BufRead,BufNewFile,BufEnter */frags/**.html set ft=tt2
 
-" Seems to cause errors in console vim.
-" autocmd FileType javascript setlocal expandtab
-
 " From http://github.com/devjj/vim-config/blob/master/.vimrc After editing, run
 autocmd! bufwritepost $MYVIMRC source $MYVIMRC | exec 'echom "vimrc reloaded after save."'
 noremap <leader>vv :vsplit $MYVIMRC<CR>
 noremap <leader>V :source $MYVIMRC<CR>:filetype detect<CR>:echom 'vimrc reloaded'<CR>
 
-" I like my own php snippets better
-" call ResetSnippets('php')
-" call ExtractSnipsFile('~/.vim/my_snips/php.snippets', 'php')
-
-
-function! MakeDashed(symbol)
-
-  " @TODO zoeken naar *enige* whitespace aan het begin van de regel, en daar
-  " onze x mee vullen.
-  " 
-  " Dan de x aanvullen met overige muk.
-
-
-  " We start with an empty string
-  let @x = ''
-
-  " Let's figure out how long this line is, anyway
-  let linelength = col("$")
-
-  " Get to the start of the line, and record its position.
-  normal ^
-  let startOfLine = col('.')
-  echom 'startOfLine=' . startOfLine
-
-  " Now get to the end and enter to the next line. If this line's commented,
-  " we'll continue the comment.
-  normal A
-  let cursorpos = getpos('.')
-
-  " If the column we're on *now* is lower than the start-of-line of our previous
-  " line, we're NOT in a comment. Vim collapses a line with just spaces/tabs on
-  " it, so we'll need to account for that.
-  if cursorpos[2] < startOfLine
-    @x = repeat(' ', startOfLine)
-  endif
-
-  " moet iets met getpos('.') worden om begin vorige regel te vinden
-  echom 'currentcolumn='.cursorpos[2]
-  let @x = @x . repeat(a:symbol, linelength - cursorpos[2] - 1)
-  normal "xp
-endfunction
-nnoremap <Leader>== :call MakeDashed('=')<CR>
-nnoremap <Leader>-- :call MakeDashed('-')<CR>
-
+" Snippets {{{
 let g:snippets_dir="~/.vim/my_snips/"
 let g:snips_author="Max Roeleveld"
 " autocmd bufwritepost snippet :call ReloadSnippets(snippets_dir, &filetype)<CR>
+" }}}
 
 " Allow me to switch between number and relativenumber. Vim >= 7.3
 function! SwitchNumbering()
@@ -303,9 +262,9 @@ let Tlist_javascript_Ctags_Cmd='ctags'
 
 
 " Syntastic {{{
-let g:syntastic_mode_map={ 'mode': 'active',
+let g:syntastic_mode_map={ 'mode': 'passive',
 													 \ 'active_filetypes': [],
-													 \ 'passive_filetypes': ['html'] }
+													 \ 'passive_filetypes': ['html', 'html.php'] }
 let g:syntastic_check_on_open=1
 let g:syntastic_enable_signs=1
 let g:syntastic_enable_balloons=1
@@ -382,21 +341,24 @@ noremap <F5> :make<CR>
 " Search for diff separater stuff
 nnoremap <Leader>fd /^<<<<<<<\\|^=======\\|^>>>>>>><CR>
 
-" NERDCommenter
+" NERDCommenter {{{
 let g:NERDRemoveExtraSpaces=1
 let g:NERDSpaceDelims=1
 let g:NERDComInsertMap='<c-c>'
 let g:NERDCustomDelimiters = { 'html': { 'left': '<!--', 'right': '-->'}}
+" }}}
 
-" WinManager
+" WinManager {{{
 noremap <c-w><c-b> :BottomExplorerWindow<CR>
 noremap <c-w><c-f> :FirstExplorerWindow<CR>
 noremap <c-w><c-t> :WMToggle<CR>
 let g:winManagerWidth=40
 let g:winManagerWindowLayout = "FileExplorer,TagList|BufExplorer"
+" }}}
 
-" Gundo
+" Gundo {{{
 noremap <c-w><c-g> :GundoToggle<CR>
+" }}}
 
 " Ctrl-P {{{
 " I'll manage my own paths
@@ -429,6 +391,7 @@ let g:favDirs='/Volumes/Home Directory/git/'."\n"
 " SVN stuff
 command! Svnadd execute "!svn add %" | execute "!svn propset svn:keywords Id %"
 
+" Statusline goodness {{{
 " Stolen from http://www.reddit.com/r/vim/comments/gexi6/a_smarter_statusline_code_in_comments/
 hi StatColor guibg=#95e454 guifg=black ctermbg=lightgreen ctermfg=black
 hi Modified guibg=orange guifg=black ctermbg=lightred ctermfg=black
@@ -477,6 +440,7 @@ endfunction
 
 au InsertEnter * call InsertStatuslineColor(v:insertmode)
 au InsertLeave * hi StatColor guibg=#95e454 guifg=black ctermbg=lightgreen ctermfg=black
+" }}}
 
 " Fix commas
 vnoremap <Leader>,, :s/, \@!\(.\+\)/, \1/g<CR>
@@ -513,4 +477,43 @@ function! StripTrailingWhite()
   call winrestview(l:winview)
 endfunction
 autocmd BufWritePre *.{php,py,pl,js,css,html} call StripTrailingWhite()
+
+function! MakeDashed(symbol)
+
+  " @TODO zoeken naar *enige* whitespace aan het begin van de regel, en daar
+  " onze x mee vullen.
+  " 
+  " Dan de x aanvullen met overige muk.
+
+
+  " We start with an empty string
+  let @x = ''
+
+  " Let's figure out how long this line is, anyway
+  let linelength = col("$")
+
+  " Get to the start of the line, and record its position.
+  normal ^
+  let startOfLine = col('.')
+  echom 'startOfLine=' . startOfLine
+
+  " Now get to the end and enter to the next line. If this line's commented,
+  " we'll continue the comment.
+  normal A
+  let cursorpos = getpos('.')
+
+  " If the column we're on *now* is lower than the start-of-line of our previous
+  " line, we're NOT in a comment. Vim collapses a line with just spaces/tabs on
+  " it, so we'll need to account for that.
+  if cursorpos[2] < startOfLine
+    @x = repeat(' ', startOfLine)
+  endif
+
+  " moet iets met getpos('.') worden om begin vorige regel te vinden
+  echom 'currentcolumn='.cursorpos[2]
+  let @x = @x . repeat(a:symbol, linelength - cursorpos[2] - 1)
+  normal "xp
+endfunction
+nnoremap <Leader>== :call MakeDashed('=')<CR>
+nnoremap <Leader>-- :call MakeDashed('-')<CR>
 

@@ -37,3 +37,6 @@
 [submodule "dot-vim/bundle/syntastic"]
 	path = dot-vim/bundle/syntastic
 	url = https://github.com/scrooloose/syntastic.git
+[submodule "dot-vim/bundle/align"]
+	path = dot-vim/bundle/align
+	url = https://github.com/vim-scripts/Align.git
