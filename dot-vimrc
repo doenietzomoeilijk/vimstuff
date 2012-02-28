@@ -65,6 +65,17 @@ nnoremap <S-space> 
 nnoremap j gj
 nnoremap k gk
 
+" Keep visual selection after indenting
+vnoremap < <gv
+vnoremap > >gv
+
+" Write with sudo
+cnoremap w!! w !sudo tee % >/dev/null
+
+" Paste with auto-indent
+nnoremap <Leader>p p'[v']=
+nnoremap <Leader>P P'[v']=
+
 " Folding
 set foldmethod=indent
 set foldlevel=100
