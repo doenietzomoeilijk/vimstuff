@@ -21,6 +21,7 @@ set smarttab
 set noexpandtab
 
 set smartcase
+set ignorecase
 set nowrap " We just CODE to the correct width, bitches!
 set whichwrap+=<,>,h,l
 set linebreak
@@ -202,17 +203,18 @@ set backupskip=/tmp/*,/private/tmp/*"
 " {{{ Filetypes
 augroup Filetypes
 	autocmd!
-	autocmd BufRead,BufNewFile *.smarty set ft=smarty.html
-	autocmd BufRead,BufNewFile,BufEnter *.json set ft=javascript
-	autocmd BufRead,BufNewFile,BufEnter *.ejs set ft=javascript
-	autocmd BufRead,BufNewFile,BufEnter *.md set ft=markdown
-	autocmd BufRead,BufEnter */hotelmodules-*/*.class set ft=php
-	autocmd BufRead,BufEnter */hotelmodules/*.php set et ts=2 sw=2 sr
+	autocmd BufRead,BufNewFile *.smarty setlocal ft=smarty.html
+	autocmd BufRead,BufNewFile,BufEnter *.json setlocal ft=javascript
+	autocmd BufRead,BufNewFile,BufEnter *.ejs setlocal ft=javascript
+	autocmd BufRead,BufNewFile,BufEnter *.md setlocal ft=markdown
+	autocmd BufRead,BufEnter */hotelmodules-*/*.class setlocal ft=php
+	autocmd BufRead,BufEnter */hotelmodules/*.php setlocal et ts=2 sw=2 sr
 	autocmd FileType html setlocal expandtab
 	autocmd FileType markdown setlocal expandtab formatoptions+=t
 	autocmd FileType javascript setlocal expandtab
 	autocmd FileType css setlocal expandtab
 	autocmd FileType perl setlocal expandtab tabstop=4 shiftwidth=4 shiftround
+	autocmd FileType php setlocal keywordprg=phpdoc noet
 	autocmd BufRead,BufNewFile,BufEnter *.tt2 set ft=tt2html
 	" autocmd BufRead,BufNewFile,BufEnter */frags/**.html set ft=tt2
 augroup END
@@ -412,6 +414,10 @@ vnoremap { S}<ESC>
 
 " Disable auto-php-folding if PIV is plugged in
 let g:DisableAutoPHPFolding=1
+let php_noShortTags=0
+let php_htmlInStrings=1
+let php_folding=0
+let PHP_outdentphpescape=0
 
 " Favourites for file-explorer
 let g:favDirs='/Volumes/Home Directory/git/'."\n"
