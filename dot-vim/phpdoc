@@ -1,7 +1,6 @@
 #!/usr/bin/env php
 <?php
-function php_search($search)
-{
+function php_search($search) {
     $search = trim($search);
     if($search == '') throw new Exception('No function given.');
     $web = file_get_contents('http://php.net/' . $search);
@@ -10,20 +9,43 @@ function php_search($search)
     }
     $matches = array();
     preg_match('#<div class="methodsynopsis dc-description">(.+?)</div>#sm', $web, $matches);
-    $response['decl'] = strip_tags($matches[1]);
+    $response['decl'] = strip_tags(html_entity_decode($matches[1]));
     list(,,$response['func']) = preg_split('/\s+/m', $response['decl']);
 
     preg_match('#<p class="para rdfs-comment">(.+?)</p>#sm', $web, $matches);
     $response['details'] = flatten_html($matches[1]);
 
-    preg_match('#<div class="refsect1 returnvalues">.+?<p class="para">(.+?)</p>#sm', $web, $matches);
+    preg_match('#<div class="refsect1 returnvalues"[^>]+>.+?<p class="para">(.+?)</p>#sm', $web, $matches);
     $response['retval'] = flatten_html($matches[1]);
+
+		// Prepare params a little better
+    preg_match('#<div class="refsect1 parameters"[^>]+>.+?<dl>(.+?)</dl>#sm', $web, $matches);
+    $response['params'] = flatten_dl($matches[1]);
     return $response;
 }
 
-function flatten_html($str)
-{
-    return trim(preg_replace("/\s*\n\s*/", ' ', strip_tags($str)));
+function flatten_html($str) {
+	if (function_exists('mb_convert_encoding')) {
+		$str = preg_replace_callback('/(&#[0-9]+;)/', function($m) {
+			return mb_convert_encoding($m[1], "UTF-8", "HTML-ENTITIES");
+		}, $str);
+	}
+	$str = html_entity_decode($str);
+	return trim(preg_replace("/\s*\n\s*/", ' ', strip_tags($str)));
+}
+
+function flatten_dl($str) {
+	$result = '';
+	preg_match_all('#<span class="term">.* class="parameter">([^<]+)</#smU',
+		$str, $params, PREG_SET_ORDER);
+	preg_match_all('#<dd>(.*)</dd>#smU', $str, $expl, PREG_SET_ORDER);
+
+	foreach ($params as $i => $m) {
+		$result .= "  \$" . $m[1] . "\n";
+		$result .= "    " . wordwrap(flatten_html($expl[ $i ][1]), 75, "\n    ") . "\n";
+	}
+
+	return $result;
 }
 
 $search = isset($argv[1]) ? preg_replace('/[^\w ]/', '', $argv[1]) : false;
@@ -36,7 +58,13 @@ try{
     die($ex->getMessage());
 }
 
-echo "\x1b[1;31m" . strtoupper($response['func']) . "\x1b[0m\n";
-echo $response['details'] . "\n";
-echo "\t\x1b[1;37m" . preg_replace("/\s*\n\s*/", '', $response['decl']) . "\x1b[0m\n";
-echo "\x1b[1;32mReturn Values:\x1b[0m\n" . $response['retval'] . "\x1b[0m\n";
+// echo "\x1b[1;31m" . strtoupper($response['func']) . "\x1b[0m\n";
+// echo $response['details'] . "\n";
+// echo "\t\x1b[1;37m" . preg_replace("/\s*\n\s*/", '', $response['decl']) . "\x1b[0m\n";
+// echo "\x1b[1;32mReturn Values:\x1b[0m\n" . $response['retval'] . "\x1b[0m\n";
+// echo "\x1b[1;31m" . strtoupper($response['func']) . "\x1b[0m\n";
+echo "\n  " . preg_replace("/\s*\n\s*/", '', $response['decl']) . "\n\n";
+echo $response['details'] . "\n\n";
+if ( ! empty($response['params'])) echo "Parameters:\n" . $response['params'] . "\n";
+if ( ! empty($response['retval'])) echo "Return Values: \n  " . $response['retval'];
+// var_dump($response);

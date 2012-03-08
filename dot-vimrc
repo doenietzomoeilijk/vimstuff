@@ -21,6 +21,7 @@ set smarttab
 set noexpandtab
 
 set smartcase
+set ignorecase
 set nowrap " We just CODE to the correct width, bitches!
 set whichwrap+=<,>,h,l
 set linebreak
@@ -213,6 +214,7 @@ augroup Filetypes
 	autocmd FileType javascript setlocal expandtab
 	autocmd FileType css setlocal expandtab
 	autocmd FileType perl setlocal expandtab tabstop=4 shiftwidth=4 shiftround
+	autocmd FileType php setlocal keywordprg=phpdoc noet
 	autocmd BufRead,BufNewFile,BufEnter *.tt2 set ft=tt2html
 	" autocmd BufRead,BufNewFile,BufEnter */frags/**.html set ft=tt2
 augroup END
@@ -415,6 +417,7 @@ let g:DisableAutoPHPFolding=1
 let php_noShortTags=0
 let php_htmlInStrings=1
 let php_folding=0
+let PHP_outdentphpescape=0
 
 " Favourites for file-explorer
 let g:favDirs='/Volumes/Home Directory/git/'."\n"

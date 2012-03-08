@@ -43,3 +43,6 @@
 [submodule "dot-vim/bundle/php-indenting"]
 	path = dot-vim/bundle/php-indenting
 	url = https://github.com/2072/PHP-Indenting-for-VIm.git
+[submodule "dot-vim/bundle/javascript-indent"]
+	path = dot-vim/bundle/javascript-indent
+	url = https://github.com/vim-scripts/JavaScript-Indent.git
