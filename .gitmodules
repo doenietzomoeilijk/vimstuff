@@ -1,6 +1,3 @@
-[submodule "dot-vim/bundle/vim-css-color"]
-	path = dot-vim/bundle/vim-css-color
-	url = https://github.com/skammer/vim-css-color.git
 [submodule "dot-vim/bundle/vim-surround"]
 	path = dot-vim/bundle/vim-surround
 	url = https://github.com/tpope/vim-surround.git
