@@ -1,4 +1,4 @@
-" vim: set filetype=vim foldmethod=marker foldlevel=0:
+" vim: set filetype=vim foldmethod=marker foldlevel=1:
 
 " Run Pathogen. Always has to be run first.
 call pathogen#infect()
@@ -199,8 +199,8 @@ set backupskip=/tmp/*,/private/tmp/*"
 if ! isdirectory(expand('~/.vimbackup'))
 	call mkdir(expand('~/.vimbackup'))
 endif
-set backupdir="~/.vimbackup//"
-set backup
+set backupdir=~/.vimbackup//
+" set backup
 "
 
 " }}}
