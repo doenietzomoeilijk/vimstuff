@@ -166,7 +166,7 @@ endif
 set textwidth=80
 set formatoptions=lcqn " see :help fo-table for letter meaning
 
-" BACKUP STUFF {{{
+" BACKUP AND UNDO STUFF {{{
 
 " Directories that have // at the end will be expanded to the full file path
 " See: http://stackoverflow.com/questions/4331776/change-vim-swap-backup-undo-file-name/4331812#4331812
@@ -196,6 +196,8 @@ if exists("&undodir") && exists("&undofile")
 endif
 
 set backupskip=/tmp/*,/private/tmp/*" 
+set backupdir=~/.vimbackup//,/tmp/vim-backup//
+set backup
 "
 
 " }}}
