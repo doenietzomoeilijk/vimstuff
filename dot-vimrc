@@ -196,7 +196,10 @@ if exists("&undodir") && exists("&undofile")
 endif
 
 set backupskip=/tmp/*,/private/tmp/*" 
-set backupdir=~/.vimbackup//,/tmp/vim-backup//
+if ! isdirectory(expand('~/.vimbackup'))
+	call mkdir(expand('~/.vimbackup'))
+endif
+set backupdir="~/.vimbackup//"
 set backup
 "
 
