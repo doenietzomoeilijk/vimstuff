@@ -20,8 +20,7 @@ set nocindent
 set smarttab
 set noexpandtab
 
-set smartcase
-set ignorecase
+set ignorecase smartcase
 set nowrap " We just CODE to the correct width, bitches!
 set whichwrap+=<,>,h,l
 set linebreak
@@ -44,7 +43,11 @@ set showmode
 set scrolloff=2
 set novisualbell
 set noerrorbells
-set nohidden
+set hidden
+
+" Prevent Vim from clobbering the scrollback buffer. See
+" http://www.shallowsky.com/linux/noaltscreen.html
+set t_ti= t_te=
 " }}}
 
 " Wildmenu {{{
@@ -72,8 +75,8 @@ nnoremap j gj
 nnoremap k gk
 
 " Keep visual selection after indenting
-vnoremap < <gv
-vnoremap > >gv
+" vnoremap < <gv
+" vnoremap > >gv
 
 " Write with sudo
 cnoremap w!! w !sudo tee % >/dev/null
@@ -90,6 +93,8 @@ set foldlevel=100
 set showmatch
 set matchpairs+=<:>
 set hlsearch
+set incsearch
+:nnoremap <CR> :nohlsearch<CR>
 noremap <leader>h :let @/ = ""<CR> " clear search pattern to disable hlsearch
 noremap <leader>n :noh<CR> " Turn off hlsearch until the next search
 
@@ -182,8 +187,8 @@ else
 endif
 
 " Save tons of history and undo (Thanks, Arnout)
-set history=1000
-set undolevels=1000
+set history=10000
+set undolevels=10000
 
 " Set persistent undo, only works on >73
 if exists("&undodir") && exists("&undofile")
@@ -563,3 +568,45 @@ endfunction
 nnoremap <Leader>== :call MakeDashed('=')<CR>
 nnoremap <Leader>-- :call MakeDashed('-')<CR>
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" EXTRACT VARIABLE (SKETCHY
+" Stolen from https://github.com/garybernhardt/dotfiles/blob/master/.vimrc
+"   but handling PHP was my own idea =]
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+function! ExtractVariable()
+	" Pre-set stuff.
+	let eol_marker = ''
+	let needs_semicolon = ['php','javascript','perl']
+	let needs_dollar = ['php']
+
+	" Get the varname
+	let name = input("Variable name: ")
+	if name == ''
+		return
+	endif
+
+	" Some filetypes need a $ in front of their strings
+	if &ft == 'php'
+		let name = '$' . name
+	endif
+
+	" Some filetypes need a ; at the end of their newly created line
+	if index(needs_semicolon, &ft) >= 0
+		let eol_marker = ';'
+	endif
+
+	" Enter visual mode (not sure why this is needed since we're already in
+	" visual mode anyway)
+	normal! gv
+
+	" Replace selected text with the variable name
+	exec "normal c" . name
+	" Define the variable on the line above
+	exec "normal! O" . name . " = "
+	" Paste the original selected text to be the variable value
+	normal! $p
+	if eol_marker != ''
+		exec "normal A" . eol_marker
+	endif
+endfunction
+vnoremap <leader>rv :call ExtractVariable()<cr>
