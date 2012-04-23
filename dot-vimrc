@@ -1,4 +1,4 @@
-" vim: set filetype=vim foldmethod=marker foldlevel=1:
+" vim: set filetype=vim foldmethod=marker foldlevel=1 et:
 
 " Run Pathogen. Always has to be run first.
 call pathogen#infect()
@@ -30,7 +30,6 @@ set backspace=indent,eol,start
 
 nnoremap <leader>c :set cursorline!<CR>
 nnoremap <leader>C :set cursorcolumn!<CR>
-
 " }}}
 
 " UI, mostly {{{
@@ -203,7 +202,7 @@ endif
 
 set backupskip=/tmp/*,/private/tmp/*" 
 if ! isdirectory(expand('~/.vimbackup'))
-	call mkdir(expand('~/.vimbackup'))
+  call mkdir(expand('~/.vimbackup'))
 endif
 set backupdir=~/.vimbackup//
 " set backup
@@ -213,29 +212,29 @@ set backupdir=~/.vimbackup//
 
 " {{{ Filetypes
 augroup Filetypes
-	autocmd!
-	autocmd BufRead,BufNewFile *.smarty setlocal ft=smarty.html
-	autocmd BufRead,BufNewFile,BufEnter *.json setlocal ft=javascript
-	autocmd BufRead,BufNewFile,BufEnter *.ejs setlocal ft=javascript
-	autocmd BufRead,BufNewFile,BufEnter *.md setlocal ft=markdown
-	autocmd BufRead,BufEnter */hotelmodules-*/*.class setlocal ft=php
-	autocmd BufRead,BufEnter */hotelmodules/*.php setlocal et ts=2 sw=2 sr
-	autocmd FileType html setlocal expandtab
-	autocmd FileType markdown setlocal expandtab formatoptions+=t
-	autocmd FileType javascript setlocal expandtab
-	autocmd FileType css setlocal expandtab
-	autocmd FileType perl setlocal expandtab tabstop=4 shiftwidth=4 shiftround
-	autocmd FileType php setlocal keywordprg=phpdoc noet
-	autocmd BufRead,BufNewFile,BufEnter *.tt2 set ft=tt2html
-	" autocmd BufRead,BufNewFile,BufEnter */frags/**.html set ft=tt2
+  autocmd!
+  autocmd BufRead,BufNewFile *.smarty setlocal ft=smarty.html
+  autocmd BufRead,BufNewFile,BufEnter *.json setlocal ft=javascript
+  autocmd BufRead,BufNewFile,BufEnter *.ejs setlocal ft=javascript
+  autocmd BufRead,BufNewFile,BufEnter *.md setlocal ft=markdown
+  autocmd BufRead,BufEnter */hotelmodules-*/*.class setlocal ft=php
+  autocmd BufRead,BufEnter */hotelmodules/*.php setlocal et ts=2 sw=2 sr
+  autocmd FileType html setlocal expandtab
+  autocmd FileType markdown setlocal expandtab formatoptions+=t
+  autocmd FileType javascript setlocal expandtab
+  autocmd FileType css setlocal expandtab
+  autocmd FileType perl setlocal expandtab tabstop=4 shiftwidth=4 shiftround
+  autocmd FileType php setlocal keywordprg=phpdoc noet
+  autocmd BufRead,BufNewFile,BufEnter *.tt2 set ft=tt2html
+  " autocmd BufRead,BufNewFile,BufEnter */frags/**.html set ft=tt2
 augroup END
 " }}}
 
 " Editing the .vimrc file {{{
 " From http://github.com/devjj/vim-config/blob/master/.vimrc After editing, run
 augroup Vimrc
-	autocmd!
-	autocmd bufwritepost $MYVIMRC source $MYVIMRC | exec 'echom "vimrc reloaded after save."'
+  autocmd!
+  autocmd bufwritepost $MYVIMRC source $MYVIMRC | exec 'echom "vimrc reloaded after save."'
 augroup END
 
 noremap <leader>vv :vsplit $MYVIMRC<CR>
@@ -271,16 +270,23 @@ noremap <leader>i :set list!<CR> " Toggle invisible chars"
 noremap <leader>cd :cd %:p:h<CR>
 
 augroup python
-	" http://www.sontek.net/Python-with-a-modular-IDE-(Vim)
-	autocmd!
-	autocmd FileType python set omnifunc=pythoncomplete#Complete
-	autocmd BufRead *.py set makeprg=python\ -c\ \"import\ py_compile,sys;\ sys.stderr=sys.stdout;\ py_compile.compile(r'%')\" 
-	autocmd BufRead *.py set efm=%C\ %.%#,%A\ \ File\ \"%f\"\\,\ line\ %l%.%#,%Z%[%^\ ]%\\@=%m 
+  " http://www.sontek.net/Python-with-a-modular-IDE-(Vim)
+  autocmd!
+  autocmd FileType python set omnifunc=pythoncomplete#Complete
+  autocmd BufRead *.py set makeprg=python\ -c\ \"import\ py_compile,sys;\ sys.stderr=sys.stdout;\ py_compile.compile(r'%')\" 
+  autocmd BufRead *.py set efm=%C\ %.%#,%A\ \ File\ \"%f\"\\,\ line\ %l%.%#,%Z%[%^\ ]%\\@=%m 
 augroup END
 
 set suffixes=.bak,~,.o,.h,.info,.swp,.obj,.pyc,.pyo
 set tags+=tags;/
 set tags+=$HOME/.vim/tags/python.ctags
+
+" Fugitive {{{
+augroup fugitive
+  autocmd!
+  autocmd BufReadPost fugitive://* set bufhidden=delete " Kill git buffs on close
+augroup END
+" }}}
 
 " TagList {{{
 noremap <leader>t :TlistToggle<CR>
@@ -305,8 +311,8 @@ let Tlist_javascript_Ctags_Cmd='ctags'
 
 " Syntastic {{{
 let g:syntastic_mode_map={ 'mode': 'passive',
-													 \ 'active_filetypes': [],
-													 \ 'passive_filetypes': ['html', 'html.php'] }
+                           \ 'active_filetypes': [],
+                           \ 'passive_filetypes': ['html', 'html.php'] }
 let g:syntastic_check_on_open=1
 let g:syntastic_enable_signs=1
 let g:syntastic_enable_balloons=1
@@ -458,14 +464,21 @@ function! MyStatusLine(mode)
   elseif a:mode == 'Enter'
     let statusline.="%r%*"
   endif
+
   if exists("*Tlist_Get_Tagname_By_Line")
     let statusline .= "\ [%{Tlist_Get_Tagname_By_Line()}]" " file type
   endif
-  " let statusline .= "%{fugitive#statusline()}"
+
+  if exists("*fugitive#statusline") " Show current Git branch, if available
+    let statusline .= "%{fugitive#statusline()}"
+  endif
+
   let statusline .= "\ (%l/%L,\ %c)\ %P%=%h%w\ %y\ [%{&encoding}:%{&fileformat}]\ \ "
-	if exists("*SyntasticStatuslineFlag")
-		let statusline .= "%{SyntasticStatuslineFlag()}"
-	endif		
+
+  if exists("*SyntasticStatuslineFlag")
+    let statusline .= "%{SyntasticStatuslineFlag()}"
+  endif   
+
   return statusline
 endfunction
 
@@ -482,11 +495,11 @@ function! InsertStatuslineColor(mode)
 endfunction 
 
 augroup WinStatusLine
-	autocmd!
-	autocmd WinEnter * setlocal statusline=%!MyStatusLine('Enter')
-	autocmd WinLeave * setlocal statusline=%!MyStatusLine('Leave')
-	autocmd InsertEnter * call InsertStatuslineColor(v:insertmode)
-	autocmd InsertLeave * hi StatColor guibg=#95e454 guifg=black ctermbg=lightgreen ctermfg=black
+  autocmd!
+  autocmd WinEnter * setlocal statusline=%!MyStatusLine('Enter')
+  autocmd WinLeave * setlocal statusline=%!MyStatusLine('Leave')
+  autocmd InsertEnter * call InsertStatuslineColor(v:insertmode)
+  autocmd InsertLeave * hi StatColor guibg=#95e454 guifg=black ctermbg=lightgreen ctermfg=black
 augroup END
 
 set statusline=%!MyStatusLine('Enter')
@@ -575,39 +588,39 @@ nnoremap <Leader>-- :call MakeDashed('-')<CR>
 "   but handling PHP was my own idea =]
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 function! ExtractVariable()
-	" Pre-set stuff.
-	let eol_marker = ''
-	let needs_semicolon = ['php','javascript','perl']
-	let needs_dollar = ['php']
+  " Pre-set stuff.
+  let eol_marker = ''
+  let needs_semicolon = ['php','javascript','perl']
+  let needs_dollar = ['php']
 
-	" Get the varname
-	let name = input("Variable name: ")
-	if name == ''
-		return
-	endif
+  " Get the varname
+  let name = input("Variable name: ")
+  if name == ''
+    return
+  endif
 
-	" Some filetypes need a $ in front of their strings
-	if &ft == 'php'
-		let name = '$' . name
-	endif
+  " Some filetypes need a $ in front of their strings
+  if &ft == 'php'
+    let name = '$' . name
+  endif
 
-	" Some filetypes need a ; at the end of their newly created line
-	if index(needs_semicolon, &ft) >= 0
-		let eol_marker = ';'
-	endif
+  " Some filetypes need a ; at the end of their newly created line
+  if index(needs_semicolon, &ft) >= 0
+    let eol_marker = ';'
+  endif
 
-	" Enter visual mode (not sure why this is needed since we're already in
-	" visual mode anyway)
-	normal! gv
+  " Enter visual mode (not sure why this is needed since we're already in
+  " visual mode anyway)
+  normal! gv
 
-	" Replace selected text with the variable name
-	exec "normal c" . name
-	" Define the variable on the line above
-	exec "normal! O" . name . " = "
-	" Paste the original selected text to be the variable value
-	normal! $p
-	if eol_marker != ''
-		exec "normal A" . eol_marker
-	endif
+  " Replace selected text with the variable name
+  exec "normal c" . name
+  " Define the variable on the line above
+  exec "normal! O" . name . " = "
+  " Paste the original selected text to be the variable value
+  normal! $p
+  if eol_marker != ''
+    exec "normal A" . eol_marker
+  endif
 endfunction
 vnoremap <leader>rv :call ExtractVariable()<cr>
