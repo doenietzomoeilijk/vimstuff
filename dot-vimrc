@@ -319,6 +319,7 @@ let g:syntastic_enable_balloons=1
 let g:syntastic_enable_highlighting=1
 let g:syntastic_echo_current_error=0
 let g:syntastic_stl_format = '[%E{Err:%e}%B{, }%W{Warn:%w}]'
+let g:syntastic_phpcs_conf="--standard=Hotelsnl --tab-width=2"
 " }}}
 
 
