@@ -2,14 +2,14 @@ snippet php
 	<?php
 	
 	/**
-	 * @file
 	 * ${1:A short description of what this file does.}
 	 *
-	 * @author `g:snips_author`
-	 * @date `strftime('%c')`
+	 * @package ${2}
+	 * @subpackage ${3}
+	 * @copyright `strftime('%Y')` Hotels.nl
 	 */
 
-	${2}
+	${4}
 # $GLOBALS['...']
 snippet globals
 	$GLOBALS['${1:variable}']${2: = }${3:something}${4:;}${5}
@@ -33,21 +33,19 @@ snippet $_ SESSION['...']
 snippet /*
 	/**
 	 * ${1}
-	 **/
+	 */
 # Constant Definition
-snippet define
+snippet def
 	/**
 	 * ${3:undocumented constant}
-	 **/
-	define(${1}, ${2});${4}
+	 * @var ${4:type} $1
+	 */
+	define(${1}, ${2});${5}
 # Class
 snippet class
 	/**
 	 * ${3:undocumented class}
-	 *
-	 * @author `g:snips_author`
-	 * @date `strftime('%c')`
-	 **/
+	 */
 	${1:}class ${2:} {
 		${4}
 	}
@@ -56,17 +54,15 @@ snippet fun
 	/**
 	 * ${4:undocumented function}
 	 *
-	 * @author `g:snips_author`
-	 * @date `strftime('%c')`
 	 * ${5}
-	 **/
+	 */
 	${1:private_public|protected|static}function ${2:}(${3}) {
 		${6}
-	} // end $2()
+	}
 snippet var
 	/**
-	 * @var $2
 	 * ${3:Variable description}
+	 * @var $2
 	 */
 	${1:private|public|protected }$${2:varname}
 snippet @author
@@ -75,14 +71,12 @@ snippet @date
 	@date `strftime('%c')`
 snippet @param
 	@param ${1:bool|int|string|array|object} $${2:paramname} ${3:description}
-snippet @return
-	@return ${1:Description of the return value}
 snippet def?
 	${1}defined('${2}')${3}
 snippet wh
 	while (${1:/* condition */}) {
 		${2:// code...}
-	} // end while
+	}
 # do ... while
 snippet do
 	do {
@@ -119,7 +113,7 @@ snippet switch
 		default:
 			${4}
 			break;
-	} // end switch
+	}
 snippet case
 	case '${1:value}':
 		${2}
@@ -131,7 +125,7 @@ snippet for
 snippet foreach
 	foreach ($${1:variable} as $${2:key}) {
 		${3}
-	} // end foreach
+	}
 # $... = array (...)
 snippet array
 	$${1:arrayName} = array(
