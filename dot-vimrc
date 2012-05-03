@@ -4,6 +4,9 @@
 call pathogen#infect()
 call pathogen#helptags()
 
+let g:Powerline_symbols = 'fancy'
+let g:solarized_termcolors=256
+
 " Set leader to comma
 let mapleader = ","
 
