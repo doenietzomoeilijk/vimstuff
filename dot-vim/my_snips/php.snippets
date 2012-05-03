@@ -18,9 +18,16 @@ snippet /*
 snippet def
 	/**
 	 * ${3:undocumented constant}
-	 * @var ${4:type} $1
 	 */
-	define(${1}, ${2});${5}
+	define(${1}, ${2});${4}
+snippet var
+	/**
+	 * ${5:Variable description}
+	 *
+	 * @var ${2:type} $${3:varname}
+	 */
+	${1:private|public|protected }$$3${4:= initial value};
+	${6}
 # Class
 snippet class
 	/**
@@ -40,12 +47,6 @@ snippet fun
 	${1:private_public|protected|static}function ${2:}(${3}) {
 	  ${7}
 	}
-snippet var
-	/**
-	 * ${3:Variable description}
-	 * @var $2
-	 */
-	${1:private|public|protected }$${2:varname}
 snippet @author
 	@author `g:snips_author`
 snippet @date
