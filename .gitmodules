@@ -62,3 +62,9 @@
 	path = dot-vim/bundle/vim-css-color
 	url = https://github.com/ap/vim-css-color.git
 	ignore = untracked
+[submodule "dot-vim/bundle/vim-powerline"]
+	path = dot-vim/bundle/vim-powerline
+	url = https://github.com/Lokaltog/vim-powerline.git
+[submodule "dot-vim/bundle/vim-solarized"]
+	path = dot-vim/bundle/vim-solarized
+	url = https://github.com/altercation/vim-colors-solarized.git
