@@ -68,3 +68,6 @@
 [submodule "dot-vim/bundle/vim-solarized"]
 	path = dot-vim/bundle/vim-solarized
 	url = https://github.com/altercation/vim-colors-solarized.git
+[submodule "dot-vim/bundle/phpcomplete"]
+	path = dot-vim/bundle/phpcomplete
+	url = https://github.com/shawncplus/phpcomplete.vim.git

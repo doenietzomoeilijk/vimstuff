@@ -4,9 +4,6 @@
 call pathogen#infect()
 call pathogen#helptags()
 
-let g:Powerline_symbols = 'fancy'
-let g:solarized_termcolors=256
-
 " Set leader to comma
 let mapleader = ","
 
@@ -21,7 +18,8 @@ set shiftwidth=2
 set nosmartindent " As smartindent conflicts with filetype
 set nocindent
 set smarttab
-set noexpandtab
+set expandtab
+set shiftround
 
 set ignorecase smartcase
 set nowrap " We just CODE to the correct width, bitches!
@@ -97,14 +95,14 @@ set showmatch
 set matchpairs+=<:>
 set hlsearch
 set incsearch
-:nnoremap <CR> :nohlsearch<CR>
+nnoremap <CR> :nohlsearch<CR>
 noremap <leader>h :let @/ = ""<CR> " clear search pattern to disable hlsearch
 noremap <leader>n :noh<CR> " Turn off hlsearch until the next search
 
 " Syntax stuff
 filetype plugin indent on
 syntax enable
-noremap <leader>s :syntax enable<CR>
+" noremap <leader>s :syntax enable<CR>
 noremap <leader>hi :so $VIMRUNTIME/syntax/hitest.vim<CR>
 
 " PURDY COLORZ
@@ -121,10 +119,10 @@ if has("gui_running")
   set guioptions-=r
   set guitablabel=%M%t
   set cursorline
-  hi SpecialKey guifg=#444444
-  hi NonText guifg=#444444 guibg=bg
-  hi VertSplit guifg=#000000 guibg=#000000
-  hi Todo gui=undercurl
+  " hi SpecialKey guifg=#444444
+  " hi NonText guifg=#444444 guibg=bg
+  " hi VertSplit guifg=#000000 guibg=#000000
+  " hi Todo gui=undercurl
 endif
 
 " A nice EOL guide column. {{{
@@ -153,8 +151,9 @@ if has('gui_macvim')
   set keymodel=
   set mousemodel=popup_setpos
   " set noantialias
-  set gfn=Inconsolata-dz:h12
-  set gfn=EnvyCodeR:h13
+  " set gfn=Inconsolata-dz:h13
+  " set gfn=EnvyCodeR:h14
+  set gfn=Anonymous\ Pro\ for\ Powerline:h14
   let macvim_skip_cmd_opt_movement = 1
   let macvim_hig_shift_movement = 1
   let g:netrw_browsex_viewer='open'
@@ -164,11 +163,11 @@ if has('gui_macvim')
 
   set fuoptions=maxvert,maxhorz,background:Normal " Fullscreen options
 
-  let g:netrw_ctags='/opt/local/bin/ctags'
-  let Tlist_Ctags_Cmd='/opt/local/bin/ctags'
+  " let g:netrw_ctags='/opt/local/bin/ctags'
+  " let Tlist_Ctags_Cmd='/opt/local/bin/ctags'
 else
-  let g:netrw_ctags='/usr/bin/ctags'
-  let Tlist_Ctags_Cmd='/usr/bin/ctags'
+  " let g:netrw_ctags='/usr/bin/ctags'
+  " let Tlist_Ctags_Cmd='/usr/bin/ctags'
 endif
 
 set textwidth=80
@@ -220,15 +219,11 @@ augroup Filetypes
   autocmd BufRead,BufNewFile,BufEnter *.json setlocal ft=javascript
   autocmd BufRead,BufNewFile,BufEnter *.ejs setlocal ft=javascript
   autocmd BufRead,BufNewFile,BufEnter *.md setlocal ft=markdown
-  autocmd BufRead,BufEnter */hotelmodules-*/*.class setlocal ft=php
-  autocmd BufRead,BufEnter */hotelmodules/*.php setlocal et ts=2 sw=2 sr
-  autocmd FileType html setlocal expandtab
-  autocmd FileType markdown setlocal expandtab formatoptions+=t
-  autocmd FileType javascript setlocal expandtab
-  autocmd FileType css setlocal expandtab
-  autocmd FileType perl setlocal expandtab tabstop=4 shiftwidth=4 shiftround
-  autocmd FileType php setlocal keywordprg=phpdoc noet
   autocmd BufRead,BufNewFile,BufEnter *.tt2 set ft=tt2html
+  autocmd BufRead,BufEnter */hotelmodules-*/*.class setlocal ft=php
+  autocmd FileType markdown setlocal formatoptions+=t
+  autocmd FileType perl setlocal tabstop=4 shiftwidth=4 
+  autocmd FileType php setlocal keywordprg=phpdoc
   " autocmd BufRead,BufNewFile,BufEnter */frags/**.html set ft=tt2
 augroup END
 " }}}
@@ -237,7 +232,7 @@ augroup END
 " From http://github.com/devjj/vim-config/blob/master/.vimrc After editing, run
 augroup Vimrc
   autocmd!
-  autocmd bufwritepost $MYVIMRC source $MYVIMRC | exec 'echom "vimrc reloaded after save."'
+  autocmd bufwritepost $MYVIMRC source $MYVIMRC | call Pl#ReloadColorscheme() | exec 'echom "vimrc reloaded after save."'
 augroup END
 
 noremap <leader>vv :vsplit $MYVIMRC<CR>
@@ -247,6 +242,7 @@ noremap <leader>V :source $MYVIMRC<CR>:filetype detect<CR>:echom 'vimrc reloaded
 " Snippets {{{
 let g:snippets_dir="~/.vim/my_snips/"
 let g:snips_author="Max Roeleveld"
+let g:snips_company="Hotels.nl"
 " autocmd bufwritepost snippet :call ReloadSnippets(snippets_dir, &filetype)<CR>
 " }}}
 
@@ -281,7 +277,8 @@ augroup python
 augroup END
 
 set suffixes=.bak,~,.o,.h,.info,.swp,.obj,.pyc,.pyo
-set tags+=tags;/
+" set tags+=tags;/
+set tags+=$HOME/.vim/tags/php.tags
 set tags+=$HOME/.vim/tags/python.ctags
 
 " Fugitive {{{
@@ -316,14 +313,17 @@ let Tlist_javascript_Ctags_Cmd='ctags'
 " let g:syntastic_mode_map={ 'mode': 'passive',
 "                            \ 'active_filetypes': [],
 "                            \ 'passive_filetypes': ['html', 'html.php'] }
-let g:syntastic_check_on_open=1
-let g:syntastic_enable_signs=1
-let g:syntastic_enable_balloons=1
-let g:syntastic_enable_highlighting=1
-let g:syntastic_echo_current_error=0
-let g:syntastic_stl_format = '[%E{Err:%e}%B{, }%W{Warn:%w}]'
+" let g:syntastic_check_on_open=1
+" let g:syntastic_enable_signs=1
+" let g:syntastic_enable_balloons=1
+" let g:syntastic_enable_highlighting=1
+" let g:syntastic_echo_current_error=0
+" let g:syntastic_stl_format = '[%E{Err:%e}%B{, }%W{Warn:%w}]'
+" let g:syntastic_auto_loc_list=0
 let g:syntastic_phpcs_conf="--standard=Hotelsnl --tab-width=2"
-let g:syntastic_auto_loc_list=0
+noremap <leader>st :SyntasticToggleMode<CR>
+noremap <leader>sc :SyntasticCheck<CR>
+noremap <leader>se :Errors<CR>
 " }}}
 
 
@@ -418,6 +418,9 @@ let g:ctrlp_working_path_mode = 0
 nnoremap <leader>b :CtrlPBuffer<CR>
 nnoremap <leader>m :CtrlPMRUFiles<CR>
 
+let g:Powerline_symbols = 'fancy'
+let g:solarized_termcolors=256
+
 " CtrlP buffer list
 " if exists("*CtrlPBuffer")
 " endif
@@ -434,80 +437,82 @@ vnoremap ( S)<ESC>
 vnoremap [ S]<ESC>
 vnoremap { S}<ESC>
 
+" PHP stuff {{{
 " Disable auto-php-folding if PIV is plugged in
 let g:DisableAutoPHPFolding=1
 let php_noShortTags=0
 let php_htmlInStrings=1
 let php_folding=0
 let PHP_outdentphpescape=0
+let php_sql_query=1
+" }}}
 
 " Favourites for file-explorer
-let g:favDirs='/Volumes/Home Directory/git/'."\n"
+let g:favDirs='/Volumes/home/git/'."\n"
 
-" SVN stuff
-command! Svnadd execute "!svn add %" | execute "!svn propset svn:keywords Id %"
 
 " Statusline goodness {{{
 set laststatus=2
 
 " Stolen from http://www.reddit.com/r/vim/comments/gexi6/a_smarter_statusline_code_in_comments/
-hi StatColor guibg=#95e454 guifg=black ctermbg=lightgreen ctermfg=black
-hi Modified guibg=orange guifg=black ctermbg=lightred ctermfg=black
+" Currently no longer used because of PowerLine...
+" hi StatColor guibg=#95e454 guifg=black ctermbg=lightgreen ctermfg=black
+" hi Modified guibg=orange guifg=black ctermbg=lightred ctermfg=black
 
-function! MyStatusLine(mode)
-  let statusline=""
-  if a:mode == 'Enter'
-    let statusline.="%#StatColor#"
-  endif
-  let statusline.="\(%n\)\ %f\ "
-  if a:mode == 'Enter'
-    let statusline.="%*"
-  endif
-  let statusline.="%#Modified#%m"
-  if a:mode == 'Leave'
-    let statusline.="%*%r"
-  elseif a:mode == 'Enter'
-    let statusline.="%r%*"
-  endif
+" function! MyStatusLine(mode)
+"   let statusline=""
+"   if a:mode == 'Enter'
+"     let statusline.="%#StatColor#"
+"   endif
+"   let statusline.="\(%n\)\ %f\ "
+"   if a:mode == 'Enter'
+"     let statusline.="%*"
+"   endif
+"   let statusline.="%#Modified#%m"
+"   if a:mode == 'Leave'
+"     let statusline.="%*%r"
+"   elseif a:mode == 'Enter'
+"     let statusline.="%r%*"
+"   endif
 
-  if exists("*Tlist_Get_Tagname_By_Line")
-    let statusline .= "\ [%{Tlist_Get_Tagname_By_Line()}]" " file type
-  endif
+"   if exists("*Tlist_Get_Tagname_By_Line")
+"     let statusline .= "\ [%{Tlist_Get_Tagname_By_Line()}]" " file type
+"   endif
 
-  if exists("*fugitive#statusline") " Show current Git branch, if available
-    let statusline .= "%{fugitive#statusline()}"
-  endif
+"   if exists("*fugitive#statusline") " Show current Git branch, if available
+"     let statusline .= "%{fugitive#statusline()}"
+"   endif
 
-  let statusline .= "\ (%l/%L,\ %c)\ %P%=%h%w\ %y\ [%{&encoding}:%{&fileformat}]\ \ "
+"   let statusline .= "\ (%l/%L,\ %c)\ %P%=%h%w\ %y\ [%{&encoding}:%{&fileformat}]\ \ "
 
-  if exists("*SyntasticStatuslineFlag")
-    let statusline .= "%{SyntasticStatuslineFlag()}"
-  endif   
+"   if exists("*SyntasticStatuslineFlag")
+"     let statusline .= "%{SyntasticStatuslineFlag()}"
+"   endif   
 
-  return statusline
-endfunction
+"   return statusline
+" endfunction
 
-function! InsertStatuslineColor(mode)
-  if a:mode == 'i'
-    hi StatColor guibg=orange ctermbg=lightred
-  elseif a:mode == 'r'
-    hi StatColor guibg=#e454ba ctermbg=magenta
-  elseif a:mode == 'v'
-    hi StatColor guibg=#e454ba ctermbg=magenta
-  else
-    hi StatColor guibg=red ctermbg=red
-  endif
-endfunction 
+" function! InsertStatuslineColor(mode)
+"   if a:mode == 'i'
+"     hi StatColor guibg=orange ctermbg=lightred
+"   elseif a:mode == 'r'
+"     hi StatColor guibg=#e454ba ctermbg=magenta
+"   elseif a:mode == 'v'
+"     hi StatColor guibg=#e454ba ctermbg=magenta
+"   else
+"     hi StatColor guibg=red ctermbg=red
+"   endif
+" endfunction 
 
-augroup WinStatusLine
-  autocmd!
-  autocmd WinEnter * setlocal statusline=%!MyStatusLine('Enter')
-  autocmd WinLeave * setlocal statusline=%!MyStatusLine('Leave')
-  autocmd InsertEnter * call InsertStatuslineColor(v:insertmode)
-  autocmd InsertLeave * hi StatColor guibg=#95e454 guifg=black ctermbg=lightgreen ctermfg=black
-augroup END
+" augroup WinStatusLine
+"   autocmd!
+"   autocmd WinEnter * setlocal statusline=%!MyStatusLine('Enter')
+"   autocmd WinLeave * setlocal statusline=%!MyStatusLine('Leave')
+"   autocmd InsertEnter * call InsertStatuslineColor(v:insertmode)
+"   autocmd InsertLeave * hi StatColor guibg=#95e454 guifg=black ctermbg=lightgreen ctermfg=black
+" augroup END
 
-set statusline=%!MyStatusLine('Enter')
+" set statusline=%!MyStatusLine('Enter')
 " }}}
 
 " Code defuckination {{{
