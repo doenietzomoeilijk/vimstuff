@@ -278,8 +278,10 @@ augroup END
 
 set suffixes=.bak,~,.o,.h,.info,.swp,.obj,.pyc,.pyo
 " set tags+=tags;/
-set tags+=$HOME/.vim/tags/php.tags
-set tags+=$HOME/.vim/tags/python.ctags
+" set tags+=$HOME/.vim/tags/php.tags
+" set tags+=$HOME/.vim/tags/python.ctags
+
+set tags=./tags,tags
 
 " Fugitive {{{
 augroup fugitive
