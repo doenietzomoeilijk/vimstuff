@@ -301,7 +301,7 @@ let Tlist_Process_File_Always=1
 let Tlist_Show_One_File=1
 let Tlist_Display_Prototype=1
 let Tlist_Max_Submenu_Items=50
-let Tlist_Max_Tag_Length=30
+let Tlist_Max_Tag_Length=50
 
 " Disable that slow stuff for now, it really chokes a bitch on larger minified
 " javascript files:
@@ -441,10 +441,10 @@ vnoremap { S}<ESC>
 " Disable auto-php-folding if PIV is plugged in
 let g:DisableAutoPHPFolding=1
 let php_noShortTags=0
-let php_htmlInStrings=1
+let php_htmlInStrings=0
 let php_folding=0
 let PHP_outdentphpescape=0
-let php_sql_query=1
+let php_sql_query=0
 " }}}
 
 " Favourites for file-explorer
