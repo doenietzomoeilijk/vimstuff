@@ -71,3 +71,12 @@
 [submodule "dot-vim/bundle/phpcomplete"]
 	path = dot-vim/bundle/phpcomplete
 	url = https://github.com/shawncplus/phpcomplete.vim.git
+[submodule "dot-vim/bundle/jsoncodecs"]
+	path = dot-vim/bundle/jsoncodecs
+	url = https://github.com/michalliu/jsoncodecs.vim.git
+[submodule "dot-vim/bundle/jsruntime"]
+	path = dot-vim/bundle/jsruntime
+	url = https://github.com/michalliu/jsruntime.vim.git
+[submodule "dot-vim/bundle/sourcebeautify"]
+	path = dot-vim/bundle/sourcebeautify
+	url = https://github.com/michalliu/sourcebeautify.vim.git
