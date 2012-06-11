@@ -80,3 +80,6 @@
 [submodule "dot-vim/bundle/sourcebeautify"]
 	path = dot-vim/bundle/sourcebeautify
 	url = https://github.com/michalliu/sourcebeautify.vim.git
+[submodule "dot-vim/bundle/vim-monokai"]
+	path = dot-vim/bundle/vim-monokai
+	url = https://github.com/sickill/vim-monokai.git
