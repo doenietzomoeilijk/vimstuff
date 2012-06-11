@@ -108,9 +108,10 @@ noremap <leader>hi :so $VIMRUNTIME/syntax/hitest.vim<CR>
 " PURDY COLORZ
 let g:CSApprox_verbose_level = 0
 set bg=dark
-colorscheme molokai
+" colorscheme molokai
 "colorscheme mustang
 "colorscheme wombat256
+colorscheme xoria256
 " map <silent><F2> :PREVCOLOR<CR>
 " map <silent><F3> :NEXTCOLOR<CR>
 
@@ -223,7 +224,7 @@ augroup Filetypes
   autocmd BufRead,BufEnter */hotelmodules-*/*.class setlocal ft=php
   autocmd FileType markdown setlocal formatoptions+=t
   autocmd FileType perl setlocal tabstop=4 shiftwidth=4 
-  autocmd FileType php setlocal keywordprg=phpdoc
+  autocmd FileType php setlocal keywordprg=pman
   " autocmd BufRead,BufNewFile,BufEnter */frags/**.html set ft=tt2
 augroup END
 " }}}
