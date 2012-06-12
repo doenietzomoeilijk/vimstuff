@@ -83,3 +83,9 @@
 [submodule "dot-vim/bundle/vim-monokai"]
 	path = dot-vim/bundle/vim-monokai
 	url = https://github.com/sickill/vim-monokai.git
+[submodule "dot-vim/bundle/vim-repeat"]
+	path = dot-vim/bundle/vim-repeat
+	url = https://github.com/tpope/vim-repeat.git
+[submodule "dot-vim/bundle/vim-abolish"]
+	path = dot-vim/bundle/vim-abolish
+	url = git://github.com/tpope/vim-abolish.git
