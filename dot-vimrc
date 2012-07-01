@@ -637,3 +637,7 @@ function! ExtractVariable()
   endif
 endfunction
 vnoremap <leader>rv :call ExtractVariable()<cr>
+
+" Hexy tiem
+nnoremap <leader>hon :%!xxd<cr>
+nnoremap <leader>hof :%!xxd -r<cr>
