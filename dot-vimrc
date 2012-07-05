@@ -637,3 +637,12 @@ function! ExtractVariable()
   endif
 endfunction
 vnoremap <leader>rv :call ExtractVariable()<cr>
+
+function! QFtoArgs()
+  let x={}
+  for d in getqflist()
+    let x[bufname(d.bufnr)]=1
+  endfor
+  exec 'args' join(keys(x))
+endfunction
+nnoremap <Leader>qa :call QFtoArgs()
