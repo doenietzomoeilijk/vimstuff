@@ -89,3 +89,6 @@
 [submodule "dot-vim/bundle/vim-abolish"]
 	path = dot-vim/bundle/vim-abolish
 	url = git://github.com/tpope/vim-abolish.git
+[submodule "dot-vim/bundle/matchit"]
+	path = dot-vim/bundle/matchit
+	url = https://github.com/vim-scripts/matchit.zip.git
