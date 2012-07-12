@@ -97,7 +97,6 @@ set hlsearch
 set incsearch
 nnoremap <CR> :nohlsearch<CR>
 noremap <leader>h :let @/ = ""<CR> " clear search pattern to disable hlsearch
-noremap <leader>n :noh<CR> " Turn off hlsearch until the next search
 
 " Syntax stuff
 filetype plugin indent on
@@ -225,7 +224,6 @@ augroup Filetypes
   autocmd FileType markdown setlocal formatoptions+=t
   autocmd FileType perl setlocal tabstop=4 shiftwidth=4 
   autocmd FileType php setlocal keywordprg=pman
-  " autocmd BufRead,BufNewFile,BufEnter */frags/**.html set ft=tt2
 augroup END
 " }}}
 
@@ -233,7 +231,7 @@ augroup END
 " From http://github.com/devjj/vim-config/blob/master/.vimrc After editing, run
 augroup Vimrc
   autocmd!
-  autocmd bufwritepost $MYVIMRC source $MYVIMRC | call Pl#ReloadColorscheme() | exec 'echom "vimrc reloaded after save."'
+  autocmd BufWritePost $MYVIMRC source $MYVIMRC | call Pl#ReloadColorscheme() | exec 'echom "vimrc reloaded after save."'
 augroup END
 
 noremap <leader>vv :vsplit $MYVIMRC<CR>
@@ -287,7 +285,7 @@ set tags=./tags,tags,$HOME/.vim/tags/php.tags,$HOME/.vim/tags/Zend.tags
 " Fugitive {{{
 augroup fugitive
   autocmd!
-  autocmd BufReadPost fugitive://* set bufhidden=delete " Kill git buffs on close
+  autocmd BufReadPost fugitive://* setlocal bufhidden=delete " Kill git buffs on close
 augroup END
 " }}}
 
@@ -436,25 +434,15 @@ let g:solarized_termcolors=256
 " endif
 " }}}
 
-" Surround all the things! Requires the Surround plugin.
-" For parens and the like we use the CLOSING symbol, otherwise we get extra
-" spaces. Yuk.
-" For quotes, we use doubles, otherwise it'd interfere with movements or
-" registers.
-vnoremap '' S'<ESC>
-vnoremap "" S"<ESC>
-vnoremap ( S)<ESC>
-vnoremap [ S]<ESC>
-vnoremap { S}<ESC>
-
 " PHP stuff {{{
 " Disable auto-php-folding if PIV is plugged in
 let g:DisableAutoPHPFolding=1
+let g:PHP_vintage_case_default_indent = 1
 let php_noShortTags=0
+let php_sql_query=0
 let php_htmlInStrings=0
 let php_folding=0
 let PHP_outdentphpescape=0
-let php_sql_query=0
 " }}}
 
 " Favourites for file-explorer
