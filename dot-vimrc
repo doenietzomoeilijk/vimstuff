@@ -221,7 +221,6 @@ augroup Filetypes
   autocmd BufRead,BufNewFile,BufEnter *.md setlocal ft=markdown
   autocmd BufRead,BufNewFile,BufEnter *.tt2 set ft=tt2html
   autocmd BufRead,BufEnter */hotelmodules-*/*.class setlocal ft=php
-  " autocmd BufWritePost *.php make
   autocmd FileType markdown setlocal formatoptions+=t
   autocmd FileType perl setlocal tabstop=4 shiftwidth=4 
   autocmd FileType php setlocal keywordprg=pman
@@ -415,10 +414,17 @@ noremap <c-w><c-g> :GundoToggle<CR>
 " }}}
 
 " Ctrl-P {{{
-" I'll manage my own paths
-let g:ctrlp_working_path_mode = 2
+let g:ctrlp_use_caching=1
+let g:ctrlp_working_path_mode=1
+let g:ctrlp_custom_ignore={
+  \ 'dir':  '\.git$\|\.hg$\|\.svn$\|\.yardoc\|public\/images\|public\/system\|data\|log\|tmp$',
+  \ 'file': '\.exe$\|\.so$\|\.dat$'
+  \ }
+let g:ctrlp_by_filename=1
 nnoremap <leader>b :CtrlPBuffer<CR>
 nnoremap <leader>m :CtrlPMRUFiles<CR>
+nnoremap <leader>cp :CtrlPCurFile<CR>
+nnoremap <leader>cr :CtrlPRoot<CR>
 
 let g:Powerline_symbols = 'fancy'
 let g:solarized_termcolors=256
@@ -626,6 +632,10 @@ function! ExtractVariable()
   endif
 endfunction
 vnoremap <leader>rv :call ExtractVariable()<cr>
+
+" Hexy tiem
+nnoremap <leader>hon :%!xxd<cr>
+nnoremap <leader>hof :%!xxd -r<cr>
 
 function! QFtoArgs()
   let x={}
