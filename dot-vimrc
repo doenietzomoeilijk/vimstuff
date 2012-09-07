@@ -152,7 +152,7 @@ if has('gui_macvim')
   set mousemodel=popup_setpos
   " set noantialias
   " set gfn=EnvyCodeR:h13
-  set gfn=Anonymous\ Pro\ for\ Powerline:h16
+  set gfn=Anonymous\ Pro\ for\ Powerline:h15
   " set gfn=Inconsolata-dz:h12
   let macvim_skip_cmd_opt_movement = 1
   let macvim_hig_shift_movement = 1
@@ -321,7 +321,8 @@ let Tlist_javascript_Ctags_Cmd='ctags'
 " let g:syntastic_echo_current_error=0
 " let g:syntastic_stl_format = '[%E{Err:%e}%B{, }%W{Warn:%w}]'
 " let g:syntastic_auto_loc_list=0
-let g:syntastic_phpcs_conf="--standard=Hotelsnl --tab-width=2"
+let g:syntastic_phpcs_conf="--standard=Hotelsnl --tab-width=2 --ignore=*/templates/*"
+
 noremap <leader>st :SyntasticToggleMode<CR>
 noremap <leader>sc :SyntasticCheck<CR>
 noremap <leader>se :Errors<CR>
