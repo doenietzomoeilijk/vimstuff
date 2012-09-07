@@ -128,7 +128,7 @@ endif
 " A nice EOL guide column. {{{
 if exists("&colorcolumn")
   set colorcolumn=80
-  hi ColorColumn ctermbg=234 guibg=#232526
+  hi ColorColumn ctermbg=237 guibg=#232526
 endif
 " }}}
 
