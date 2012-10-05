@@ -115,8 +115,11 @@ colorscheme xoria256
 " map <silent><F3> :NEXTCOLOR<CR>
 
 if has("gui_running")
-  set guioptions-=T
-  set guioptions-=r
+  set guioptions-=T " No toolbar
+  set guioptions-=r " No right scrollbar
+  set guioptions-=L " No left scrollbar
+  set guioptions+=g " Grey menu items instead of hiding them
+  set guioptions+=i " Icons are nifty
   set guitablabel=%M%t
   set cursorline
   " hi SpecialKey guifg=#444444
