@@ -95,3 +95,6 @@
 [submodule "dot-vim/bundle/vimwiki"]
 	path = dot-vim/bundle/vimwiki
 	url = https://github.com/vim-scripts/vimwiki
+[submodule "dot-vim/bundle/stylus"]
+	path = dot-vim/bundle/stylus
+	url = https://github.com/wavded/vim-stylus.git

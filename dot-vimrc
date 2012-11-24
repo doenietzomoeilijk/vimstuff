@@ -95,7 +95,8 @@ set showmatch
 set matchpairs+=<:>
 set hlsearch
 set incsearch
-nnoremap <CR> :nohlsearch<CR>
+
+nnoremap <S-CR> :nohlsearch<S-CR> " Setting it to enter mucked with error windows.
 noremap <leader>h :let @/ = ""<CR> " clear search pattern to disable hlsearch
 
 " Syntax stuff
@@ -115,8 +116,11 @@ colorscheme xoria256
 " map <silent><F3> :NEXTCOLOR<CR>
 
 if has("gui_running")
-  set guioptions-=T
-  set guioptions-=r
+  set guioptions-=T " No toolbar
+  set guioptions-=r " No right scrollbar
+  set guioptions-=L " No left scrollbar
+  set guioptions+=g " Grey menu items instead of hiding them
+  set guioptions+=i " Icons are nifty
   set guitablabel=%M%t
   set cursorline
   " hi SpecialKey guifg=#444444
@@ -128,7 +132,7 @@ endif
 " A nice EOL guide column. {{{
 if exists("&colorcolumn")
   set colorcolumn=80
-  hi ColorColumn ctermbg=234 guibg=#232526
+  hi ColorColumn ctermbg=237 guibg=#232526
 endif
 " }}}
 
@@ -152,7 +156,7 @@ if has('gui_macvim')
   set mousemodel=popup_setpos
   " set noantialias
   " set gfn=EnvyCodeR:h13
-  set gfn=Anonymous\ Pro\ for\ Powerline:h16
+  set gfn=Anonymous\ Pro\ for\ Powerline:h15
   " set gfn=Inconsolata-dz:h12
   let macvim_skip_cmd_opt_movement = 1
   let macvim_hig_shift_movement = 1
@@ -321,7 +325,8 @@ let Tlist_javascript_Ctags_Cmd='ctags'
 " let g:syntastic_echo_current_error=0
 " let g:syntastic_stl_format = '[%E{Err:%e}%B{, }%W{Warn:%w}]'
 " let g:syntastic_auto_loc_list=0
-let g:syntastic_phpcs_conf="--standard=Hotelsnl --tab-width=2"
+let g:syntastic_phpcs_conf="--standard=Hotelsnl --tab-width=2 --ignore=*/templates/*"
+
 noremap <leader>st :SyntasticToggleMode<CR>
 noremap <leader>sc :SyntasticCheck<CR>
 noremap <leader>se :Errors<CR>
