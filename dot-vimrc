@@ -96,9 +96,8 @@ set matchpairs+=<:>
 set hlsearch
 set incsearch
 
-nnoremap <S-CR> :nohlsearch<S-CR> " Setting it to enter mucked with error windows.
+nnoremap <leader>n :nohlsearch<CR> " Setting it to enter mucked with error windows.
 noremap <leader>h :let @/ = ""<CR> " clear search pattern to disable hlsearch
-
 " Syntax stuff
 filetype plugin indent on
 syntax enable
@@ -114,6 +113,8 @@ set bg=dark
 colorscheme xoria256
 " map <silent><F2> :PREVCOLOR<CR>
 " map <silent><F3> :NEXTCOLOR<CR>
+
+hi CursorLine ctermbg=238 cterm=NONE " Disable underline which cterm doesn't need.
 
 if has("gui_running")
   set guioptions-=T " No toolbar
