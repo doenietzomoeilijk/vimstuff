@@ -29,6 +29,7 @@ set showbreak=~\ \ \
 
 set backspace=indent,eol,start
 
+set cursorline
 nnoremap <leader>c :set cursorline!<CR>
 nnoremap <leader>C :set cursorcolumn!<CR>
 " }}}
@@ -123,7 +124,6 @@ if has("gui_running")
   set guioptions+=g " Grey menu items instead of hiding them
   set guioptions+=i " Icons are nifty
   set guitablabel=%M%t
-  set cursorline
   " hi SpecialKey guifg=#444444
   " hi NonText guifg=#444444 guibg=bg
   " hi VertSplit guifg=#000000 guibg=#000000
@@ -554,7 +554,7 @@ function! StripTrailingWhite()
   silent! %s/\s\+$//
   call winrestview(l:winview)
 endfunction
-autocmd BufWritePre *.{php,py,pl,js,css,html} call StripTrailingWhite()
+autocmd BufWritePre *.{php,py,pl,js,css,styl,less,html} call StripTrailingWhite()
 " }}}
 
 function! MakeDashed(symbol)
@@ -651,3 +651,8 @@ function! QFtoArgs()
   exec 'args' join(keys(x))
 endfunction
 nnoremap <Leader>qa :call QFtoArgs()
+
+" Make sexy vimwiki checkboxes or check/uncheck 'em.
+if exists('loaded_vimwiki')
+  nnoremap <Space> :VimwikiToggleListItem<CR>
+endif
