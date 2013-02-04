@@ -395,7 +395,7 @@ inoremap jj <Esc>
 inoremap JJ <Esc>
 
 " Hey, F5 wasn't used yet. Let's map :make to that!
-noremap <F5> :make<CR>
+" noremap <F5> :make<CR>
 
 " Search for diff separater stuff
 nnoremap <Leader>fd /^<<<<<<<\\|^=======\\|^>>>>>>><CR>
@@ -656,3 +656,8 @@ nnoremap <Leader>qa :call QFtoArgs()
 if exists('loaded_vimwiki')
   nnoremap <Space> :VimwikiToggleListItem<CR>
 endif
+
+" XDebug Remote Debugging {{{
+let g:dbgPavimPort = 9000
+let g:dbgPavimBreakAtEntry = 1
+" }}}
