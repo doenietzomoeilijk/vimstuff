@@ -164,7 +164,7 @@ if has('gui_macvim')
   let g:netrw_browsex_viewer='open'
   map <S-D-[> :tabprevious<CR>
   map <S-D-]> :tabnext<CR>
-  set linespace=4
+  set linespace=3
 
   set fuoptions=maxvert,maxhorz,background:Normal " Fullscreen options
 
