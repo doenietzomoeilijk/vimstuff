@@ -391,8 +391,8 @@ nnoremap <Leader>u viwu
 noremap <F1> <Esc>
 
 " j is on the home row, Esc isn't, and we don't use j all that much anyway.
-inoremap jj <Esc>
-inoremap JJ <Esc>
+" inoremap jj <Esc>
+" inoremap JJ <Esc>
 
 " Hey, F5 wasn't used yet. Let's map :make to that!
 " noremap <F5> :make<CR>
