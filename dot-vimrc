@@ -86,6 +86,7 @@ cnoremap w!! w !sudo tee % >/dev/null
 " Paste with auto-indent
 nnoremap <Leader>p p'[v']=
 nnoremap <Leader>P P'[v']=
+nnoremap <Leader>pp :set paste!<CR>
 
 " Folding
 set foldmethod=indent
@@ -225,6 +226,7 @@ augroup Filetypes
   autocmd BufRead,BufNewFile,BufEnter *.ejs setlocal ft=javascript
   autocmd BufRead,BufNewFile,BufEnter *.md setlocal ft=markdown
   autocmd BufRead,BufNewFile,BufEnter *.tt2 set ft=tt2html
+  autocmd BufRead,BufNewFile,BufEnter .tmux.conf*,tmux.conf* set ft=tmux
   autocmd BufRead,BufEnter */hotelmodules-*/*.class setlocal ft=php
   autocmd FileType markdown setlocal formatoptions+=t
   autocmd FileType perl setlocal tabstop=4 shiftwidth=4 
