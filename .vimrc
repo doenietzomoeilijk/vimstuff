@@ -1,4 +1,4 @@
-" vim: set filetype=vim foldmethod=marker foldlevel=0 et tw=78:"{{{
+" vim: set filetype=vim foldmethod=marker foldlevel=1 et tw=78:"{{{
 
 " Pathogen {{{
 runtime bundle/vim-pathogen/autoload/pathogen.vim
