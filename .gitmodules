@@ -1,100 +1,12 @@
-[submodule "dot-vim/bundle/vim-surround"]
-	path = dot-vim/bundle/vim-surround
-	url = https://github.com/tpope/vim-surround.git
-	ignore = untracked
-[submodule "dot-vim/bundle/delimitMate"]
-	path = dot-vim/bundle/delimitMate
-	url = https://github.com/Raimondi/delimitMate.git
-	ignore = untracked
-[submodule "dot-vim/bundle/supertab"]
-	path = dot-vim/bundle/supertab
-	url = https://github.com/ervandew/supertab.git
-	ignore = untracked
-[submodule "dot-vim/bundle/snipmate"]
-	path = dot-vim/bundle/snipmate
-	url = https://github.com/msanders/snipmate.vim.git
-	ignore = untracked
-[submodule "dot-vim/bundle/vim-cuteerrormarker"]
-	path = dot-vim/bundle/vim-cuteerrormarker
-	url = https://github.com/Twinside/vim-cuteErrorMarker.git
-	ignore = untracked
-[submodule "dot-vim/bundle/vim-fugitive"]
-	path = dot-vim/bundle/vim-fugitive
-	url = https://github.com/tpope/vim-fugitive.git
-	ignore = untracked
-[submodule "dot-vim/bundle/vim-javascript"]
-	path = dot-vim/bundle/vim-javascript
-	url = https://github.com/pangloss/vim-javascript.git
-	ignore = untracked
-[submodule "dot-vim/bundle/vim-perl"]
-	path = dot-vim/bundle/vim-perl
-	url = https://github.com/petdance/vim-perl.git
-	ignore = untracked
-[submodule "dot-vim/bundle/ctrlp"]
-	path = dot-vim/bundle/ctrlp
-	url = https://github.com/kien/ctrlp.vim.git
-	ignore = untracked
-[submodule "dot-vim/bundle/gundo"]
-	path = dot-vim/bundle/gundo
-	url = http://github.com/sjl/gundo.vim.git
-	ignore = untracked
-[submodule "dot-vim/bundle/vim-taglist-plus"]
-	path = dot-vim/bundle/vim-taglist-plus
-	url = https://github.com/int3/vim-taglist-plus.git
-	ignore = untracked
-[submodule "dot-vim/bundle/syntastic"]
-	path = dot-vim/bundle/syntastic
-	url = https://github.com/scrooloose/syntastic.git
-	ignore = untracked
-[submodule "dot-vim/bundle/align"]
-	path = dot-vim/bundle/align
-	url = https://github.com/vim-scripts/Align.git
-	ignore = untracked
-[submodule "dot-vim/bundle/php-indenting"]
-	path = dot-vim/bundle/php-indenting
-	url = https://github.com/2072/PHP-Indenting-for-VIm.git
-	ignore = untracked
-[submodule "dot-vim/bundle/javascript-indent"]
-	path = dot-vim/bundle/javascript-indent
-	url = https://github.com/vim-scripts/JavaScript-Indent.git
-	ignore = untracked
-[submodule "dot-vim/bundle/vim-css-color"]
-	path = dot-vim/bundle/vim-css-color
-	url = https://github.com/ap/vim-css-color.git
-	ignore = untracked
-[submodule "dot-vim/bundle/vim-powerline"]
-	path = dot-vim/bundle/vim-powerline
-	url = https://github.com/Lokaltog/vim-powerline.git
-[submodule "dot-vim/bundle/vim-solarized"]
-	path = dot-vim/bundle/vim-solarized
-	url = https://github.com/altercation/vim-colors-solarized.git
-[submodule "dot-vim/bundle/phpcomplete"]
-	path = dot-vim/bundle/phpcomplete
-	url = https://github.com/shawncplus/phpcomplete.vim.git
-[submodule "dot-vim/bundle/jsoncodecs"]
-	path = dot-vim/bundle/jsoncodecs
-	url = https://github.com/michalliu/jsoncodecs.vim.git
-[submodule "dot-vim/bundle/jsruntime"]
-	path = dot-vim/bundle/jsruntime
-	url = https://github.com/michalliu/jsruntime.vim.git
-[submodule "dot-vim/bundle/sourcebeautify"]
-	path = dot-vim/bundle/sourcebeautify
-	url = https://github.com/michalliu/sourcebeautify.vim.git
-[submodule "dot-vim/bundle/vim-monokai"]
-	path = dot-vim/bundle/vim-monokai
-	url = https://github.com/sickill/vim-monokai.git
-[submodule "dot-vim/bundle/vim-repeat"]
-	path = dot-vim/bundle/vim-repeat
-	url = https://github.com/tpope/vim-repeat.git
-[submodule "dot-vim/bundle/vim-abolish"]
-	path = dot-vim/bundle/vim-abolish
-	url = git://github.com/tpope/vim-abolish.git
-[submodule "dot-vim/bundle/matchit"]
-	path = dot-vim/bundle/matchit
-	url = https://github.com/vim-scripts/matchit.zip.git
-[submodule "dot-vim/bundle/vimwiki"]
-	path = dot-vim/bundle/vimwiki
-	url = https://github.com/vim-scripts/vimwiki
-[submodule "dot-vim/bundle/stylus"]
-	path = dot-vim/bundle/stylus
-	url = https://github.com/wavded/vim-stylus.git
+[submodule ".vim/bundle/vim-pathogen"]
+	path = .vim/bundle/vim-pathogen
+	url = git://github.com/tpope/vim-pathogen.git
+[submodule ".vim/bundle/vim-fugitive"]
+	path = .vim/bundle/vim-fugitive
+	url = git://github.com/tpope/vim-fugitive.git
+[submodule ".vim/bundle/powerline"]
+	path = .vim/bundle/powerline
+	url = git://github.com/Lokaltog/powerline.git
+[submodule ".vim/bundle/ctrlp"]
+	path = .vim/bundle/ctrlp
+	url = git://github.com/kien/ctrlp.vim.git
