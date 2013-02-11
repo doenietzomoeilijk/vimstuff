@@ -49,7 +49,7 @@
 [submodule "dot-vim/bundle/align"]
 	path = dot-vim/bundle/align
 	url = https://github.com/vim-scripts/Align.git
-	ignore = untracked
+	ignore = dirty
 [submodule "dot-vim/bundle/php-indenting"]
 	path = dot-vim/bundle/php-indenting
 	url = https://github.com/2072/PHP-Indenting-for-VIm.git
