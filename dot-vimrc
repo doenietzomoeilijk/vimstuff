@@ -391,6 +391,9 @@ nnoremap <Leader>u viwu
 " If I want help, I'll ask for it (instead of inadvertly hit my F1 when I
 " actually wanted ESC)
 noremap <F1> <Esc>
+inoremap <F1> <Esc>
+noremap OP <Esc>
+inoremap OP <Esc>
 
 " j is on the home row, Esc isn't, and we don't use j all that much anyway.
 " inoremap jj <Esc>
@@ -459,66 +462,6 @@ let g:favDirs='/Volumes/home/git/'."\n"
 
 " Statusline goodness {{{
 set laststatus=2
-
-" Stolen from http://www.reddit.com/r/vim/comments/gexi6/a_smarter_statusline_code_in_comments/
-" Currently no longer used because of PowerLine...
-" hi StatColor guibg=#95e454 guifg=black ctermbg=lightgreen ctermfg=black
-" hi Modified guibg=orange guifg=black ctermbg=lightred ctermfg=black
-
-" function! MyStatusLine(mode)
-"   let statusline=""
-"   if a:mode == 'Enter'
-"     let statusline.="%#StatColor#"
-"   endif
-"   let statusline.="\(%n\)\ %f\ "
-"   if a:mode == 'Enter'
-"     let statusline.="%*"
-"   endif
-"   let statusline.="%#Modified#%m"
-"   if a:mode == 'Leave'
-"     let statusline.="%*%r"
-"   elseif a:mode == 'Enter'
-"     let statusline.="%r%*"
-"   endif
-
-"   if exists("*Tlist_Get_Tagname_By_Line")
-"     let statusline .= "\ [%{Tlist_Get_Tagname_By_Line()}]" " file type
-"   endif
-
-"   if exists("*fugitive#statusline") " Show current Git branch, if available
-"     let statusline .= "%{fugitive#statusline()}"
-"   endif
-
-"   let statusline .= "\ (%l/%L,\ %c)\ %P%=%h%w\ %y\ [%{&encoding}:%{&fileformat}]\ \ "
-
-"   if exists("*SyntasticStatuslineFlag")
-"     let statusline .= "%{SyntasticStatuslineFlag()}"
-"   endif   
-
-"   return statusline
-" endfunction
-
-" function! InsertStatuslineColor(mode)
-"   if a:mode == 'i'
-"     hi StatColor guibg=orange ctermbg=lightred
-"   elseif a:mode == 'r'
-"     hi StatColor guibg=#e454ba ctermbg=magenta
-"   elseif a:mode == 'v'
-"     hi StatColor guibg=#e454ba ctermbg=magenta
-"   else
-"     hi StatColor guibg=red ctermbg=red
-"   endif
-" endfunction 
-
-" augroup WinStatusLine
-"   autocmd!
-"   autocmd WinEnter * setlocal statusline=%!MyStatusLine('Enter')
-"   autocmd WinLeave * setlocal statusline=%!MyStatusLine('Leave')
-"   autocmd InsertEnter * call InsertStatuslineColor(v:insertmode)
-"   autocmd InsertLeave * hi StatColor guibg=#95e454 guifg=black ctermbg=lightgreen ctermfg=black
-" augroup END
-
-" set statusline=%!MyStatusLine('Enter')
 " }}}
 
 " Code defuckination {{{
@@ -558,45 +501,6 @@ function! StripTrailingWhite()
 endfunction
 autocmd BufWritePre *.{php,py,pl,js,css,styl,less,html} call StripTrailingWhite()
 " }}}
-
-function! MakeDashed(symbol)
-
-  " @TODO zoeken naar *enige* whitespace aan het begin van de regel, en daar
-  " onze x mee vullen.
-  " 
-  " Dan de x aanvullen met overige muk.
-
-
-  " We start with an empty string
-  let @x = ''
-
-  " Let's figure out how long this line is, anyway
-  let linelength = col("$")
-
-  " Get to the start of the line, and record its position.
-  normal ^
-  let startOfLine = col('.')
-  echom 'startOfLine=' . startOfLine
-
-  " Now get to the end and enter to the next line. If this line's commented,
-  " we'll continue the comment.
-  normal A
-  let cursorpos = getpos('.')
-
-  " If the column we're on *now* is lower than the start-of-line of our previous
-  " line, we're NOT in a comment. Vim collapses a line with just spaces/tabs on
-  " it, so we'll need to account for that.
-  if cursorpos[2] < startOfLine
-    @x = repeat(' ', startOfLine)
-  endif
-
-  " moet iets met getpos('.') worden om begin vorige regel te vinden
-  echom 'currentcolumn='.cursorpos[2]
-  let @x = @x . repeat(a:symbol, linelength - cursorpos[2] - 1)
-  normal "xp
-endfunction
-nnoremap <Leader>== :call MakeDashed('=')<CR>
-nnoremap <Leader>-- :call MakeDashed('-')<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " EXTRACT VARIABLE (SKETCHY
@@ -645,6 +549,7 @@ vnoremap <leader>rv :call ExtractVariable()<cr>
 nnoremap <leader>hon :%!xxd<cr>
 nnoremap <leader>hof :%!xxd -r<cr>
 
+" Transpose the files in the quickfix list to args, so you can argdo on them.
 function! QFtoArgs()
   let x={}
   for d in getqflist()
@@ -654,12 +559,17 @@ function! QFtoArgs()
 endfunction
 nnoremap <Leader>qa :call QFtoArgs()
 
-" Make sexy vimwiki checkboxes or check/uncheck 'em.
-if exists('loaded_vimwiki')
-  nnoremap <Space> :VimwikiToggleListItem<CR>
-endif
-
 " XDebug Remote Debugging {{{
 let g:dbgPavimPort = 9000
 let g:dbgPavimBreakAtEntry = 1
+" }}}
+
+" Faster escape {{{
+" Found at https://powerline.readthedocs.org/en/latest/tipstricks.html
+set ttimeoutlen=10
+augroup FastEscape
+  autocmd!
+  au InsertEnter * set timeoutlen=0
+  au InsertLeave * set timeoutlen=1000
+augroup END
 " }}}
