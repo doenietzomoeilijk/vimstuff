@@ -1,4 +1,4 @@
-" vim: set filetype=vim foldmethod=marker foldlevel=1 et tw=78:
+" vim: set filetype=vim foldmethod=marker foldlevel=0 et tw=78:"{{{
 
 " Pathogen {{{
 runtime bundle/vim-pathogen/autoload/pathogen.vim
@@ -39,7 +39,7 @@ colorscheme xoria256
 " Disable underline which cterm doesn't need.
 hi CursorLine ctermbg=238 cterm=NONE
 
-" A nice EOL guide column. {{{
+" A nice EOL guide column.
 if exists("&colorcolumn")
   set colorcolumn=80
   hi ColorColumn ctermbg=237 guibg=#232526
@@ -231,4 +231,4 @@ augroup END
 
 noremap <leader>vv :vsplit $MYVIMRC<CR>
 noremap <leader>V :source $MYVIMRC<CR>:filetype detect<CR>:echom 'vimrc reloaded'<CR>
-" }}}
+" }}}"}}}
