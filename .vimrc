@@ -1,7 +1,7 @@
 " vim: set filetype=vim foldmethod=marker foldlevel=1 et tw=78:
 
 " Pathogen {{{
-runtime bundle/vim-pathogen/autoload/pathogen.vim
+runtime ~/.vim/bundle/vim-pathogen/autoload/pathogen.vim
 execute pathogen#infect()
 execute pathogen#helptags()
 " }}}
