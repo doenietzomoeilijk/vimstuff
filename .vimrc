@@ -19,10 +19,10 @@ let g:ctrlp_custom_ignore={
   \ }
 let g:ctrlp_by_filename=1
 
-nnoremap <leader>b :CtrlPBuffer<CR>
-nnoremap <leader>m :CtrlPMRUFiles<CR>
-nnoremap <leader>cp :CtrlPCurFile<CR>
-nnoremap <leader>cr :CtrlPRoot<CR>
+nnoremap <Leader>b :CtrlPBuffer<CR>
+nnoremap <Leader>m :CtrlPMRUFiles<CR>
+nnoremap <Leader>cp :CtrlPCurFile<CR>
+nnoremap <Leader>cr :CtrlPRoot<CR>
 " }}}
 
 " Snippets {{{
@@ -226,9 +226,10 @@ let PHP_outdentphpescape=0
 " From http://github.com/devjj/vim-config/blob/master/.vimrc After editing, run
 augroup Vimrc
   autocmd!
-  autocmd BufWritePost $MYVIMRC source $MYVIMRC | call Pl#ReloadColorscheme() | exec 'echom "vimrc reloaded after save."'
+  autocmd BufWritePost $MYVIMRC source $MYVIMRC | exec 'echom "vimrc reloaded after save."'
+  " autocmd BufWritePost $MYVIMRC source $MYVIMRC | call Pl#ReloadColorscheme() | exec 'echom "vimrc reloaded after save."'
 augroup END
 
-noremap <leader>vv :vsplit $MYVIMRC<CR>
-noremap <leader>V :source $MYVIMRC<CR>:filetype detect<CR>:echom 'vimrc reloaded'<CR>
+noremap <Leader>vv :vsplit $MYVIMRC<CR>
+noremap <Leader>V :source $MYVIMRC<CR>:filetype detect<CR>:echom 'vimrc reloaded'<CR>
 " }}}"}}}
