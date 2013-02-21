@@ -366,6 +366,7 @@ noremap <silent><A-Left> :bprevious!<CR>
 " Why didn't I think of these earlier?
 inoremap <C-E> <End>
 inoremap <C-A> <Home>
+nnoremap 0 ^
 
 " Uppercase / lowercase current word
 nnoremap <Leader>U viwU
