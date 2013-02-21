@@ -328,7 +328,9 @@ let Tlist_javascript_Ctags_Cmd='ctags'
 " let g:syntastic_echo_current_error=0
 " let g:syntastic_stl_format = '[%E{Err:%e}%B{, }%W{Warn:%w}]'
 " let g:syntastic_auto_loc_list=0
-let g:syntastic_phpcs_conf="--standard=Hotelsnl --tab-width=2 --ignore=*/templates/*"
+let g:syntastic_php_checkers=['php', 'phpcs']
+let g:syntastic_phpcs_args="--standard=Hotelsnl --tab-width=2 --ignore=*/templates/*"
+let g:syntastic_javascript_checkers=['jshint']
 
 noremap <leader>st :SyntasticToggleMode<CR>
 noremap <leader>sc :SyntasticCheck<CR>
