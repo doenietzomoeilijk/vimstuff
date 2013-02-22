@@ -228,6 +228,7 @@ augroup Filetypes
   autocmd BufRead,BufNewFile,BufEnter *.tt2 set ft=tt2html
   autocmd BufRead,BufNewFile,BufEnter .tmux.conf*,tmux.conf* set ft=tmux
   autocmd BufRead,BufEnter */hotelmodules-*/*.class setlocal ft=php
+  autocmd FileType html setlocal indentkeys-=*<Return> " Stop reformatting after newline
   autocmd FileType markdown setlocal formatoptions+=t
   autocmd FileType perl setlocal tabstop=4 shiftwidth=4 
   autocmd FileType php setlocal keywordprg=pman
@@ -321,16 +322,18 @@ let Tlist_javascript_Ctags_Cmd='ctags'
 " let g:syntastic_mode_map={ 'mode': 'passive',
 "                            \ 'active_filetypes': [],
 "                            \ 'passive_filetypes': ['html', 'html.php'] }
-" let g:syntastic_check_on_open=1
+let g:syntastic_check_on_open=1
 " let g:syntastic_enable_signs=1
 " let g:syntastic_enable_balloons=1
 " let g:syntastic_enable_highlighting=1
 " let g:syntastic_echo_current_error=0
 " let g:syntastic_stl_format = '[%E{Err:%e}%B{, }%W{Warn:%w}]'
-" let g:syntastic_auto_loc_list=0
+let g:syntastic_auto_loc_list=1
 let g:syntastic_php_checkers=['php', 'phpcs']
-let g:syntastic_phpcs_args="--standard=Hotelsnl --tab-width=2 --ignore=*/templates/*"
-let g:syntastic_javascript_checkers=['jshint']
+" let g:syntastic_php_phpcs_args="--standard=Hotelsnl --tab-width=2 --ignore=*/templates/*"
+let g:syntastic_javascript_checkers=['phpcs', 'jshint']
+let g:syntastic_error_symbol='✗'
+let g:syntastic_warning_symbol='⚠'
 
 noremap <leader>st :SyntasticToggleMode<CR>
 noremap <leader>sc :SyntasticCheck<CR>
@@ -363,7 +366,9 @@ noremap <C-L> <C-W>l
 " noremap <S-C-H> :bp<CR>
 " noremap <S-C-L> :bn<CR>
 noremap <silent><A-Right> :bnext!<CR> 
+noremap <silent>O5C :bnext!<CR> 
 noremap <silent><A-Left> :bprevious!<CR> 
+noremap <silent>O5D :bprevious!<CR> 
 
 " Why didn't I think of these earlier?
 inoremap <C-E> <End>
