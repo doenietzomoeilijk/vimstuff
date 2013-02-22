@@ -1,7 +1,7 @@
 " vim: set filetype=vim foldmethod=marker foldlevel=1 et tw=78:"{{{
 
 " Pathogen {{{
-runtime ~/.vim/bundle/vim-pathogen/autoload/pathogen.vim
+" runtime ~/.vim/bundle/vim-pathogen/autoload/pathogen.vim
 execute pathogen#infect()
 execute pathogen#helptags()
 " }}}
@@ -12,12 +12,15 @@ set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
 
 " Ctrl-P {{{
 let g:ctrlp_use_caching=1
-let g:ctrlp_working_path_mode=1
+let g:ctrlp_cmd='CtrlPMixed'
+let g:ctrlp_working_path_mode='c'
 let g:ctrlp_custom_ignore={
-  \ 'dir':  '\.git$\|\.hg$\|\.svn$\|\.yardoc\|public\/images\|public\/system\|data\|log\|tmp$',
-  \ 'file': '\.exe$\|\.so$\|\.dat$'
+  \ 'dir':  '\v[\/]\.(git|hg|svn|yardoc)$',
+  \ 'file': '\v\.(exe|so|dll)$',
   \ }
 let g:ctrlp_by_filename=1
+let g:ctrlp_max_files = 20000
+let g:ctrlp_max_depth = 40
 
 nnoremap <Leader>b :CtrlPBuffer<CR>
 nnoremap <Leader>m :CtrlPMRUFiles<CR>
@@ -30,6 +33,13 @@ let g:snippets_dir="~/.vim/my_snips/"
 let g:snips_author="Max Roeleveld"
 let g:snips_company="Hotels.nl"
 " autocmd bufwritepost snippet :call ReloadSnippets(snippets_dir, &filetype)<CR>
+" }}}
+
+" Syntastic {{{
+let g:syntastic_phpcs_conf="--standard=Hotelsnl --tab-width=2"
+noremap <leader>st :SyntasticToggleMode<CR>
+noremap <leader>sc :SyntasticCheck<CR>
+noremap <leader>se :Errors<CR>
 " }}}
 
 " UI {{{
@@ -222,6 +232,7 @@ let php_htmlInStrings=0
 let php_folding=0
 let PHP_outdentphpescape=0
 
+set wildignore+=*.so,*.swp,*.zip,*/tmp/*,.git/*
 " Editing the .vimrc file {{{
 " From http://github.com/devjj/vim-config/blob/master/.vimrc After editing, run
 augroup Vimrc
