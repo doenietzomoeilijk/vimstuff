@@ -288,7 +288,7 @@ set suffixes=.bak,~,.o,.h,.info,.swp,.obj,.pyc,.pyo
 " set tags+=$HOME/.vim/tags/php.tags
 " set tags+=$HOME/.vim/tags/python.ctags
 
-set tags=./tags,tags,$HOME/.vim/tags/php.tags,$HOME/.vim/tags/Zend.tags
+set tags=./tags,tags
 
 " Fugitive {{{
 augroup fugitive
@@ -322,13 +322,13 @@ let Tlist_javascript_Ctags_Cmd='ctags'
 " let g:syntastic_mode_map={ 'mode': 'passive',
 "                            \ 'active_filetypes': [],
 "                            \ 'passive_filetypes': ['html', 'html.php'] }
-let g:syntastic_check_on_open=1
+let g:syntastic_check_on_open=0
 " let g:syntastic_enable_signs=1
 " let g:syntastic_enable_balloons=1
 " let g:syntastic_enable_highlighting=1
 " let g:syntastic_echo_current_error=0
 " let g:syntastic_stl_format = '[%E{Err:%e}%B{, }%W{Warn:%w}]'
-let g:syntastic_auto_loc_list=1
+let g:syntastic_auto_loc_list=0
 let g:syntastic_php_checkers=['php', 'phpcs']
 " let g:syntastic_php_phpcs_args="--standard=Hotelsnl --tab-width=2 --ignore=*/templates/*"
 let g:syntastic_javascript_checkers=['phpcs', 'jshint']
@@ -581,3 +581,8 @@ augroup FastEscape
   au InsertLeave * set timeoutlen=1000
 augroup END
 " }}}
+
+" Add site-specific stuff. Make sure this is alwyas at the end of .vimrc.
+if filereadable(expand("~/.vimlocalrc"))
+  source ~/.vimlocalrc
+endif
