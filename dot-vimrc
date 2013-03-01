@@ -225,7 +225,7 @@ augroup Filetypes
   autocmd BufRead,BufNewFile,BufEnter *.md setlocal ft=markdown
   autocmd BufRead,BufNewFile,BufEnter *.tt2 set ft=tt2html
   autocmd BufRead,BufEnter */hotelmodules-*/*.class setlocal ft=php
-  autocmd FileType markdown setlocal formatoptions+=t
+  autocmd FileType markdown setlocal formatoptions+=t showbreak= nonumber
   autocmd FileType perl setlocal tabstop=4 shiftwidth=4 
   autocmd FileType php setlocal keywordprg=pman
 augroup END
