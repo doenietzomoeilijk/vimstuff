@@ -27,6 +27,6 @@ if has('gui_macvim')
   " set gfn=EnvyCodeR:h13
   " set gfn=Anonymous\ Pro\ for\ Powerline:h15
   " set gfn=Inconsolata-dz:h12
-  set gfn=Source\ Code\ Pro\ for\ Powerline:h13
+  set gfn=Source\ Code\ Pro\ Light\ for\ Powerline:h12
 endif
 " }}}
