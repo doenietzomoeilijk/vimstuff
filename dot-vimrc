@@ -214,7 +214,10 @@ if ! isdirectory(expand('~/.vimbackup'))
 endif
 set backupdir=~/.vimbackup//
 " set backup
-"
+
+" Disable swapsync. While this might, theoretically, cause us to lose up to 30
+" seconds of data, calling fsync() sometimes causes lag.
+set swapsync=
 
 " }}}
 
@@ -350,6 +353,9 @@ let g:miniBufExplMapCTabSwitchBufs = 1
 
 " Stop the beeping AND flashing
 set vb t_vb=".
+
+" Bigger redraw
+set ttyfast
 
 " Re-select text you just pasted so you can indent it and stuff
 nnoremap <leader>q gqip
