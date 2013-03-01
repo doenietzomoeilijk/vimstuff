@@ -228,8 +228,8 @@ augroup Filetypes
   autocmd BufRead,BufNewFile,BufEnter *.tt2 set ft=tt2html
   autocmd BufRead,BufNewFile,BufEnter .tmux.conf*,tmux.conf* set ft=tmux
   autocmd BufRead,BufEnter */hotelmodules-*/*.class setlocal ft=php
+  autocmd FileType markdown setlocal formatoptions+=t showbreak= nonumber
   autocmd FileType html setlocal indentkeys-=*<Return> " Stop reformatting after newline
-  autocmd FileType markdown setlocal formatoptions+=t
   autocmd FileType perl setlocal tabstop=4 shiftwidth=4 
   autocmd FileType php setlocal keywordprg=pman
 augroup END
