@@ -29,6 +29,7 @@ set showbreak=~\ \ \
 
 set backspace=indent,eol,start
 
+set cursorline
 nnoremap <leader>c :set cursorline!<CR>
 nnoremap <leader>C :set cursorcolumn!<CR>
 " }}}
@@ -85,6 +86,7 @@ cnoremap w!! w !sudo tee % >/dev/null
 " Paste with auto-indent
 nnoremap <Leader>p p'[v']=
 nnoremap <Leader>P P'[v']=
+nnoremap <Leader>pp :set paste!<CR>
 
 " Folding
 set foldmethod=indent
@@ -96,9 +98,8 @@ set matchpairs+=<:>
 set hlsearch
 set incsearch
 
-nnoremap <S-CR> :nohlsearch<S-CR> " Setting it to enter mucked with error windows.
+nnoremap <leader>n :nohlsearch<CR> " Setting it to enter mucked with error windows.
 noremap <leader>h :let @/ = ""<CR> " clear search pattern to disable hlsearch
-
 " Syntax stuff
 filetype plugin indent on
 syntax enable
@@ -115,6 +116,8 @@ colorscheme xoria256
 " map <silent><F2> :PREVCOLOR<CR>
 " map <silent><F3> :NEXTCOLOR<CR>
 
+hi CursorLine ctermbg=238 cterm=NONE " Disable underline which cterm doesn't need.
+
 if has("gui_running")
   set guioptions-=T " No toolbar
   set guioptions-=r " No right scrollbar
@@ -122,7 +125,6 @@ if has("gui_running")
   set guioptions+=g " Grey menu items instead of hiding them
   set guioptions+=i " Icons are nifty
   set guitablabel=%M%t
-  set cursorline
   " hi SpecialKey guifg=#444444
   " hi NonText guifg=#444444 guibg=bg
   " hi VertSplit guifg=#000000 guibg=#000000
@@ -163,7 +165,7 @@ if has('gui_macvim')
   let g:netrw_browsex_viewer='open'
   map <S-D-[> :tabprevious<CR>
   map <S-D-]> :tabnext<CR>
-  set linespace=4
+  set linespace=3
 
   set fuoptions=maxvert,maxhorz,background:Normal " Fullscreen options
 
@@ -224,8 +226,10 @@ augroup Filetypes
   autocmd BufRead,BufNewFile,BufEnter *.ejs setlocal ft=javascript
   autocmd BufRead,BufNewFile,BufEnter *.md setlocal ft=markdown
   autocmd BufRead,BufNewFile,BufEnter *.tt2 set ft=tt2html
+  autocmd BufRead,BufNewFile,BufEnter .tmux.conf*,tmux.conf* set ft=tmux
   autocmd BufRead,BufEnter */hotelmodules-*/*.class setlocal ft=php
   autocmd FileType markdown setlocal formatoptions+=t showbreak= nonumber
+  autocmd FileType html setlocal indentkeys-=*<Return> " Stop reformatting after newline
   autocmd FileType perl setlocal tabstop=4 shiftwidth=4 
   autocmd FileType php setlocal keywordprg=pman
 augroup END
@@ -284,7 +288,7 @@ set suffixes=.bak,~,.o,.h,.info,.swp,.obj,.pyc,.pyo
 " set tags+=$HOME/.vim/tags/php.tags
 " set tags+=$HOME/.vim/tags/python.ctags
 
-set tags=./tags,tags,$HOME/.vim/tags/php.tags,$HOME/.vim/tags/Zend.tags
+set tags=./tags,tags
 
 " Fugitive {{{
 augroup fugitive
@@ -318,14 +322,18 @@ let Tlist_javascript_Ctags_Cmd='ctags'
 " let g:syntastic_mode_map={ 'mode': 'passive',
 "                            \ 'active_filetypes': [],
 "                            \ 'passive_filetypes': ['html', 'html.php'] }
-" let g:syntastic_check_on_open=1
+let g:syntastic_check_on_open=0
 " let g:syntastic_enable_signs=1
 " let g:syntastic_enable_balloons=1
 " let g:syntastic_enable_highlighting=1
 " let g:syntastic_echo_current_error=0
 " let g:syntastic_stl_format = '[%E{Err:%e}%B{, }%W{Warn:%w}]'
-" let g:syntastic_auto_loc_list=0
-let g:syntastic_phpcs_conf="--standard=Hotelsnl --tab-width=2 --ignore=*/templates/*"
+let g:syntastic_auto_loc_list=0
+let g:syntastic_php_checkers=['php', 'phpcs']
+" let g:syntastic_php_phpcs_args="--standard=Hotelsnl --tab-width=2 --ignore=*/templates/*"
+let g:syntastic_javascript_checkers=['phpcs', 'jshint']
+let g:syntastic_error_symbol='✗'
+let g:syntastic_warning_symbol='⚠'
 
 noremap <leader>st :SyntasticToggleMode<CR>
 noremap <leader>sc :SyntasticCheck<CR>
@@ -358,11 +366,14 @@ noremap <C-L> <C-W>l
 " noremap <S-C-H> :bp<CR>
 " noremap <S-C-L> :bn<CR>
 noremap <silent><A-Right> :bnext!<CR> 
+noremap <silent>O5C :bnext!<CR> 
 noremap <silent><A-Left> :bprevious!<CR> 
+noremap <silent>O5D :bprevious!<CR> 
 
 " Why didn't I think of these earlier?
 inoremap <C-E> <End>
 inoremap <C-A> <Home>
+nnoremap 0 ^
 
 " Uppercase / lowercase current word
 nnoremap <Leader>U viwU
@@ -388,13 +399,16 @@ nnoremap <Leader>u viwu
 " If I want help, I'll ask for it (instead of inadvertly hit my F1 when I
 " actually wanted ESC)
 noremap <F1> <Esc>
+inoremap <F1> <Esc>
+noremap OP <Esc>
+inoremap OP <Esc>
 
 " j is on the home row, Esc isn't, and we don't use j all that much anyway.
-inoremap jj <Esc>
-inoremap JJ <Esc>
+" inoremap jj <Esc>
+" inoremap JJ <Esc>
 
 " Hey, F5 wasn't used yet. Let's map :make to that!
-noremap <F5> :make<CR>
+" noremap <F5> :make<CR>
 
 " Search for diff separater stuff
 nnoremap <Leader>fd /^<<<<<<<\\|^=======\\|^>>>>>>><CR>
@@ -456,66 +470,6 @@ let g:favDirs='/Volumes/home/git/'."\n"
 
 " Statusline goodness {{{
 set laststatus=2
-
-" Stolen from http://www.reddit.com/r/vim/comments/gexi6/a_smarter_statusline_code_in_comments/
-" Currently no longer used because of PowerLine...
-" hi StatColor guibg=#95e454 guifg=black ctermbg=lightgreen ctermfg=black
-" hi Modified guibg=orange guifg=black ctermbg=lightred ctermfg=black
-
-" function! MyStatusLine(mode)
-"   let statusline=""
-"   if a:mode == 'Enter'
-"     let statusline.="%#StatColor#"
-"   endif
-"   let statusline.="\(%n\)\ %f\ "
-"   if a:mode == 'Enter'
-"     let statusline.="%*"
-"   endif
-"   let statusline.="%#Modified#%m"
-"   if a:mode == 'Leave'
-"     let statusline.="%*%r"
-"   elseif a:mode == 'Enter'
-"     let statusline.="%r%*"
-"   endif
-
-"   if exists("*Tlist_Get_Tagname_By_Line")
-"     let statusline .= "\ [%{Tlist_Get_Tagname_By_Line()}]" " file type
-"   endif
-
-"   if exists("*fugitive#statusline") " Show current Git branch, if available
-"     let statusline .= "%{fugitive#statusline()}"
-"   endif
-
-"   let statusline .= "\ (%l/%L,\ %c)\ %P%=%h%w\ %y\ [%{&encoding}:%{&fileformat}]\ \ "
-
-"   if exists("*SyntasticStatuslineFlag")
-"     let statusline .= "%{SyntasticStatuslineFlag()}"
-"   endif   
-
-"   return statusline
-" endfunction
-
-" function! InsertStatuslineColor(mode)
-"   if a:mode == 'i'
-"     hi StatColor guibg=orange ctermbg=lightred
-"   elseif a:mode == 'r'
-"     hi StatColor guibg=#e454ba ctermbg=magenta
-"   elseif a:mode == 'v'
-"     hi StatColor guibg=#e454ba ctermbg=magenta
-"   else
-"     hi StatColor guibg=red ctermbg=red
-"   endif
-" endfunction 
-
-" augroup WinStatusLine
-"   autocmd!
-"   autocmd WinEnter * setlocal statusline=%!MyStatusLine('Enter')
-"   autocmd WinLeave * setlocal statusline=%!MyStatusLine('Leave')
-"   autocmd InsertEnter * call InsertStatuslineColor(v:insertmode)
-"   autocmd InsertLeave * hi StatColor guibg=#95e454 guifg=black ctermbg=lightgreen ctermfg=black
-" augroup END
-
-" set statusline=%!MyStatusLine('Enter')
 " }}}
 
 " Code defuckination {{{
@@ -553,47 +507,8 @@ function! StripTrailingWhite()
   silent! %s/\s\+$//
   call winrestview(l:winview)
 endfunction
-autocmd BufWritePre *.{php,py,pl,js,css,html} call StripTrailingWhite()
+autocmd BufWritePre *.{php,py,pl,js,css,styl,less,html} call StripTrailingWhite()
 " }}}
-
-function! MakeDashed(symbol)
-
-  " @TODO zoeken naar *enige* whitespace aan het begin van de regel, en daar
-  " onze x mee vullen.
-  " 
-  " Dan de x aanvullen met overige muk.
-
-
-  " We start with an empty string
-  let @x = ''
-
-  " Let's figure out how long this line is, anyway
-  let linelength = col("$")
-
-  " Get to the start of the line, and record its position.
-  normal ^
-  let startOfLine = col('.')
-  echom 'startOfLine=' . startOfLine
-
-  " Now get to the end and enter to the next line. If this line's commented,
-  " we'll continue the comment.
-  normal A
-  let cursorpos = getpos('.')
-
-  " If the column we're on *now* is lower than the start-of-line of our previous
-  " line, we're NOT in a comment. Vim collapses a line with just spaces/tabs on
-  " it, so we'll need to account for that.
-  if cursorpos[2] < startOfLine
-    @x = repeat(' ', startOfLine)
-  endif
-
-  " moet iets met getpos('.') worden om begin vorige regel te vinden
-  echom 'currentcolumn='.cursorpos[2]
-  let @x = @x . repeat(a:symbol, linelength - cursorpos[2] - 1)
-  normal "xp
-endfunction
-nnoremap <Leader>== :call MakeDashed('=')<CR>
-nnoremap <Leader>-- :call MakeDashed('-')<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " EXTRACT VARIABLE (SKETCHY
@@ -642,6 +557,7 @@ vnoremap <leader>rv :call ExtractVariable()<cr>
 nnoremap <leader>hon :%!xxd<cr>
 nnoremap <leader>hof :%!xxd -r<cr>
 
+" Transpose the files in the quickfix list to args, so you can argdo on them.
 function! QFtoArgs()
   let x={}
   for d in getqflist()
@@ -650,3 +566,23 @@ function! QFtoArgs()
   exec 'args' join(keys(x))
 endfunction
 nnoremap <Leader>qa :call QFtoArgs()
+
+" XDebug Remote Debugging {{{
+let g:dbgPavimPort = 9000
+let g:dbgPavimBreakAtEntry = 1
+" }}}
+
+" Faster escape {{{
+" Found at https://powerline.readthedocs.org/en/latest/tipstricks.html
+set ttimeoutlen=10
+augroup FastEscape
+  autocmd!
+  au InsertEnter * set timeoutlen=0
+  au InsertLeave * set timeoutlen=1000
+augroup END
+" }}}
+
+" Add site-specific stuff. Make sure this is alwyas at the end of .vimrc.
+if filereadable(expand("~/.vimlocalrc"))
+  source ~/.vimlocalrc
+endif

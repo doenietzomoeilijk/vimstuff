@@ -22,12 +22,20 @@ snippet def
 	define(${1}, ${2});${4}
 snippet var
 	/**
-	 * ${5:Variable description}
+	 * ${4:Variable description}
 	 *
 	 * @var ${2:type} $${3:varname}
 	 */
-	${1:private|public|protected }$$3${4:= initial value};
+	${1:private|public|protected} $$3${5: = initial value};
 	${6}
+snippet const
+	/**
+	 * ${3:Const description}
+	 *
+	 * @const ${1:type} ${2:varname}
+	 */
+	const $2 = ${4:initial value};
+	${5}
 # Class
 snippet class
 	/**
