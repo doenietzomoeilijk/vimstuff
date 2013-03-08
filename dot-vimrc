@@ -88,6 +88,10 @@ nnoremap <Leader>p p'[v']=
 nnoremap <Leader>P P'[v']=
 nnoremap <Leader>pp :set paste!<CR>
 
+" Set title
+set title
+set titlestring=%t%(\ %M%)%(\ (%{expand(\"%:~:.:h\")})%)%(\ %a%)
+
 " Folding
 set foldmethod=indent
 set foldlevel=100
@@ -457,6 +461,14 @@ let g:solarized_termcolors=256
 " CtrlP buffer list
 " if exists("*CtrlPBuffer")
 " endif
+" }}}
+
+" GitGutter {{{
+if exists("*ToggleGitGutter")
+  nnoremap <leader>gg :ToggleGitGutter<CR>
+  nnoremap <leader>gn :GitGutterNextHunk<CR>
+  nnoremap <leader>gp :GitGutterPrevHunk<CR>
+endif
 " }}}
 
 " PHP stuff {{{
