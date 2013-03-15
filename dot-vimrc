@@ -238,7 +238,7 @@ augroup Filetypes
   autocmd FileType markdown setlocal formatoptions+=t showbreak= nonumber
   autocmd FileType html setlocal indentkeys-=*<Return> " Stop reformatting after newline
   autocmd FileType perl setlocal tabstop=4 shiftwidth=4 
-  autocmd FileType php setlocal keywordprg=pman
+  autocmd FileType php setlocal keywordprg=pman | source ~/.vim/bundle/vim-php-doc/php.vim
 augroup END
 " }}}
 
@@ -340,7 +340,9 @@ let g:syntastic_php_checkers=['php', 'phpcs']
 " let g:syntastic_php_phpcs_args="--standard=Hotelsnl --tab-width=2 --ignore=*/templates/*"
 let g:syntastic_javascript_checkers=['phpcs', 'jshint']
 let g:syntastic_error_symbol='✗'
+let g:syntastic_style_error_symbol='✗'
 let g:syntastic_warning_symbol='⚠'
+let g:syntastic_style_warning_symbol='⚠'
 
 noremap <leader>st :SyntasticToggleMode<CR>
 noremap <leader>sc :SyntasticCheck<CR>
@@ -447,7 +449,7 @@ let g:ctrlp_use_caching=1
 let g:ctrlp_working_path_mode=1
 let g:ctrlp_custom_ignore={
   \ 'dir':  '\.git$\|\.hg$\|\.svn$\|\.yardoc\|public\/images\|public\/system\|data\|log\|tmp$',
-  \ 'file': '\.exe$\|\.so$\|\.dat$'
+  \ 'file': '\.exe$\|\.so$\|\.dat$\|.fugitiveblame$'
   \ }
 let g:ctrlp_by_filename=1
 nnoremap <leader>b :CtrlPBuffer<CR>
