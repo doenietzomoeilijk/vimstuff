@@ -112,4 +112,4 @@
 	ignore = untracked
 [submodule "dot-vim/bundle/vim-php-doc"]
 	path = dot-vim/bundle/vim-php-doc
-	url = https://github.com/tetsuo13/Vim-PHP-Doc.git
+	url = https://github.com/teranex/Vim-PHP-Doc.git
