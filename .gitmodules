@@ -22,3 +22,6 @@
 	path = .vim/bundle/syntastic
 	url = https://github.com/scrooloose/syntastic.git
   ignore = dirty
+[submodule ".vim/bundle/vim-surround"]
+	path = .vim/bundle/vim-surround
+	url = https://github.com/tpope/vim-surround
