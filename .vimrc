@@ -106,8 +106,8 @@ let mapleader=","
 " }}}
 
 " Coding defaults {{{
-set tabstop=2
-set shiftwidth=2
+set tabstop=4
+set shiftwidth=4
 set nosmartindent " As smartindent conflicts with filetype
 set nocindent
 set smarttab
@@ -217,13 +217,17 @@ augroup Filetypes
   autocmd BufRead,BufNewFile,BufEnter *.md setlocal ft=markdown
   autocmd BufRead,BufNewFile,BufEnter *.tt2 set ft=tt2html
   autocmd BufRead,BufNewFile,BufEnter .tmux.conf*,tmux.conf* set ft=tmux
-  autocmd BufRead,BufEnter */hotelmodules-*/*.class setlocal ft=php
-  autocmd FileType markdown setlocal formatoptions+=t
-  autocmd FileType perl setlocal tabstop=4 shiftwidth=4 
+  autocmd FileType markdown setlocal shiftwidth=2 tabstop=2 " formatoptions+=t
+augroup END
+
+" PHP {{{
+" Disable auto-php-folding if PIV is plugged in
+augroup PHP
+  autocmd!
+  autocmd BufRead,BufEnter */hotelmodules/*.class setlocal ft=php
   autocmd FileType php setlocal keywordprg=pman
 augroup END
 
-" Disable auto-php-folding if PIV is plugged in
 let g:DisableAutoPHPFolding=1
 let g:PHP_vintage_case_default_indent = 1
 let php_noShortTags=0
@@ -231,8 +235,10 @@ let php_sql_query=0
 let php_htmlInStrings=0
 let php_folding=0
 let PHP_outdentphpescape=0
+" }}}
 
 set wildignore+=*.so,*.swp,*.zip,*/tmp/*,.git/*
+
 " Editing the .vimrc file {{{
 " From http://github.com/devjj/vim-config/blob/master/.vimrc After editing, run
 augroup Vimrc
