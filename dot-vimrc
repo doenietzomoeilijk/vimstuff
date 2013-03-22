@@ -13,8 +13,8 @@ set mouse=a
 " }}}
 
 " Indenting and wrapping {{{
-set tabstop=2
-set shiftwidth=2
+set tabstop=4
+set shiftwidth=4
 set nosmartindent " As smartindent conflicts with filetype
 set nocindent
 set smarttab
@@ -234,11 +234,8 @@ augroup Filetypes
   autocmd BufRead,BufNewFile,BufEnter *.md setlocal ft=markdown
   autocmd BufRead,BufNewFile,BufEnter *.tt2 set ft=tt2html
   autocmd BufRead,BufNewFile,BufEnter .tmux.conf*,tmux.conf* set ft=tmux
-  autocmd BufRead,BufEnter */hotelmodules-*/*.class setlocal ft=php
-  autocmd FileType markdown setlocal formatoptions+=t showbreak= nonumber
+  autocmd FileType markdown setlocal tabstop=2 shiftwidth=2 showbreak= nonumber " formatoptions+=t
   autocmd FileType html setlocal indentkeys-=*<Return> " Stop reformatting after newline
-  autocmd FileType perl setlocal tabstop=4 shiftwidth=4 
-  autocmd FileType php setlocal keywordprg=pman | source ~/.vim/bundle/vim-php-doc/php.vim
 augroup END
 " }}}
 
@@ -247,6 +244,8 @@ augroup END
 augroup Vimrc
   autocmd!
   autocmd BufWritePost $MYVIMRC source $MYVIMRC | call Pl#ReloadColorscheme() | exec 'echom "vimrc reloaded after save."'
+  " Setting keywordprg to blank leads to vim using :help instead.
+  autocmd FileType vim setlocal keywordprg=
 augroup END
 
 noremap <leader>vv :vsplit $MYVIMRC<CR>
@@ -282,18 +281,32 @@ noremap <leader>i :set list!<CR> " Toggle invisible chars"
 
 noremap <leader>cd :cd %:p:h<CR>
 
+" PHP stuff {{{
+" Disable auto-php-folding if PIV is plugged in
+augroup php
+  autocmd!
+  autocmd FileType php setlocal keywordprg=pman colorcolumn=80 textwidth=100
+augroup END
+
+let g:DisableAutoPHPFolding=1
+let g:PHP_vintage_case_default_indent = 1
+let php_noShortTags=0
+let php_sql_query=0
+let php_htmlInStrings=0
+let php_folding=0
+let PHP_outdentphpescape=0
+" }}}
+
 augroup python
   " http://www.sontek.net/Python-with-a-modular-IDE-(Vim)
   autocmd!
   autocmd FileType python set omnifunc=pythoncomplete#Complete
+  autocmd FileType python setlocal keywordprg=pman colorcolumn=80 textwidth=80
   autocmd BufRead *.py set makeprg=python\ -c\ \"import\ py_compile,sys;\ sys.stderr=sys.stdout;\ py_compile.compile(r'%')\" 
   autocmd BufRead *.py set efm=%C\ %.%#,%A\ \ File\ \"%f\"\\,\ line\ %l%.%#,%Z%[%^\ ]%\\@=%m 
 augroup END
 
 set suffixes=.bak,~,.o,.h,.info,.swp,.obj,.pyc,.pyo
-" set tags+=tags;/
-" set tags+=$HOME/.vim/tags/php.tags
-" set tags+=$HOME/.vim/tags/python.ctags
 
 set tags=./tags,tags
 
@@ -471,17 +484,6 @@ if exists("*ToggleGitGutter")
   nnoremap <leader>gn :GitGutterNextHunk<CR>
   nnoremap <leader>gp :GitGutterPrevHunk<CR>
 endif
-" }}}
-
-" PHP stuff {{{
-" Disable auto-php-folding if PIV is plugged in
-let g:DisableAutoPHPFolding=1
-let g:PHP_vintage_case_default_indent = 1
-let php_noShortTags=0
-let php_sql_query=0
-let php_htmlInStrings=0
-let php_folding=0
-let PHP_outdentphpescape=0
 " }}}
 
 " Favourites for file-explorer
