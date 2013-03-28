@@ -1,0 +1,757 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+AFFILIATE_TEMPLATE_PATH	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/settings.php	/^define('AFFILIATE_TEMPLATE_PATH', '\/www\/templates\/affiliate_layout\/');$/;"	d
+Affiliate	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Affiliate.php	/^class Affiliate {$/;"	c
+Arrdate	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Arrdate.php	/^class Arrdate {$/;"	c
+Autoload	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Autoload.php	/^class Autoload$/;"	c
+Autosuggest	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Autosuggest.php	/^class Autosuggest$/;"	c
+Availability	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Availability.php	/^class Availability extends Skeleton {$/;"	c
+AvailabilityData	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/AvailabilityData.php	/^class AvailabilityData {$/;"	c
+BASE_URL	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/settings.php	/^define('BASE_URL', 'http:\/\/' . HOST_NAME . '\/');$/;"	d
+BTL91_DIRECTORY	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/settings.php	/^define('BTL91_DIRECTORY', '\/www\/writeable\/homerus\/finance\/btl91\/');$/;"	d
+Booking	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Booking.php	/^class Booking extends Skeleton {$/;"	c
+BookingPartial	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/BookingPartial.php	/^class BookingPartial {$/;"	c
+Bootstrap	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Bootstrap.php	/^class Bootstrap extends \\BootstrapAbstract$/;"	c
+BootstrapAbstract	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/BootstrapAbstract.php	/^abstract class BootstrapAbstract$/;"	c
+Btl91	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Btl91.php	/^class Btl91 {$/;"	c
+CLIEOP03_DIRECTORY	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/settings.php	/^define('CLIEOP03_DIRECTORY', '\/www\/writeable\/homerus\/finance\/clieop03\/');$/;"	d
+COOKIE_HOST	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/settings.php	/^define('COOKIE_HOST', '.' . HOST_NAME);$/;"	d
+CSS_VERSION	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/settings.php	/^define('CSS_VERSION', $versions['VERSIONS']['css_version']);$/;"	d
+CURRENT_URL	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/settings.php	/^define('CURRENT_URL', HTTP_PROTO . HOST_NAME . Input::server('REQUEST_URI'));$/;"	d
+Chain	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Chain.php	/^class Chain extends Skeleton {$/;"	c
+City	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/City.php	/^class City extends Skeleton {$/;"	c
+Clieop03	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Clieop03.php	/^class Clieop03 {$/;"	c
+Contact	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Contact.php	/^class Contact extends Skeleton {$/;"	c
+Contactlog	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Contactlog.php	/^class Contactlog {$/;"	c
+Country	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Country.php	/^class Country extends Skeleton {$/;"	c
+DB_NO_QUERY_CACHE	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/settings.php	/^define('DB_NO_QUERY_CACHE', false);$/;"	d
+DB_RO_HOST	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/settings.php	/^define('DB_RO_HOST', 'sql-slave.internal.hotels.nl');$/;"	d
+DB_RO_PASS	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/settings.php	/^define('DB_RO_PASS', 'terrer');$/;"	d
+DB_RO_USER	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/settings.php	/^define('DB_RO_USER', 'ro');$/;"	d
+DB_RW_HOST	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/settings.php	/^define('DB_RW_HOST', 'sql-master.internal.hotels.nl');$/;"	d
+DB_RW_PASS	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/settings.php	/^define('DB_RW_PASS', 'terrer');$/;"	d
+DB_RW_USER	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/settings.php	/^define('DB_RW_USER', 'rw');$/;"	d
+DB_SOCKET	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/settings.php	/^define('DB_SOCKET', '\/var\/run\/mysqld\/mysqld.sock');$/;"	d
+DEFAULT_ARRIVAL	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/settings.php	/^define('DEFAULT_ARRIVAL', MYSQL_TODAY);$/;"	d
+DEFAULT_CURRENCY	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/settings.php	/^define('DEFAULT_CURRENCY', 'EUR');$/;"	d
+DEFAULT_DEPARTURE	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/settings.php	/^define('DEFAULT_DEPARTURE', MYSQL_TOMORROW);$/;"	d
+DEFAULT_HOTELS_PER_PAGE	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/settings.php	/^define('DEFAULT_HOTELS_PER_PAGE', 24);$/;"	d
+DEFAULT_LANG	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/settings.php	/^define('DEFAULT_LANG', 'nl');$/;"	d
+DEFAULT_LANG_FALLBACK	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/settings.php	/^define('DEFAULT_LANG_FALLBACK', 'en');$/;"	d
+DEFAULT_MIN_REVIEW_COUNT	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/settings.php	/^define('DEFAULT_MIN_REVIEW_COUNT', 5);$/;"	d
+DEFAULT_NUM_PERSONS	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/settings.php	/^define('DEFAULT_NUM_PERSONS', 2);$/;"	d
+DEFAULT_NUM_ROOMS	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/settings.php	/^define('DEFAULT_NUM_ROOMS', 1);$/;"	d
+DEFINED_VWO_TESTS	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/settings.php	/^define('DEFINED_VWO_TESTS', $hasTests);$/;"	d
+DailyDeal	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/DailyDeal.php	/^class DailyDeal extends Skeleton {$/;"	c
+Database	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Database.php	/^class Database {$/;"	c
+DatePicker	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/DatePicker.php	/^class DatePicker {$/;"	c
+ENDECRYPT	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/settings.php	/^define('ENDECRYPT', '\/www\/tools\/endecrypt.pl');$/;"	d
+END_NEXT_YEAR	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/settings.php	/^define('END_NEXT_YEAR', strtotime((date('Y', NOW) + 1) . '1230'));$/;"	d
+E_DEPRECATED	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Error.php	/^  define('E_DEPRECATED', 8192);$/;"	d
+E_USER_DEPRECATED	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Error.php	/^  define('E_USER_DEPRECATED', 16384);$/;"	d
+EmailParser	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/EmailParser.php	/^class EmailParser {$/;"	c
+Employee	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Employee.php	/^class Employee {$/;"	c
+Encryption	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Encryption.php	/^class Encryption {$/;"	c
+Error	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Error.php	/^class Error {$/;"	c
+FRAG_TYPE	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/BootstrapAbstract.php	/^            define('FRAG_TYPE', $this::FRAG_TYPE);$/;"	d
+Facility	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Facility.php	/^class Facility {$/;"	c
+Finance	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Finance.php	/^class Finance {$/;"	c
+GA_CODE	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/settings.php	/^define('GA_CODE', 'UA-499674-5');$/;"	d
+GA_DOMAIN	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/settings.php	/^define('GA_DOMAIN', 'www.hotels.nl');$/;"	d
+HOMERUS_HOSTNAME	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/settings.php	/^define('HOMERUS_HOSTNAME', 'homerus.' . HOST_SUFFIX);$/;"	d
+HOST_SUFFIX	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/settings.php	/^define('HOST_SUFFIX', Request::getInstance()->getHostnameSuffix());$/;"	d
+HTTP_PROTO	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/settings.php	/^define('HTTP_PROTO', IS_SECURE ? 'https:\/\/' : 'http:\/\/');$/;"	d
+Headers	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Headers.php	/^class Headers {$/;"	c
+History	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/History.php	/^class History {$/;"	c
+Hotel	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Hotel.php	/^class Hotel extends Skeleton {$/;"	c
+Html	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Html.php	/^class Html {$/;"	c
+IDEAL_CACHE_PATH	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/settings.php	/^define('IDEAL_CACHE_PATH', IDEAL_TEST_MODE ? false : '\/tmp\/');$/;"	d
+IDEAL_DEFAULT_TIMEOUT	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/settings.php	/^define('IDEAL_DEFAULT_TIMEOUT', '15M');$/;"	d
+IDEAL_FORCE_RABO	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/settings.php	/^define('IDEAL_FORCE_RABO', false);$/;"	d
+IDEAL_FORCE_TEST	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/settings.php	/^define('IDEAL_FORCE_TEST', false);$/;"	d
+IDEAL_RETURN_URL	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/settings.php	/^define('IDEAL_RETURN_URL', '');$/;"	d
+IDEAL_SECURE_PATH	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/settings.php	/^define('IDEAL_SECURE_PATH', '\/etc\/apache2\/ssl\/ideal\/');$/;"	d
+IDEAL_SUB_ID	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/settings.php	/^define('IDEAL_SUB_ID', '0');$/;"	d
+IDEAL_TEST_MODE	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/settings.php	/^define('IDEAL_TEST_MODE', HOST_TYPE !== 'production' || IDEAL_FORCE_TEST);$/;"	d
+IS_CLI	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/settings.php	/^define('IS_CLI', php_sapi_name() === 'cli');$/;"	d
+IS_OFFICE	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/settings.php	/^define('IS_OFFICE', $isOffice);$/;"	d
+IS_SECURE	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/settings.php	/^define('IS_SECURE', Input::server('HTTPS') !== false);$/;"	d
+Ideal	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Ideal.php	/^class Ideal extends Skeleton {$/;"	c
+Image	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Image.php	/^class Image extends Skeleton{$/;"	c
+Input	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Input.php	/^class Input {$/;"	c
+JS_VERSION	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/settings.php	/^define('JS_VERSION', $versions['VERSIONS']['js_version']);$/;"	d
+LANDING_PAGE	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/BootstrapAbstract.php	/^            define('LANDING_PAGE', $this::LANDING_PAGE);$/;"	d
+LAZY_IMG	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/settings.php	/^define('LAZY_IMG', NO_PROTO . MEDIA_HOSTNAME . '\/website\/grey.gif');$/;"	d
+LOCALHOST	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/settings.php	/^define('LOCALHOST', '127.0.0.1');$/;"	d
+LOGIN_HOSTNAME	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/settings.php	/^define('LOGIN_HOSTNAME', 'login.' . HOST_SUFFIX);$/;"	d
+LOG_LEVEL	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/settings.php	/^  define('LOG_LEVEL', HOST_TYPE === 'production' ? LOG_NOTICE : LOG_DEBUG);$/;"	d
+Language	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Language.php	/^class Language {$/;"	c
+Log	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Log.php	/^class Log$/;"	c
+MCSS_VERSION	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/settings.php	/^define('MCSS_VERSION', $versions['VERSIONS']['mcss_version']);$/;"	d
+MEDIA_HOSTNAME	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/settings.php	/^define('MEDIA_HOSTNAME', 'media.hotels.nl');$/;"	d
+MEDIA_SERVER	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/settings.php	/^define('MEDIA_SERVER', HTTP_PROTO . MEDIA_HOSTNAME);$/;"	d
+MIN_COMMISSION	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/settings.php	/^define('MIN_COMMISSION', 12);$/;"	d
+MJS_VERSION	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/settings.php	/^define('MJS_VERSION', $versions['VERSIONS']['mjs_version']);$/;"	d
+MYSQL_NOW	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/settings.php	/^define('MYSQL_NOW', date('Y-m-d H:i:s', NOW));$/;"	d
+MYSQL_TODAY	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/settings.php	/^define('MYSQL_TODAY', date('Y-m-d', NOW));$/;"	d
+MYSQL_TOMORROW	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/settings.php	/^define('MYSQL_TOMORROW', date('Y-m-d', TOMORROW));$/;"	d
+Message	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Message.php	/^class Message {$/;"	c
+Mini	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Mini.php	/^class Mini {$/;"	c
+MyDateTime	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/MyDateTime.php	/^class MyDateTime extends DateTime {$/;"	c
+MyException	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/MyException.php	/^class MyException extends Exception {$/;"	c
+NOW	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/settings.php	/^define('NOW', time());$/;"	d
+NO_PROTO	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/settings.php	/^define('NO_PROTO', '\/\/');$/;"	d
+Newsletter	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Newsletter.php	/^class Newsletter extends Skeleton {$/;"	c
+OFFICE_IP	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/settings.php	/^define('OFFICE_IP', $whitelist['office']['office'][0]);$/;"	d
+PARTIAL_BOOKING_TTL	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/settings.php	/^define('PARTIAL_BOOKING_TTL', '1 DAY');$/;"	d
+PRIVATE_KEY_FILE	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/settings.php	/^define('PRIVATE_KEY_FILE', '\/etc\/apache2\/ssl\/hotelsnl_crypt_priv.pem');$/;"	d
+PRIVATE_KEY_PASSPHRASE	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/settings.php	/^define('PRIVATE_KEY_PASSPHRASE', 'OnKBOkDJx4BDb2ZWcocFfZoww4OBXw9');$/;"	d
+PUBLIC_KEY_FILE	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/settings.php	/^define('PUBLIC_KEY_FILE', '\/etc\/apache2\/ssl\/hotelsnl_crypt_pub.pem');$/;"	d
+Password	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Password.php	/^class Password implements PasswordInterface {$/;"	c
+Poi	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Poi.php	/^class Poi extends Skeleton {$/;"	c
+Province	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Province.php	/^class Province extends Skeleton {$/;"	c
+REMOTE_IP	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/settings.php	/^define('REMOTE_IP', Input::clean($remote));$/;"	d
+Ratetype	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Ratetype.php	/^class Ratetype extends Skeleton {$/;"	c
+Region	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Region.php	/^class Region extends Skeleton {$/;"	c
+Request	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Request.php	/^class Request {$/;"	c
+Room	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Room.php	/^class Room extends Skeleton {$/;"	c
+SCRIPTS_HOSTNAME	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/settings.php	/^define('SCRIPTS_HOSTNAME', $scriptsHost);$/;"	d
+SCRIPT_SERVER	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/settings.php	/^define('SCRIPT_SERVER', HTTP_PROTO . SCRIPTS_HOSTNAME);$/;"	d
+SECURE_SERVER	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/settings.php	/^define('SECURE_SERVER', 'https:\/\/' . HOST_NAME);$/;"	d
+SERVER_IP	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/settings.php	/^define('SERVER_IP', $interface);$/;"	d
+START_OF_MONTH	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/settings.php	/^define('START_OF_MONTH', date('Y-m-01', NOW));$/;"	d
+SUBDOMAIN	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/settings.php	/^define('SUBDOMAIN', Request::getInstance()->getHostnamePrefix());$/;"	d
+Satellite	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Satellite.php	/^class Satellite extends Skeleton {$/;"	c
+SearchAv	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/SearchAv.php	/^class SearchAv {$/;"	c
+SearchSettings	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/SearchSettings.php	/^class SearchSettings {$/;"	c
+SiteToCheck	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/SiteToCheck.php	/^class SiteToCheck {$/;"	c
+SitesToCheck	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/SitesToCheck.php	/^class SitesToCheck {$/;"	c
+Skeleton	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Skeleton.php	/^abstract class Skeleton {$/;"	c
+Statuslog	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Statuslog.php	/^class Statuslog {$/;"	c
+TEMPLATE_PATH	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/settings.php	/^define('TEMPLATE_PATH', '\/www\/templates\/hotelsnl\/');$/;"	d
+TIMEZONE	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/settings.php	/^define('TIMEZONE', 'Europe\/Amsterdam');$/;"	d
+TODAY	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/settings.php	/^define('TODAY', strtotime(date('Y-m-d', NOW)));$/;"	d
+TOMORROW	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/settings.php	/^define('TOMORROW', strtotime('+1 day', TODAY));$/;"	d
+TOM_TOM_API_KEY	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/settings.php	/^define('TOM_TOM_API_KEY', 'fdd08e16-1aeb-465f-bf02-da7eaaca6601');$/;"	d
+Template	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Template.php	/^class Template$/;"	c
+Text	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Text.php	/^class Text {$/;"	c
+Theme	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Theme.php	/^class Theme extends Skeleton {$/;"	c
+Url	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Url.php	/^class Url {$/;"	c
+Utilities	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Utilities.php	/^class Utilities$/;"	c
+VAT_PERCENTAGE	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/settings.php	/^define('VAT_PERCENTAGE', 21);$/;"	d
+VAT_PERCENTAGE_LOW	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/settings.php	/^define('VAT_PERCENTAGE_LOW', 6);$/;"	d
+Validation	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Validation.php	/^class Validation {$/;"	c
+__construct	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Arrdate.php	/^  public function __construct() {$/;"	f
+__construct	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Autoload.php	/^    public function __construct()$/;"	f
+__construct	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Autosuggest.php	/^    public function __construct($type, array $restrictions = array())$/;"	f
+__construct	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Availability.php	/^  public function __construct(array $params = null) {$/;"	f
+__construct	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Booking.php	/^  public function __construct() {$/;"	f
+__construct	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/BookingPartial.php	/^  public function __construct(array $data = null) {$/;"	f
+__construct	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/BootstrapAbstract.php	/^    public function __construct($autoloader = 'Autoload.php')$/;"	f
+__construct	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Btl91.php	/^  public function __construct() {$/;"	f
+__construct	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Clieop03.php	/^  public function __construct() {$/;"	f
+__construct	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Contact.php	/^  public function __construct($type, $typeId) {$/;"	f
+__construct	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Contactlog.php	/^  public function __construct() {$/;"	f
+__construct	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/DailyDeal.php	/^  private function __construct() {$/;"	f
+__construct	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/EmailParser.php	/^  public function __construct($/;"	f
+__construct	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Encryption.php	/^  private function __construct() {$/;"	f
+__construct	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Error.php	/^  public function __construct($callback = null) {$/;"	f
+__construct	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Ideal.php	/^  public function __construct() {$/;"	f
+__construct	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Image.php	/^  public function __construct($image) {$/;"	f
+__construct	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Language.php	/^  private function __construct($forcedLanguage = null) {$/;"	f
+__construct	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Mini.php	/^  public function __construct($month, $year) {$/;"	f
+__construct	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/MyDateTime.php	/^  public function __construct($time = 'now', DateTimeZone $timezone = null) {$/;"	f
+__construct	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Newsletter.php	/^  public function __construct($email = null, $pageName = null) {$/;"	f
+__construct	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Request.php	/^  public function __construct($url = null) {$/;"	f
+__construct	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Satellite.php	/^  private function __construct(array $params = null, array $include = null) {$/;"	f
+__construct	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/SearchAv.php	/^  public function __construct($/;"	f
+__construct	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/SearchSettings.php	/^  public function __construct() {$/;"	f
+__construct	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/SiteToCheck.php	/^  public function __construct($id) {$/;"	f
+__construct	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/SitesToCheck.php	/^  public function __construct() {$/;"	f
+__construct	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Statuslog.php	/^  public function __construct() {$/;"	f
+__construct	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Template.php	/^    public function __construct($callback = null)$/;"	f
+__destruct	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Request.php	/^  public function __destruct() {$/;"	f
+__get	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Arrdate.php	/^  public function __get($name) {$/;"	f
+__get	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Availability.php	/^  public function __get($name) {$/;"	f
+__get	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Booking.php	/^  public function __get($name) {$/;"	f
+__get	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/BookingPartial.php	/^  public function __get($name) {$/;"	f
+__get	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Satellite.php	/^  public function __get($name) {$/;"	f
+__get	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/SearchSettings.php	/^  public function __get($group) {$/;"	f
+__get	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/SiteToCheck.php	/^  public function __get($name) {$/;"	f
+__isset	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Availability.php	/^  public function __isset($name) {$/;"	f
+__isset	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Booking.php	/^  public function __isset($name) {$/;"	f
+__isset	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/BookingPartial.php	/^  public function __isset($name) {$/;"	f
+__set	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Arrdate.php	/^  public function __set($name, $value) {$/;"	f
+__set	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Availability.php	/^  public function __set($name, $value) {$/;"	f
+__set	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Booking.php	/^  public function __set($name, $value) {$/;"	f
+__set	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/BookingPartial.php	/^  public function __set($name, $value) {$/;"	f
+__set	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Satellite.php	/^  public function __set($name, $value) {$/;"	f
+__set	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/SearchSettings.php	/^  public function __set($name, $value) {$/;"	f
+__set	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/SiteToCheck.php	/^  public function __set($name, $value) {$/;"	f
+__toString	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Arrdate.php	/^  public function __toString() {$/;"	f
+__toString	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/BookingPartial.php	/^  public function __toString() {$/;"	f
+__toString	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/MyDateTime.php	/^  public function __toString() {$/;"	f
+__unset	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Arrdate.php	/^  public function __unset($name) {$/;"	f
+__unset	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/BookingPartial.php	/^  public function __unset($name) {$/;"	f
+_addContactInfo	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Hotel.php	/^  private function _addContactInfo(array $hotels) {$/;"	f
+_addEnd	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Btl91.php	/^  private function _addEnd() {$/;"	f
+_addEnd	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Clieop03.php	/^  private function _addEnd() {$/;"	f
+_addPayment	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Btl91.php	/^  private function _addPayment(array $payment) {$/;"	f
+_addPayment	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Clieop03.php	/^  private function _addPayment(array $payment) {$/;"	f
+_addStart	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Btl91.php	/^  private function _addStart() {$/;"	f
+_addStart	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Clieop03.php	/^  private function _addStart() {$/;"	f
+_applyOptions	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Database.php	/^  private static function _applyOptions($/;"	f
+_buildRequestStorage	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Request.php	/^  private function _buildRequestStorage($url) {$/;"	f
+_calculateTotals	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/BookingPartial.php	/^  private function _calculateTotals() {$/;"	f
+_checkAllowedToChangeDates	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Booking.php	/^  private function _checkAllowedToChangeDates(array &$newData, array $oldData) {$/;"	f
+_checkData	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Mini.php	/^  private static function _checkData(array $data, $table) {$/;"	f
+_checkEc	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Ideal.php	/^  private function _checkEc($ec) {$/;"	f
+_checkFields	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/EmailParser.php	/^  private function _checkFields() {$/;"	f
+_checkParams	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/AvailabilityData.php	/^  private static function _checkParams(array $params) {$/;"	f
+_checktrxId	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Ideal.php	/^  private function _checktrxId($trxId) {$/;"	f
+_cleanup	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/City.php	/^  private function _cleanup(array $row) {$/;"	f
+_cleanup	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Hotel.php	/^  public static function _cleanup(array $row, array $include = array()) {$/;"	f
+_cleanup	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Room.php	/^  private function _cleanup(array $row) {$/;"	f
+_cleanup	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/SearchAv.php	/^  private function _cleanup() {$/;"	f
+_cleanupByRateType	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Availability.php	/^  private function _cleanupByRateType(array $results) {$/;"	f
+_cleanupCancelPolicy	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Ratetype.php	/^  private function _cleanupCancelPolicy(array $policy, $arrival) {$/;"	f
+_cleanupDays	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Booking.php	/^  private function _cleanupDays(array $row) {$/;"	f
+_cleanupForUpdate	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/DailyDeal.php	/^  private function _cleanupForUpdate(array $updateData) {$/;"	f
+_closeHandle	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Request.php	/^  private function _closeHandle() {$/;"	f
+_cmpHotelsDistance	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/SearchAv.php	/^  private function _cmpHotelsDistance(array $a, array $b) {$/;"	f
+_cmpHotelsPriceAsc	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/SearchAv.php	/^  private function _cmpHotelsPriceAsc(array $a, array $b) {$/;"	f
+_cmpHotelsPriceDesc	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/SearchAv.php	/^  private function _cmpHotelsPriceDesc(array $a, array $b) {$/;"	f
+_cmpHotelsRank	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/SearchAv.php	/^  private function _cmpHotelsRank(array $a, array $b) {$/;"	f
+_cmpHotelsReview	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/SearchAv.php	/^  private function _cmpHotelsReview(array $a, array $b) {$/;"	f
+_constructInsert	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Database.php	/^  private static function _constructInsert($table, array $data, $strategy,$/;"	f
+_decodeJSON	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/BookingPartial.php	/^  private function _decodeJSON($data) {$/;"	f
+_defaultCallback	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Error.php	/^  private function _defaultCallback($error, $trace, $code) {$/;"	f
+_divideHotelListByCity	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/SearchAv.php	/^  private function _divideHotelListByCity() {$/;"	f
+_fetch	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Input.php	/^  private static function _fetch($/;"	f
+_fetchActiveLanguages	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Language.php	/^  private function _fetchActiveLanguages() {$/;"	f
+_fetchTypedRows	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Database.php	/^  private static function _fetchTypedRows($/;"	f
+_filterAvailable	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/SearchAv.php	/^  private function _filterAvailable() {$/;"	f
+_filterByNumPersons	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Availability.php	/^  private function _filterByNumPersons(array $results, $needCount, $numPersons,$/;"	f
+_filterCancelPolicy	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Ratetype.php	/^  private function _filterCancelPolicy(array $row, array $params = null) {$/;"	f
+_filterGuaranteeMethods	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Ratetype.php	/^  private function _filterGuaranteeMethods(array $row) {$/;"	f
+_findCurrentLanguage	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Language.php	/^  private function _findCurrentLanguage() {$/;"	f
+_forceLanguage	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Language.php	/^  private function _forceLanguage($language) {$/;"	f
+_generateEmptyCalendars	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Availability.php	/^  private static function _generateEmptyCalendars(MyDateTime $startDate) {$/;"	f
+_generateProfile	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Database.php	/^  private static function _generateProfile() {$/;"	f
+_getAvailability	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/BookingPartial.php	/^  private function _getAvailability() {$/;"	f
+_getBatchNumber	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Btl91.php	/^  private function _getBatchNumber() {$/;"	f
+_getBatchNumber	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Clieop03.php	/^  private function _getBatchNumber() {$/;"	f
+_getBookingDays	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Booking.php	/^  private function _getBookingDays($bookingId) {$/;"	f
+_getCancellationPolicies	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/SearchAv.php	/^  private function _getCancellationPolicies() {$/;"	f
+_getColumnMeta	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Database.php	/^  private static function _getColumnMeta($/;"	f
+_getCountries	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Language.php	/^  private function _getCountries() {$/;"	f
+_getDateDetails	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/DatePicker.php	/^  private static function _getDateDetails(MyDateTime $date) {$/;"	f
+_getDestinationDetails	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/SearchAv.php	/^  private function _getDestinationDetails ($destinationId, $destinationType) {$/;"	f
+_getHeaderName	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Headers.php	/^  private static function _getHeaderName(array &$header) {$/;"	f
+_getHotelIds	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/AvailabilityData.php	/^  private static function _getHotelIds($id, $type) {$/;"	f
+_getHotelIdsForChain	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/SearchAv.php	/^  private function _getHotelIdsForChain() {$/;"	f
+_getHotelIdsForCity	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/SearchAv.php	/^  private function _getHotelIdsForCity() {$/;"	f
+_getHotelIdsForInfo	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/SearchAv.php	/^  private function _getHotelIdsForInfo() {$/;"	f
+_getHotelIdsForLatLon	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/SearchAv.php	/^  private function _getHotelIdsForLatLon() {$/;"	f
+_getHotelIdsForPoi	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/SearchAv.php	/^  private function _getHotelIdsForPoi() {$/;"	f
+_getHotelIdsForProvince	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/SearchAv.php	/^  private function _getHotelIdsForProvince() {$/;"	f
+_getHotelIdsForRegion	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/SearchAv.php	/^  private function _getHotelIdsForRegion() {$/;"	f
+_getHotelIdsForTheme	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/SearchAv.php	/^  private function _getHotelIdsForTheme() {$/;"	f
+_getHotels	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/SearchAv.php	/^  private function _getHotels() {$/;"	f
+_getInstance	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Contact.php	/^  private static function _getInstance($type, $typeId) {$/;"	f
+_getRates	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/SearchAv.php	/^  private function _getRates() {$/;"	f
+_getRoomRateTypes	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/SearchAv.php	/^  private function _getRoomRateTypes() {$/;"	f
+_getStack	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/History.php	/^  private static function _getStack() {$/;"	f
+_grabParam	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/BookingPartial.php	/^  private function _grabParam($key) {$/;"	f
+_hash	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Password.php	/^  private function _hash($combined) {$/;"	f
+_input	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Html.php	/^  private static function _input($type, $name, $value, $extra = '') {$/;"	f
+_isRemovableShortlisted	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Affiliate.php	/^  private static function _isRemovableShortlisted($/;"	f
+_isValidLanguage	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Language.php	/^  private function _isValidLanguage($language) {$/;"	f
+_loadTags	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Language.php	/^  private function _loadTags(array $groups = array('common')) {$/;"	f
+_logErrors	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Ideal.php	/^  private function _logErrors() {$/;"	f
+_openHandle	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Request.php	/^  private function _openHandle() {$/;"	f
+_parseCookie	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Arrdate.php	/^  private function _parseCookie() {$/;"	f
+_parseCookie	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/SearchSettings.php	/^  private function _parseCookie() {$/;"	f
+_parseResponseHeader	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Request.php	/^  private function _parseResponseHeader() {$/;"	f
+_readBookUnchecked	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/BookingPartial.php	/^  private function _readBookUnchecked() {$/;"	f
+_reset	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Availability.php	/^  private function _reset() {$/;"	f
+_reset	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Booking.php	/^  private function _reset() {$/;"	f
+_resetPaymentToHotel	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Finance.php	/^  private static function _resetPaymentToHotel($bookingId, $idealId, $amount) {$/;"	f
+_save	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Btl91.php	/^  private function _save() {$/;"	f
+_save	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Clieop03.php	/^  private function _save() {$/;"	f
+_saveAffiliateInfo	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Booking.php	/^  private function _saveAffiliateInfo() {$/;"	f
+_saveBooking	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Booking.php	/^  private function _saveBooking() {$/;"	f
+_saveDayDetails	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Booking.php	/^  private function _saveDayDetails() {$/;"	f
+_saveGuaranteeMethod	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Booking.php	/^  private function _saveGuaranteeMethod() {$/;"	f
+_saveGuaranteeMethodTypedata	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Booking.php	/^  private function _saveGuaranteeMethodTypedata() {$/;"	f
+_saveRates	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Booking.php	/^  private function _saveRates() {$/;"	f
+_saveSatellite	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Booking.php	/^  private function _saveSatellite() {$/;"	f
+_saveServer	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Booking.php	/^  private function _saveServer() {$/;"	f
+_saveStack	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/History.php	/^  private static function _saveStack() {$/;"	f
+_selectOptions	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Html.php	/^  private static function _selectOptions(array $options, $selected = null) {$/;"	f
+_setArrival	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/BookingPartial.php	/^  private function _setArrival($date) {$/;"	f
+_setBaseLanguageUrl	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Language.php	/^  private function _setBaseLanguageUrl() {$/;"	f
+_setCookie	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/BookingPartial.php	/^  private function _setCookie() {$/;"	f
+_setCurrencies	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Language.php	/^  private function _setCurrencies() {$/;"	f
+_setDate	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Booking.php	/^  private function _setDate($name, $value) {$/;"	f
+_setDeparture	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/BookingPartial.php	/^  private function _setDeparture($date) {$/;"	f
+_setFields	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/EmailParser.php	/^  private function _setFields() {$/;"	f
+_setNights	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Availability.php	/^  private function _setNights() {$/;"	f
+_sortHotelList	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/SearchAv.php	/^  private function _sortHotelList($sortfield = null, $sortorder = null) {$/;"	f
+_sortRoomRateTypeList	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/SearchAv.php	/^  private function _sortRoomRateTypeList(array $roomRateTypeList) {$/;"	f
+_stripslashes	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Input.php	/^  private static function _stripslashes($input) {$/;"	f
+_validate	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Validation.php	/^  private static function _validate($keyName, $value) {$/;"	f
+add	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Contactlog.php	/^  public function add($bookingId, array &$newData, array $oldData) {$/;"	f
+add	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Newsletter.php	/^  public function add($email, $pageName = null) {$/;"	f
+add	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Statuslog.php	/^  public function add($bookingId, $status) {$/;"	f
+addFilterGroupValue	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/SearchSettings.php	/^  public function addFilterGroupValue($name, $value) {$/;"	f
+addMediaServer	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Image.php	/^  public function addMediaServer($server) {$/;"	f
+addMonths	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/MyDateTime.php	/^  public function addMonths($months) {$/;"	f
+addRequest	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Mini.php	/^  public static function addRequest(array $data) {$/;"	f
+affiliate	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Contact.php	/^  public static function affiliate($affiliateId) {$/;"	f
+affiliatePathExists	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Template.php	/^    private function affiliatePathExists($affiliate = null)$/;"	f
+after	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/MyDateTime.php	/^  public function after(MyDateTime $checkDate) {$/;"	f
+anchor	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Html.php	/^  public static function anchor($url, $content, array $extra = array()) {$/;"	f
+anchor	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Template.php	/^function anchor($url, $content, $extra = array())$/;"	f
+apply	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Password.php	/^  public function apply($credential) {$/;"	f
+arrayHasKeys	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Utilities.php	/^    public static function arrayHasKeys(array $array, array $keys)$/;"	f
+arrayToAttributes	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Utilities.php	/^function arrayToAttributes($input, $forceArrayKey = true, $separator = ' ', $level = 0)$/;"	f
+arrayToObject	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Utilities.php	/^    public static function arrayToObject(array $array, $castRoot = true)$/;"	f
+attributesToArray	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Utilities.php	/^function attributesToArray($attributes)$/;"	f
+before	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/MyDateTime.php	/^  public function before(MyDateTime $checkDate) {$/;"	f
+between	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/MyDateTime.php	/^  public function between(MyDateTime $start, MyDateTime $end) {$/;"	f
+booleanToYn	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Utilities.php	/^function booleanToYn($value)$/;"	f
+calculateAvailabilityData	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/BookingPartial.php	/^  public function calculateAvailabilityData($force = false) {$/;"	f
+calculateLatLonBox	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Utilities.php	/^function calculateLatLonBox(array $hotels)$/;"	f
+calculateServiceCost	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Satellite.php	/^  public static function calculateServiceCost($nights) {$/;"	f
+camelToUnderscore	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Utilities.php	/^    public static function camelToUnderscore($string)$/;"	f
+cancel	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Booking.php	/^  public function cancel($bookingId, array $data) {$/;"	f
+cancelRequest	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Mini.php	/^  public static function cancelRequest(array $data) {$/;"	f
+cancelUsage	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Mini.php	/^  public static function cancelUsage(array $data) {$/;"	f
+ccMonths	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Html.php	/^  public static function ccMonths($first = '00', $textual = false) {$/;"	f
+ccYears	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Html.php	/^  public static function ccYears($first = false, $start = null, $count = 10) {$/;"	f
+chain	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Contact.php	/^  public static function chain($chainId) {$/;"	f
+checkBankAccount	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Finance.php	/^  public static function checkBankAccount($bankaccount) {$/;"	f
+checkGroup	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Employee.php	/^  public static function checkGroup($id) {$/;"	f
+checkIbanAndBic	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Finance.php	/^  public static function checkIbanAndBic($iban, $bic) {$/;"	f
+checkNotEmpty	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Utilities.php	/^function checkNotEmpty($value)$/;"	f
+checkPermission	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Employee.php	/^  public static function checkPermission($id) {$/;"	f
+checkbox	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Html.php	/^  public static function checkbox($/;"	f
+city	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Contact.php	/^  public static function city($cityId) {$/;"	f
+clean	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Input.php	/^  public static function clean($input) {$/;"	f
+cleanBankAccount	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Finance.php	/^  public static function cleanBankAccount(&$bankaccount) {$/;"	f
+cleanBic	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Finance.php	/^  public static function cleanBic(&$bic) {$/;"	f
+cleanData	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Template.php	/^    private function cleanData($data)$/;"	f
+cleanIban	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Finance.php	/^  public static function cleanIban(&$iban) {$/;"	f
+cleanSemiColonsFromKeys	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Input.php	/^  public static function cleanSemiColonsFromKeys(array $input) {$/;"	f
+cleanup	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/DailyDeal.php	/^  public static function cleanup(array $row, array $include = null) {$/;"	f
+cleanup	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Facility.php	/^  public static function cleanup(array $row) {$/;"	f
+cleanup	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Ideal.php	/^  public function cleanup(array $row) {$/;"	f
+cleanup	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Poi.php	/^  public static function cleanup(array $row) {$/;"	f
+cleanup	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Theme.php	/^  public static function cleanup(array $row) {$/;"	f
+cleanupGet	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Booking.php	/^  public static function cleanupGet(array $row, array $include = array()) {$/;"	f
+cleanupGet	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Satellite.php	/^  public function cleanupGet(array $row, array $include) {$/;"	f
+cleanupMonthInfo	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Availability.php	/^  public static function cleanupMonthInfo(array $row) {$/;"	f
+cleanupPadLastWeek	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Availability.php	/^  public static function cleanupPadLastWeek(&$lastWeek) {$/;"	f
+cleanupRateType	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Ratetype.php	/^  public static function cleanupRateType(array $row, array $params = null) {$/;"	f
+clearCleanCookie	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Input.php	/^  public static function clearCleanCookie() {$/;"	f
+cloneExisting	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/DailyDeal.php	/^  public function cloneExisting($dealId) {$/;"	f
+constructInsert	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Database.php	/^  public static function constructInsert($table, array $data) {$/;"	f
+constructInsertIgnore	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Database.php	/^  public static function constructInsertIgnore($table, array $data) {$/;"	f
+constructInsertUpdate	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Database.php	/^  public static function constructInsertUpdate($table, array $data,$/;"	f
+constructUrl	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Url.php	/^  public static function constructUrl($/;"	f
+constructUrl	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Utilities.php	/^function constructUrl($base, array $query = array())$/;"	f
+convertCurrency	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Language.php	/^  public function convertCurrency($amount, $toCurrency, $fromCurrency = null) {$/;"	f
+cookie	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Input.php	/^  public static function cookie($keyName = null, $default = false, $xssClean = true) {$/;"	f
+createBtl91	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Finance.php	/^  public static function createBtl91(array $postData) {$/;"	f
+createClieop03	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Finance.php	/^  public static function createClieop03(array $postData) {$/;"	f
+createFile	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Btl91.php	/^  public function createFile($paymentType, array $payments) {$/;"	f
+createFile	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Clieop03.php	/^  public function createFile($paymentType, array $payments) {$/;"	f
+createPassword	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Password.php	/^  public function createPassword($value = '') {$/;"	f
+css	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Url.php	/^  public static function css($file) {$/;"	f
+dateOrNull	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/MyDateTime.php	/^  public static function dateOrNull($date) {$/;"	f
+debug	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Log.php	/^    public static function debug($message, $quiet = false)$/;"	f
+decancel	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Booking.php	/^  public function decancel(array &$newData, array $oldData) {$/;"	f
+decrypt	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Encryption.php	/^  public static function decrypt($message) {$/;"	f
+delete	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/DailyDeal.php	/^  public function delete($dealId) {$/;"	f
+deleteFromMediaServers	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Image.php	/^  public function deleteFromMediaServers($filename) {$/;"	f
+determineBankFileType	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Finance.php	/^  public static function determineBankFileType(array &$booking) {$/;"	f
+diffNights	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/MyDateTime.php	/^  public function diffNights(MyDateTime $date) {$/;"	f
+distance	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Utilities.php	/^function distance($lat1, $lon1, $lat2, $lon2, $unit)$/;"	f
+dumpJSON	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Template.php	/^    public function dumpJSON(array $data)$/;"	f
+encrypt	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Encryption.php	/^  public static function encrypt($message) {$/;"	f
+equals	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/MyDateTime.php	/^  public function equals(MyDateTime $checkDate) {$/;"	f
+error	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Ideal.php	/^  public function error() {$/;"	f
+error	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Log.php	/^    public static function error($message, $quiet = false)$/;"	f
+errorCallback	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Bootstrap.php	/^    public function errorCallback($error, $trace, $code)$/;"	f
+errorHandler	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Error.php	/^  public function errorHandler($/;"	f
+errorPage	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Error.php	/^  public static function errorPage($message, $trace, $code, $response = 404) {$/;"	f
+exceptionHandler	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Error.php	/^  public function exceptionHandler(Exception $e) {$/;"	f
+expires	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Template.php	/^    public function expires($expiry)$/;"	f
+extra	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Html.php	/^  public static function extra($extra = null) {$/;"	f
+failedValidation	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Validation.php	/^  public static function failedValidation($keyName) {$/;"	f
+failmail	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Error.php	/^  public static function failmail($/;"	f
+fetch	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/BookingPartial.php	/^  public function fetch() {$/;"	f
+files	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Input.php	/^  public static function files($keyName = null, $default = false, $xssClean = true) {$/;"	f
+filterArrayByKey	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Utilities.php	/^function filterArrayByKey(array $haystack, array $needle, $strict = true)$/;"	f
+filterArrayByKeys	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Utilities.php	/^    public static function filterArrayByKeys(array $input, array $keys)$/;"	f
+filterForSearchName	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Hotel.php	/^  public function filterForSearchName(array $hotels, $url = null) {$/;"	f
+form	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Html.php	/^  public static function form($/;"	f
+form_checkbox	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Template.php	/^function form_checkbox($name, $value, $checked = null, $extra = null)$/;"	f
+form_dropdown	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Template.php	/^function form_dropdown($name, array $options, $selected = null, $extra = null)$/;"	f
+form_hidden	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Template.php	/^function form_hidden($name, $value = null, $extra = null, $idIsName = false)$/;"	f
+form_input	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Template.php	/^function form_input($name, $value, $extra = '')$/;"	f
+form_radio	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Template.php	/^function form_radio($name, $value, $checked = null, $extra = null)$/;"	f
+form_textarea	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Template.php	/^function form_textarea($name, $value, $extra = null, $columns = 0, $rows = 0)$/;"	f
+formatBacktrace	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Log.php	/^    private static function formatBacktrace(array $trace = array())$/;"	f
+formatDate	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Language.php	/^  public function formatDate($date, $format = 'long') {$/;"	f
+formatDate	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Language.php	/^function formatDate($date, $format) {$/;"	f
+formatDistance	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Utilities.php	/^function formatDistance($distance, $meterTag = '')$/;"	f
+formatMemory	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Log.php	/^    private static function formatMemory($bytes)$/;"	f
+formatNumber	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Language.php	/^  public function formatNumber($number, $decimals) {$/;"	f
+formatNumber	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Language.php	/^function formatNumber($number, $decimals = 2) {$/;"	f
+formatPrice	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Language.php	/^  public function formatPrice($number, $showDecimals = 'auto', $html = true,$/;"	f
+formatPrice	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Language.php	/^function formatPrice($/;"	f
+formatTrace	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Utilities.php	/^function formatTrace(array $trace)$/;"	f
+gatherData	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/BookingPartial.php	/^  public function gatherData() {$/;"	f
+gatherDates	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/BookingPartial.php	/^  public function gatherDates() {$/;"	f
+generateHash	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/BookingPartial.php	/^  public static function generateHash($cookieName = null) {$/;"	f
+generic	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Contact.php	/^  public static function generic($genericId) {$/;"	f
+get	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Availability.php	/^  public function get(array $params = array(), array $include = array(),$/;"	f
+get	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/AvailabilityData.php	/^  public static function get(array $params) {$/;"	f
+get	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Booking.php	/^  public function get($/;"	f
+get	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Chain.php	/^  public function get($/;"	f
+get	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/City.php	/^  public function get($/;"	f
+get	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Contactlog.php	/^  public function get($bookingId) {$/;"	f
+get	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Country.php	/^  public function get(array $params, array $include=array(), array $options=array()) {$/;"	f
+get	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/DailyDeal.php	/^  public function get($/;"	f
+get	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Employee.php	/^  public function get($users) {$/;"	f
+get	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Facility.php	/^  public function get($/;"	f
+get	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/History.php	/^  public static function get($withHotelData = false) {$/;"	f
+get	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Hotel.php	/^  public function get($/;"	f
+get	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Ideal.php	/^  public function get($/;"	f
+get	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Input.php	/^  public static function get($keyName = null, $default = false, $xssClean = true) {$/;"	f
+get	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Poi.php	/^  public function get($/;"	f
+get	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Province.php	/^  public function get($/;"	f
+get	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Ratetype.php	/^  public function get($/;"	f
+get	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Region.php	/^  public function get($/;"	f
+get	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Room.php	/^  public function get($/;"	f
+get	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Satellite.php	/^  public function get($/;"	f
+get	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Skeleton.php	/^  public function get($/;"	f
+get	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Statuslog.php	/^  public function get($bookingId) {$/;"	f
+get	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Theme.php	/^  public function get($/;"	f
+getAddress	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Contact.php	/^  public function getAddress($city = false, $country = false) {$/;"	f
+getAffiliate	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Affiliate.php	/^  public static function getAffiliate() {$/;"	f
+getAll	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Employee.php	/^  public static function getAll($former = false) {$/;"	f
+getAspectRatio	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Image.php	/^  public function getAspectRatio() {$/;"	f
+getBookingsToPayToHotel	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Finance.php	/^  public static function getBookingsToPayToHotel() {$/;"	f
+getBreadcrumb	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Template.php	/^    public static function getBreadcrumb($/;"	f
+getByApplication	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Employee.php	/^  public static function getByApplication($application) {$/;"	f
+getByFunction	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Contact.php	/^  public function getByFunction($function, array $includes = array()) {$/;"	f
+getByGroup	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Employee.php	/^  public static function getByGroup($groupId) {$/;"	f
+getCallingFunction	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Utilities.php	/^function getCallingFunction($depth = 1)$/;"	f
+getCancellationDetails	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Booking.php	/^  public function getCancellationDetails($bookingId) {$/;"	f
+getCancellationPolicyTexts	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Language.php	/^  public function getCancellationPolicyTexts($/;"	f
+getCancellationReason	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Booking.php	/^  public function getCancellationReason($bookingId, $languageIso) {$/;"	f
+getCanonical	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Url.php	/^  public static function getCanonical($url) {$/;"	f
+getCheapestHotels	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Hotel.php	/^  public function getCheapestHotels(array $hotelIds) {$/;"	f
+getClass	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Autoload.php	/^    public function getClass($class)$/;"	f
+getClasses	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Poi.php	/^  public function getClasses($languageIso) {$/;"	f
+getClosedFilterGroups	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/SearchSettings.php	/^  public function getClosedFilterGroups($returnAsJSON = false) {$/;"	f
+getCode	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Poi.php	/^  public function getCode($code, $languageIso) {$/;"	f
+getCodeClass	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Poi.php	/^  public function getCodeClass($code) {;$/;"	f
+getCodes	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Poi.php	/^  public function getCodes($languageIso) {$/;"	f
+getCountriesListForDropdown	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Language.php	/^  public function getCountriesListForDropdown() {$/;"	f
+getCurrent	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Employee.php	/^  public static function getCurrent() {$/;"	f
+getCurrentCurrency	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Language.php	/^  public function getCurrentCurrency() {$/;"	f
+getCurrentLocale	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Language.php	/^  public function getCurrentLocale() {$/;"	f
+getData	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/EmailParser.php	/^  public function getData() {$/;"	f
+getData	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/SitesToCheck.php	/^  public function getData() {$/;"	f
+getDateDetails	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/DatePicker.php	/^  public static function getDateDetails() {$/;"	f
+getDateFormat	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Language.php	/^  public function getDateFormat($type = 'formatted') {$/;"	f
+getDates	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/DatePicker.php	/^  public static function getDates() {$/;"	f
+getDescription	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/City.php	/^  public function getDescription($cityId, $cutoff = 0) {$/;"	f
+getDestinationUrl	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Url.php	/^  public static function getDestinationUrl($id, $type = 'city') {$/;"	f
+getEmail	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Contact.php	/^  public function getEmail() {$/;"	f
+getError	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Validation.php	/^  public static function getError($keyName) {$/;"	f
+getErrors	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Finance.php	/^  public static function getErrors() {$/;"	f
+getErrors	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Log.php	/^    public static function getErrors()$/;"	f
+getFacilityList	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Hotel.php	/^  public function getFacilityList($hotelCount = null) {$/;"	f
+getFax	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Contact.php	/^  public function getFax() {$/;"	f
+getFilename	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Autoload.php	/^    private function getFilename($class)$/;"	f
+getFilterGroup	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/SearchSettings.php	/^  public function getFilterGroup($name) {$/;"	f
+getForType	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Facility.php	/^  public static function getForType($type, $id, $lang) {$/;"	f
+getFunctionByEmailName	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Contact.php	/^  public function getFunctionByEmailName($emailName) {$/;"	f
+getGroupContact	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Contact.php	/^  public static function getGroupContact($/;"	f
+getGuaranteeMethods	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Ratetype.php	/^  public function getGuaranteeMethods($ids) {$/;"	f
+getHeaders	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Headers.php	/^  public static function getHeaders() {$/;"	f
+getHomeUrl	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Language.php	/^  public function getHomeUrl() {$/;"	f
+getHostnamePrefix	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Request.php	/^  public function getHostnamePrefix() {$/;"	f
+getHostnameSuffix	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Request.php	/^  public function getHostnameSuffix() {$/;"	f
+getHotelData	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/DailyDeal.php	/^  public static function getHotelData(array $result) {$/;"	f
+getHotelFacilities	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Hotel.php	/^  public function getHotelFacilities($/;"	f
+getHotelInternetFacility	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Hotel.php	/^  public function getHotelInternetFacility($/;"	f
+getHotelParkingFacility	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Facility.php	/^  public static function getHotelParkingFacility($lang = LANGUAGE) {$/;"	f
+getHotelParkingFacility	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Hotel.php	/^  public function getHotelParkingFacility($/;"	f
+getHotelUrl	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Satellite.php	/^  public function getHotelUrl($name, $hotelId, $fullUrl = false) {$/;"	f
+getHoteldata	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Hotel.php	/^  public function getHoteldata($/;"	f
+getHtmlContent	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/EmailParser.php	/^  public function getHtmlContent() {$/;"	f
+getInstance	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Arrdate.php	/^  public static function getInstance() {$/;"	f
+getInstance	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Availability.php	/^  public static function getInstance() {$/;"	f
+getInstance	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Booking.php	/^  public static function getInstance() {$/;"	f
+getInstance	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/BookingPartial.php	/^  public static function getInstance() {$/;"	f
+getInstance	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Chain.php	/^  public static function getInstance() {$/;"	f
+getInstance	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/City.php	/^  public static function getInstance() {$/;"	f
+getInstance	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Contactlog.php	/^  public static function getInstance() {$/;"	f
+getInstance	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Country.php	/^  public static function getInstance() {$/;"	f
+getInstance	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/DailyDeal.php	/^  public static function getInstance() {$/;"	f
+getInstance	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Facility.php	/^  public static function getInstance() {$/;"	f
+getInstance	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Finance.php	/^  public static function getInstance() {$/;"	f
+getInstance	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Hotel.php	/^  public static function getInstance() {$/;"	f
+getInstance	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Ideal.php	/^  public static function getInstance() {$/;"	f
+getInstance	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Language.php	/^  public static function getInstance($forcedLanguage = null) {$/;"	f
+getInstance	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Poi.php	/^  public static function getInstance() {$/;"	f
+getInstance	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Province.php	/^  public static function getInstance() {$/;"	f
+getInstance	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Ratetype.php	/^  public static function getInstance() {$/;"	f
+getInstance	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Region.php	/^  public static function getInstance() {$/;"	f
+getInstance	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Request.php	/^  public static function getInstance($url = null) {$/;"	f
+getInstance	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Room.php	/^  public static function getInstance() {$/;"	f
+getInstance	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Satellite.php	/^  public static function getInstance($/;"	f
+getInstance	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/SearchSettings.php	/^  public static function getInstance() {$/;"	f
+getInstance	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Statuslog.php	/^  public static function getInstance() {$/;"	f
+getInstance	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Template.php	/^    public static function getInstance($callback = null)$/;"	f
+getInstance	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Theme.php	/^  public static function getInstance() {$/;"	f
+getInterval	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Log.php	/^    private static function getInterval()$/;"	f
+getInvoice	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Finance.php	/^  public static function getInvoice(array $options) {$/;"	f
+getItems	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Autosuggest.php	/^    public function getItems()$/;"	f
+getJSON	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/SearchAv.php	/^  public function getJSON() {$/;"	f
+getLabel	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Affiliate.php	/^  public static function getLabel() {$/;"	f
+getLanguageIsos	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Language.php	/^  public static function getLanguageIsos() {$/;"	f
+getLanguageList	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Language.php	/^  public function getLanguageList() {$/;"	f
+getLanguages	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Language.php	/^  public function getLanguages($quote = false) {$/;"	f
+getListForCountryUrl	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/City.php	/^  public function getListForCountryUrl($country = null) {$/;"	f
+getLocaleList	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Language.php	/^  public function getLocaleList() {$/;"	f
+getMediaServer	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Url.php	/^  public static function getMediaServer($id = null) {$/;"	f
+getMediaServers	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Image.php	/^  public function getMediaServers() {$/;"	f
+getMissedDeals	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/DailyDeal.php	/^  public function getMissedDeals($amount = 3) {$/;"	f
+getMonthInfo	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Availability.php	/^  public function getMonthInfo(array $binds) {$/;"	f
+getNearbyHotels	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Hotel.php	/^  public static function getNearbyHotels($/;"	f
+getOverviewData	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Mini.php	/^  public function getOverviewData() {$/;"	f
+getPageTopics	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Language.php	/^  public function getPageTopics(array $options = array(), $keyArray = null) {$/;"	f
+getPageTopicsReverse	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Language.php	/^  public function getPageTopicsReverse(array $options = array()) {$/;"	f
+getParameters	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Request.php	/^  public function getParameters() {$/;"	f
+getPassword	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Password.php	/^  public function getPassword() {$/;"	f
+getPhone	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Contact.php	/^  public function getPhone() {$/;"	f
+getPromo	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/DailyDeal.php	/^  public static function getPromo() {$/;"	f
+getProxyCityPoiIds	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Poi.php	/^  public function getProxyCityPoiIds($/;"	f
+getProxyHotelPoiIds	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Poi.php	/^  public function getProxyHotelPoiIds($/;"	f
+getProxyPoiPoiIds	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Poi.php	/^  public function getProxyPoiPoiIds($/;"	f
+getRanges	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/DatePicker.php	/^  public static function getRanges() {$/;"	f
+getRateTypeIds	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/SearchAv.php	/^  public function getRateTypeIds() {$/;"	f
+getRatetypeData	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/DailyDeal.php	/^  public static function getRatetypeData(array $row) {$/;"	f
+getRequests	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Mini.php	/^  public function getRequests() {$/;"	f
+getResults	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/SearchAv.php	/^  public function getResults() {$/;"	f
+getReview	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Hotel.php	/^  public function getReview($/;"	f
+getSingle	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Skeleton.php	/^  public function getSingle($/;"	f
+getSubPageTopics	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Language.php	/^  public function getSubPageTopics() {$/;"	f
+getSubPageTopicsReverse	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Language.php	/^  public function getSubPageTopicsReverse() {$/;"	f
+getSubject	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/EmailParser.php	/^  public function getSubject() {$/;"	f
+getTags	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Language.php	/^  public function getTags($groups = array('common')) {$/;"	f
+getTemplateAffiliate	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Affiliate.php	/^  public static function getTemplateAffiliate() {$/;"	f
+getTemplateFilename	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Template.php	/^    private function getTemplateFilename($template, $affiliate = '')$/;"	f
+getTemplatePath	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Template.php	/^    public function getTemplatePath()$/;"	f
+getTextContent	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/EmailParser.php	/^  public function getTextContent() {$/;"	f
+getTopics	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Language.php	/^  public function getTopics() {$/;"	f
+getTotalPrice	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Availability.php	/^  public function getTotalPrice($hotelId, $roomId, $rateTypeId) {$/;"	f
+getTransactionByBookId	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Ideal.php	/^  public function getTransactionByBookId($bookingId, $getExpired = false) {$/;"	f
+getTranslatedUrls	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Language.php	/^  public function getTranslatedUrls($url) {$/;"	f
+getTriggeredAt	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Log.php	/^    public static function getTriggeredAt($depth = 1)$/;"	f
+getUnencrypted	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Password.php	/^  public function getUnencrypted() {$/;"	f
+getUrlParameters	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Utilities.php	/^function getUrlParameters()$/;"	f
+get_media_server	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Template.php	/^function get_media_server($id = null)$/;"	f
+grantRequest	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Mini.php	/^  public static function grantRequest(array $data) {$/;"	f
+hasErrors	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Finance.php	/^  public static function hasErrors() {$/;"	f
+hidden	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Html.php	/^  public static function hidden($/;"	f
+hotel	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Contact.php	/^  public static function hotel($hotelId) {$/;"	f
+hotelPriorities	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Hotel.php	/^  public function hotelPriorities($label) {$/;"	f
+htmlentities	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Html.php	/^  public static function htmlentities($string) {$/;"	f
+htmlspecialchars	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Html.php	/^  public static function htmlspecialchars($string) {$/;"	f
+http_response_code	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Utilities.php	/^    function http_response_code($code = null)$/;"	f
+img	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Html.php	/^  public static function img($src, $alt, array $extra = array()) {$/;"	f
+info	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Log.php	/^    public static function info($message, $quiet = false)$/;"	f
+init	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Bootstrap.php	/^    public function init()$/;"	f
+input	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Html.php	/^  public static function input($name, $value, $extra = null) {$/;"	f
+insert	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/DailyDeal.php	/^  public function insert(array $insertData) {$/;"	f
+insert	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Headers.php	/^  public static function insert(array $data) {$/;"	f
+insert	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Poi.php	/^  public function insert(array $data) {$/;"	f
+intro	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Log.php	/^    public static function intro($verbose = false)$/;"	f
+isDoubleBooking	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/BookingPartial.php	/^  public function isDoubleBooking() {$/;"	f
+isFatal	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Error.php	/^  public static function isFatal($errorCode) {$/;"	f
+isHex	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Utilities.php	/^function isHex($str)$/;"	f
+isNumericArray	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Utilities.php	/^function isNumericArray($array)$/;"	f
+isValidCurrency	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Language.php	/^  public function isValidCurrency($currency) {$/;"	f
+issuerRequest	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Ideal.php	/^  public function issuerRequest() {$/;"	f
+js	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Url.php	/^  public static function js($file) {$/;"	f
+keyArray	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Utilities.php	/^    public static function keyArray(array $array, $keyname = 'id')$/;"	f
+keyArray	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Utilities.php	/^function keyArray(array $array, $keyname = 'id')$/;"	f
+levelInGroup	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Error.php	/^  public static function levelInGroup($level, $group) {$/;"	f
+log	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Log.php	/^    private static function log($message, $level = LOG_DEBUG, $quiet = false)$/;"	f
+logChanges	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Booking.php	/^  public function logChanges($id, array $newData, array $oldData) {$/;"	f
+makeThumbnail	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Image.php	/^  public function makeThumbnail($size) {$/;"	f
+makeTransactionAndRedirect	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Ideal.php	/^  public function makeTransactionAndRedirect(array $booking, $issuerID,$/;"	f
+me	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Log.php	/^    public static function me($message = '', $quiet = false)$/;"	f
+media	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Url.php	/^  public static function media($path) {$/;"	f
+memory	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Log.php	/^    public static function memory($return = false)$/;"	f
+minify	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Template.php	/^    public static function minify($buffer)$/;"	f
+myself	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Log.php	/^    private static function myself($addLevel = 0)$/;"	f
+newHash	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Utilities.php	/^    public static function newHash()$/;"	f
+numerificate	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Utilities.php	/^function numerificate($data, $forceConversion = false)$/;"	f
+numerificateRecursive	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Utilities.php	/^function numerificateRecursive(array $array)$/;"	f
+parseTemplate	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/EmailParser.php	/^  public function parseTemplate() {$/;"	f
+parseTranslatableUrl	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Language.php	/^  public function parseTranslatableUrl($url) {$/;"	f
+plural	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Text.php	/^  public static function plural($/;"	f
+post	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Input.php	/^  public static function post($keyName = null, $default = false, $xssClean = true) {$/;"	f
+post	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Request.php	/^  public function post($data, $send = true) {$/;"	f
+prepareUpdatePriceData	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Booking.php	/^  public function prepareUpdatePriceData(array &$newData, array $oldData) {$/;"	f
+processBookingsToPayToHotel	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Finance.php	/^  public static function processBookingsToPayToHotel(array $postData) {$/;"	f
+profile	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Database.php	/^  public static function profile($html = true) {$/;"	f
+profileJSON	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Database.php	/^  public static function profileJSON() {$/;"	f
+province	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Contact.php	/^  public static function province($provinceId) {$/;"	f
+push	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/History.php	/^  public static function push($hotelID) {$/;"	f
+quote	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Html.php	/^  public static function quote($string, $quoteChar = "'") {$/;"	f
+radio	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Html.php	/^  public static function radio($/;"	f
+realtime	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Contact.php	/^  public static function realtime($realtimeId) {$/;"	f
+redirect	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Url.php	/^  public static function redirect($url, $status = 302, $noCache = false) {$/;"	f
+redirect	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Utilities.php	/^function redirect($url, $status = 302, $noCache = false)$/;"	f
+redirectToHotelList	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Url.php	/^  public static function redirectToHotelList($id, $type = 'city') {$/;"	f
+redirectToSearchAv	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Url.php	/^  public static function redirectToSearchAv($/;"	f
+redirectToSearchAv	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Utilities.php	/^function redirectToSearchAv($destinationName, $destinationType = 'city')$/;"	f
+refresh	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Request.php	/^  public function refresh() {$/;"	f
+register	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Autoload.php	/^    protected function register()$/;"	f
+registerAutoloadMap	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Autoload.php	/^    protected function registerAutoloadMap()$/;"	f
+remoteFileExists	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Image.php	/^  public function remoteFileExists($filename) {$/;"	f
+remove	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Affiliate.php	/^  public static function remove($forTemplate = false) {$/;"	f
+remove	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Arrdate.php	/^  public function remove() {$/;"	f
+removeAccents	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Utilities.php	/^function removeAccents(array &$values)$/;"	f
+removeCookie	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/BookingPartial.php	/^  public static function removeCookie() {$/;"	f
+removeEmptyArrayValues	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Utilities.php	/^    public static function removeEmptyArrayValues($/;"	f
+removeEmptyArrayValues	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Utilities.php	/^function removeEmptyArrayValues(array $array, $removeAllFalsies = false)$/;"	f
+removeExpiredPartials	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/BookingPartial.php	/^  public function removeExpiredPartials($interval = PARTIAL_BOOKING_TTL) {$/;"	f
+removeInvisibleCharacters	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Input.php	/^  public static function removeInvisibleCharacters($str, $urlEncoded = true) {$/;"	f
+removeMediaServer	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Image.php	/^  public function removeMediaServer($server) {$/;"	f
+request	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Input.php	/^  public static function request($keyName = null, $default = false, $xssClean = true) {$/;"	f
+reset	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/BookingPartial.php	/^  public function reset() {$/;"	f
+resetBookingData	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/BookingPartial.php	/^  public function resetBookingData() {$/;"	f
+resetErrors	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Finance.php	/^  public static function resetErrors() {$/;"	f
+resizeTo	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Image.php	/^  public function resizeTo($width, $height) {$/;"	f
+resizeToHeight	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Image.php	/^  public function resizeToHeight($height) {$/;"	f
+resizeToWidth	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Image.php	/^  public function resizeToWidth($width) {$/;"	f
+responseBody	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Request.php	/^  public function responseBody() {$/;"	f
+responseCode	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Request.php	/^  public function responseCode() {$/;"	f
+responseHead	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Request.php	/^  public function responseHead() {$/;"	f
+responseText	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Request.php	/^  public function responseText() {$/;"	f
+responseTime	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Request.php	/^  public function responseTime() {$/;"	f
+responseVersion	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Request.php	/^  public function responseVersion() {$/;"	f
+runQuery	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Database.php	/^  public static function runQuery($/;"	f
+runQuery	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Skeleton.php	/^  protected function runQuery($/;"	f
+save	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Arrdate.php	/^  public function save() {$/;"	f
+save	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Booking.php	/^  public function save() {$/;"	f
+save	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/BookingPartial.php	/^  public function save() {$/;"	f
+save	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/SearchSettings.php	/^  public function save() {$/;"	f
+saveToFile	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Image.php	/^  public function saveToFile($filename) {$/;"	f
+select	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Html.php	/^  public static function select($/;"	f
+sendContentType	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Template.php	/^    public function sendContentType($/;"	f
+sendMessage	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Message.php	/^  public static function sendMessage(array $options) {$/;"	f
+sendNocacheHeaders	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Template.php	/^    public function sendNocacheHeaders($noStore = false)$/;"	f
+sendOpenCreditBills	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Finance.php	/^  public static function sendOpenCreditBills() {$/;"	f
+separator	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Log.php	/^    public static function separator($message = '')$/;"	f
+server	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Input.php	/^  public static function server($keyName = null, $default = false, $xssClean = true) {$/;"	f
+setActiveId	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Contact.php	/^  public function setActiveId($id) {$/;"	f
+setArrival	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Availability.php	/^  public function setArrival($arrival, $skipDepartureCheck = false) {$/;"	f
+setCache	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/EmailParser.php	/^  public function setCache($cache) {$/;"	f
+setCurrency	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Availability.php	/^  public function setCurrency($newCurrency) {$/;"	f
+setCurrency	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Language.php	/^  public function setCurrency($currency) {$/;"	f
+setCurrency	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/SearchAv.php	/^  public function setCurrency($currency = null) {$/;"	f
+setCurrentImage	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Image.php	/^  public function setCurrentImage($image) {$/;"	f
+setData	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/BookingPartial.php	/^  public function setData(array $data) {$/;"	f
+setData	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/EmailParser.php	/^  public function setData(array $data) {$/;"	f
+setDates	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Availability.php	/^  public function setDates(array $params) {$/;"	f
+setDates	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/DatePicker.php	/^  public static function setDates(MyDateTime $arrival, MyDateTime $departure) {$/;"	f
+setDeparture	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Availability.php	/^  public function setDeparture($departure) {$/;"	f
+setExample	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/EmailParser.php	/^  public function setExample($example) {$/;"	f
+setFacilities	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/SearchAv.php	/^  public function setFacilities(array $facilities) {$/;"	f
+setItems	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Autosuggest.php	/^    private function setItems()$/;"	f
+setJSCallbackName	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/SearchAv.php	/^  public function setJSCallbackName($callback) {$/;"	f
+setLanguageIso	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/EmailParser.php	/^  public function setLanguageIso($languageIso) {$/;"	f
+setLatLon	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/SearchAv.php	/^  public function setLatLon($lat, $lon, $radius = 10) {$/;"	f
+setName	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/EmailParser.php	/^  public function setName($name) {$/;"	f
+setNumPersons	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Availability.php	/^  public function setNumPersons($numPersons) {$/;"	f
+setParams	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Availability.php	/^  public function setParams(array $params) {$/;"	f
+setQueryAffiliates	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Autosuggest.php	/^    private function setQueryAffiliates()$/;"	f
+setQueryChains	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Autosuggest.php	/^    private function setQueryChains()$/;"	f
+setQueryCities	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Autosuggest.php	/^    private function setQueryCities()$/;"	f
+setQueryContactGroups	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Autosuggest.php	/^    private function setQueryContactGroups()$/;"	f
+setQueryCountries	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Autosuggest.php	/^    private function setQueryCountries()$/;"	f
+setQueryHotels	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Autosuggest.php	/^    private function setQueryHotels()$/;"	f
+setQueryPois	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Autosuggest.php	/^    private function setQueryPois()$/;"	f
+setQueryProvinces	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Autosuggest.php	/^    private function setQueryProvinces()$/;"	f
+setQueryRealtimeProviders	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Autosuggest.php	/^    private function setQueryRealtimeProviders()$/;"	f
+setQueryRegions	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Autosuggest.php	/^    private function setQueryRegions()$/;"	f
+setQueryThemes	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Autosuggest.php	/^    private function setQueryThemes()$/;"	f
+setReceiver	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/EmailParser.php	/^  public function setReceiver($receiver) {$/;"	f
+setReceiverId	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/EmailParser.php	/^  public function setReceiverId($receiverId) {$/;"	f
+setSort	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/SearchAv.php	/^  public function setSort($sortfield = null, $sortorder = null) {$/;"	f
+setStars	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/SearchAv.php	/^  public function setStars(array $stars) {$/;"	f
+setTemplateAffiliate	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Affiliate.php	/^  public static function setTemplateAffiliate($affiliate) {$/;"	f
+setTemplatePath	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Template.php	/^    public function setTemplatePath($path)$/;"	f
+setTimeout	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Request.php	/^  public function setTimeout($timeout = 2) {$/;"	f
+setToEndOfMonth	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/MyDateTime.php	/^  public function setToEndOfMonth() {$/;"	f
+setToStartOfMonth	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/MyDateTime.php	/^  public function setToStartOfMonth() {$/;"	f
+setToStartOfQuarter	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/MyDateTime.php	/^  public function setToStartOfQuarter() {$/;"	f
+setUrl	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Request.php	/^  public function setUrl($url = null) {$/;"	f
+shouldLog	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Log.php	/^    private static function shouldLog($level)$/;"	f
+shutdownHandler	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Error.php	/^  public static function shutdownHandler () {$/;"	f
+splitAfterParagraph	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Utilities.php	/^function splitAfterParagraph($description, $cutoff = 0)$/;"	f
+startSearch	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/SearchAv.php	/^  public function startSearch() {$/;"	f
+statusRequest	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Ideal.php	/^  public function statusRequest($transactionId) {$/;"	f
+store	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/SiteToCheck.php	/^  public function store() {$/;"	f
+storeAffiliateLabelCombo	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Affiliate.php	/^  public static function storeAffiliateLabelCombo() {$/;"	f
+storeData	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Affiliate.php	/^  public static function storeData() {$/;"	f
+strftime	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/MyDateTime.php	/^  public function strftime($format) {$/;"	f
+stringReplace	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Utilities.php	/^    public static function stringReplace($subject, array $replacements)$/;"	f
+stringToUrl	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Url.php	/^  public static function stringToUrl($/;"	f
+submit	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Html.php	/^  public static function submit($label, array $extra) {$/;"	f
+tag	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Language.php	/^  public static function tag($group, $tag,$/;"	f
+textarea	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Html.php	/^  public static function textarea($/;"	f
+timestamp	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Log.php	/^    public static function timestamp($message, $return = false)$/;"	f
+toArray	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Arrdate.php	/^  public function toArray() {$/;"	f
+toArray	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Booking.php	/^  public function toArray() {$/;"	f
+toArray	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/BookingPartial.php	/^  public function toArray() {$/;"	f
+transactionRequest	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Ideal.php	/^  public function transactionRequest($id, $description, $amount, $issuerId,$/;"	f
+translateFunction	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Contact.php	/^  public static function translateFunction($function) {$/;"	f
+translatedDestination	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Language.php	/^  public function translatedDestination($destination, $type, $lang = null) {$/;"	f
+truncate	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Utilities.php	/^function truncate($string, $length, $suffix = '&hellip;', $cutAtWord = false)$/;"	f
+truncateWords	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Utilities.php	/^function truncateWords($string, $length, $suffix = '&hellip;')$/;"	f
+undelete	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/DailyDeal.php	/^  public function undelete($dealId) {$/;"	f
+underscoreToCamel	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Utilities.php	/^    public static function underscoreToCamel($string)$/;"	f
+update	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Booking.php	/^  public function update($id, array $data = null) {$/;"	f
+update	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/DailyDeal.php	/^  public function update($id, array $updateData) {$/;"	f
+update	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Poi.php	/^  public function update(array $pois) {$/;"	f
+updateAvailability	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Booking.php	/^  public function updateAvailability(array $newData, array $oldData) {$/;"	f
+updateCode	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Poi.php	/^  public function updateCode($code, $maxListings) {$/;"	f
+updateDonebookingDetailPerDay	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Booking.php	/^  public function updateDonebookingDetailPerDay($/;"	f
+uploadToMediaServers	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Image.php	/^  public function uploadToMediaServers($filename) {$/;"	f
+url	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Html.php	/^  public static function url($urlPart = '') {$/;"	f
+url	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Template.php	/^function url($urlPart = '')$/;"	f
+utf8ToAscii	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Utilities.php	/^function utf8ToAscii($string)$/;"	f
+validateDates	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Arrdate.php	/^  public static function validateDates($arrival = null, $departure = null) {$/;"	f
+validateTransaction	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Ideal.php	/^  public function validateTransaction($trxId, $ec) {$/;"	f
+view	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Template.php	/^    public function view($/;"	f
+viewAffiliate	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Template.php	/^    public function viewAffiliate($template, array $data = null)$/;"	f
+viewString	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Template.php	/^    public function viewString($/;"	f
+warn	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Log.php	/^    public static function warn($message, $quiet = false)$/;"	f
+ynToBoolean	/Volumes/home/repos/hotelmodules/PHPClasses/php_rewritten/Utilities.php	/^function ynToBoolean($value)$/;"	f
