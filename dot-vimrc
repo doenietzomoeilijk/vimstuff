@@ -66,7 +66,10 @@ set eadirection=hor
 set splitright
 
 " Resize windows on metawindow resize
-autocmd VimResized * exe "normal! \<c-w>="
+augroup Resize
+  autocmd!
+  autocmd VimResized * exe "normal! \<c-w>="
+augroup END
 
 " For browser weenies
 " nnoremap <space> 
@@ -245,7 +248,7 @@ augroup Vimrc
   autocmd!
   autocmd BufWritePost $MYVIMRC source $MYVIMRC | call Pl#ReloadColorscheme() | exec 'echom "vimrc reloaded after save."'
   " Setting keywordprg to blank leads to vim using :help instead.
-  autocmd FileType vim setlocal keywordprg=
+  autocmd FileType vim setlocal keywordprg= ts=2 sw=2
 augroup END
 
 noremap <leader>vv :vsplit $MYVIMRC<CR>
