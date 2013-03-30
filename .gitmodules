@@ -113,3 +113,6 @@
 [submodule "dot-vim/bundle/vim-php-doc"]
 	path = dot-vim/bundle/vim-php-doc
 	url = https://github.com/teranex/Vim-PHP-Doc.git
+[submodule "dot-vim/bundle/vim-expand-region"]
+	path = dot-vim/bundle/vim-expand-region
+	url = git://github.com/terryma/vim-expand-region.git
