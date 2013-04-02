@@ -1,0 +1,44 @@
+snippet /* "Docblock"
+/**
+ * ${1}
+ */
+endsnippet
+
+snippet php "PHP File"
+<?php
+/**
+ * ${1:A short description of what this file does.}
+ *
+ * @package ${2:Packagename}
+ * @subpackage ${3:Subpackage}
+ * @copyright `date +%Y` ${4:Max Roeleveld}
+ */
+
+endsnippet
+
+snippet class "Class" !b
+/**
+ * Class ${1:`!p snip.rv=snip.fn.capitalize().split('.')[0]`}
+ */
+class $1
+{
+    $0
+}
+endsnippet
+
+snippet fun "PHP Function" !b
+/**
+ * ${4:Brief description.}
+ * 
+ * ${5}@return ${6:void}
+ */
+${1}function ${2:functionName}(${3})
+{
+    ${7}
+}
+
+endsnippet
+
+snippet fun "PHP anonymous function"
+function (${1})${2: use (${3})} {${4}}
+endsnippet

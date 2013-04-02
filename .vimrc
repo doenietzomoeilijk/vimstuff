@@ -7,6 +7,10 @@ execute pathogen#infect()
 execute pathogen#helptags()
 " }}}
 
+" UltiSnips {{{
+let g:UltiSnipsEditSplit="vertical"
+" }}}
+
 " Powerline {{{
 let g:Powerline_symbols="fancy"
 set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
