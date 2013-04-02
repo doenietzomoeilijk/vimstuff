@@ -1,4 +1,5 @@
 " vim: set filetype=vim foldmethod=marker foldlevel=1 et tw=78:"{{{
+set encoding=utf-8
 
 " Pathogen {{{
 " runtime ~/.vim/bundle/vim-pathogen/autoload/pathogen.vim
@@ -7,6 +8,7 @@ execute pathogen#helptags()
 " }}}
 
 " Powerline {{{
+let g:Powerline_symbols="fancy"
 set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
 " }}}
 
