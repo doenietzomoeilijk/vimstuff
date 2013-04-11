@@ -272,3 +272,10 @@ augroup stripwhite
     autocmd BufWritePre *.{php,py,pl,js,css,styl,less,html,htmljinja,twig} call StripTrailingWhite()
 augroup END
 " }}}
+
+" End the bell terror {{{
+set noeb vb t_vb=
+augroup NoVisualBellFluff
+    au GUIEnter * set vb t_vb=
+augroup END
+" }}}
