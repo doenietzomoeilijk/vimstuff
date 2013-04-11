@@ -42,3 +42,13 @@ endsnippet
 snippet fun "PHP anonymous function"
 function (${1})${2: use (${3})} {${4}}
 endsnippet
+
+snippet var "Class property" !b
+/**
+ * ${4:Variable description.}
+ *
+ * @var ${2:type} $${3:varname}
+ */
+${1:private|public|protected} $3${5: = initial value};
+
+endsnippet

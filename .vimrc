@@ -21,12 +21,13 @@ let g:ctrlp_use_caching=1
 let g:ctrlp_cmd='CtrlPMixed'
 let g:ctrlp_working_path_mode='c'
 let g:ctrlp_custom_ignore={
-  \ 'dir':  '\v[\/]\.(git|hg|svn|yardoc)$',
-  \ 'file': '\v\.(exe|so|dll)$',
+  \ 'dir':  '\.(git|hg|svn|yardoc)\/',
+  \ 'file': '\.(exe|so|dll)$',
   \ }
 let g:ctrlp_by_filename=1
 let g:ctrlp_max_files = 20000
 let g:ctrlp_max_depth = 40
+let g:ctrlp_show_hidden = 0
 
 nnoremap <Leader>b :CtrlPBuffer<CR>
 nnoremap <Leader>m :CtrlPMRUFiles<CR>
@@ -42,7 +43,7 @@ let g:snips_company="Hotels.nl"
 " }}}
 
 " Syntastic {{{
-let g:syntastic_phpcs_conf="--standard=Hotelsnl --tab-width=2"
+let g:syntastic_phpcs_conf="--standard=PSR2"
 noremap <leader>st :SyntasticToggleMode<CR>
 noremap <leader>sc :SyntasticCheck<CR>
 noremap <leader>se :Errors<CR>
@@ -123,10 +124,12 @@ set shiftround
 
 " Movement {{{
 " Quick jumping between splits and buffers
-noremap <C-J> <C-W>j
-noremap <C-K> <C-W>k
-noremap <C-H> <C-W>h
-noremap <C-L> <C-W>l
+nnoremap <C-J> <C-W>j
+nnoremap <C-K> <C-W>k
+nnoremap <C-H> <C-W>h
+nnoremap <C-L> <C-W>l
+nnoremap <C-PageDown> :bn<CR>
+nnoremap <C-PageUp> :bp<CR>
 
 " For everyone who uses wrap
 nnoremap j gj
@@ -221,9 +224,10 @@ augroup Filetypes
   autocmd BufRead,BufNewFile,BufEnter *.json setlocal ft=javascript
   autocmd BufRead,BufNewFile,BufEnter *.ejs setlocal ft=javascript
   autocmd BufRead,BufNewFile,BufEnter *.md setlocal ft=markdown
+  autocmd BufRead,BufNewFile,BufEnter *.twig setlocal ft=htmljinja
   autocmd BufRead,BufNewFile,BufEnter *.tt2 set ft=tt2html
   autocmd BufRead,BufNewFile,BufEnter .tmux.conf*,tmux.conf* set ft=tmux
-  autocmd FileType markdown setlocal shiftwidth=2 tabstop=2 " formatoptions+=t
+  autocmd FileType markdown,stylus,html,htmljinja setlocal shiftwidth=2 tabstop=2 " formatoptions+=t
 augroup END
 
 " PHP {{{
@@ -256,3 +260,15 @@ augroup END
 noremap <Leader>vv :vsplit $MYVIMRC<CR>
 noremap <Leader>V :source $MYVIMRC<CR>:filetype detect<CR>:echom 'vimrc reloaded'<CR>
 " }}}"}}}
+
+" On Save Whitespace removal {{{
+function! StripTrailingWhite()
+    let l:winview = winsaveview()
+    silent! %s/\s\+$//
+    call winrestview(l:winview)
+endfunction
+augroup stripwhite
+    autocmd!
+    autocmd BufWritePre *.{php,py,pl,js,css,styl,less,html,htmljinja,twig} call StripTrailingWhite()
+augroup END
+" }}}
