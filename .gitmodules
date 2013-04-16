@@ -10,10 +10,10 @@
 	path = .vim/bundle/vim-fugitive
 	url = git://github.com/tpope/vim-fugitive.git
   ignore = dirty
-[submodule ".vim/bundle/powerline"]
-	path = .vim/bundle/powerline
-	url = git://github.com/Lokaltog/powerline.git
-  ignore = dirty
+# [submodule ".vim/bundle/powerline"]
+# 	path = .vim/bundle/powerline
+# 	url = git://github.com/Lokaltog/powerline.git
+#   ignore = dirty
 [submodule ".vim/bundle/ctrlp"]
 	path = .vim/bundle/ctrlp
 	url = git://github.com/kien/ctrlp.vim.git
@@ -37,3 +37,6 @@
 [submodule ".vim/bundle/vim-stylus"]
 	path = .vim/bundle/vim-stylus
 	url = https://github.com/wavded/vim-stylus.git
+[submodule ".vim/bundle/vim-powerline"]
+	path = .vim/bundle/vim-powerline
+	url = https://github.com/Lokaltog/vim-powerline
