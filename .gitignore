@@ -4,3 +4,6 @@
 .hg
 .vim/tags/*
 
+olddotvim
+oldgitmodules
+olddotvimrc
