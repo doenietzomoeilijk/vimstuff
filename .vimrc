@@ -227,7 +227,7 @@ augroup Filetypes
   autocmd BufRead,BufNewFile,BufEnter *.twig setlocal ft=htmljinja
   autocmd BufRead,BufNewFile,BufEnter *.tt2 set ft=tt2html
   autocmd BufRead,BufNewFile,BufEnter .tmux.conf*,tmux.conf* set ft=tmux
-  autocmd FileType markdown,stylus,html,htmljinja setlocal shiftwidth=2 tabstop=2 " formatoptions+=t
+  autocmd FileType markdown,stylus,html,htmljinja,javascript setlocal shiftwidth=2 tabstop=2 " formatoptions+=t
 augroup END
 
 " PHP {{{
