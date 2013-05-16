@@ -58,7 +58,7 @@ hi CursorLine ctermbg=238 cterm=NONE
 
 " A nice EOL guide column.
 if exists("&colorcolumn")
-  set colorcolumn=80
+  set colorcolumn=+1,+21
   hi ColorColumn ctermbg=237 guibg=#232526
 endif
 

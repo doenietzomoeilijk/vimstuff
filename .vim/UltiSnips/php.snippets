@@ -22,7 +22,106 @@ snippet class "Class" !b
  */
 class $1
 {
-    $0
+}
+endsnippet
+
+snippet classi "Class iterator" !b
+/**
+ * Class ${1:`!p snip.rv=snip.fn.capitalize().split('.')[0]`}
+ */
+class $1 implements \Iterator
+{
+    /**
+     * Table name.
+     *
+     * @var string $table
+     */
+    private $table = '${2}';
+
+    /**
+     * Database holder.
+     *
+     * @var \Doctrine\DBAL\Connection $db
+     */
+    private $db;
+
+    /**
+     * Statement holder.
+     *
+     * @var \Doctrine\DBAL\Driver\PDOStatement type $stmt
+     */
+    private $stmt;
+
+    /**
+     * Holder for data.
+     *
+     * @var array $array
+     */
+    private $array = array();
+
+    /**
+     * Pointer for data array.
+     *
+     * @var integer $position
+     */
+    private $position = 0;
+
+    /**
+     * Constructor.
+     *
+     * @param \Doctrine\DBAL\Connection $db
+     */
+    public function __construct(\Doctrine\DBAL\Connection $db)
+    {
+        $this->db = $db;
+    }
+
+    public function rewind()
+    {
+        $this->position = 0;
+    }
+
+    public function current()
+    {
+        return $this->array[$this->position];
+    }
+
+    public function key()
+    {
+        return $this->position;
+    }
+
+    public function next()
+    {
+        ++$this->position;
+    }
+
+    public function valid()
+    {
+        return isset($this->array[$this->position]);
+    }
+
+    /**
+     * How many did we get?
+     *
+     * @return integer
+     */
+    public function count()
+    {
+        return count($this->array);
+    }
+
+    /**
+     * Reset the data.
+     *
+     * @return void
+     */
+    private function reset()
+    {
+        $this->array = array();
+        $this->stmt = null;
+        $this->position = 0;
+    }
 }
 endsnippet
 
@@ -36,10 +135,9 @@ ${1}function ${2:functionName}(${3})
 {
     ${7}
 }
-
 endsnippet
 
-snippet fun "PHP anonymous function"
+snippet afun "PHP anonymous function"
 function (${1})${2: use (${3})} {${4}}
 endsnippet
 
@@ -49,6 +147,5 @@ snippet var "Class property" !b
  *
  * @var ${2:type} $${3:varname}
  */
-${1:private|public|protected} $3${5: = initial value};
-
+${1:private|public|protected} \$$3${5: = initial value};
 endsnippet
