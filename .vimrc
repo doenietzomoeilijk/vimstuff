@@ -58,7 +58,7 @@ hi CursorLine ctermbg=238 cterm=NONE
 
 " A nice EOL guide column.
 if exists("&colorcolumn")
-  set colorcolumn=+1,+21
+  set colorcolumn=+1,+41
   hi ColorColumn ctermbg=237 guibg=#232526
 endif
 
@@ -120,6 +120,7 @@ set nocindent
 set smarttab
 set expandtab
 set shiftround
+set textwidth=80
 " }}}
 
 " Movement {{{
