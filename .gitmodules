@@ -39,3 +39,6 @@
 [submodule ".vim/bundle/vim-commentary"]
 	path = .vim/bundle/vim-commentary
 	url = https://github.com/tpope/vim-commentary.git
+[submodule ".vim/bundle/vim-argumentative"]
+	path = .vim/bundle/vim-argumentative
+	url = https://github.com/PeterRincker/vim-argumentative
