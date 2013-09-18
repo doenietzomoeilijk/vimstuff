@@ -28,6 +28,7 @@ let g:ctrlp_by_filename=1
 let g:ctrlp_max_files = 20000
 let g:ctrlp_max_depth = 40
 let g:ctrlp_show_hidden = 0
+let g:ctrlp_clear_cache_on_exit = 0
 
 nnoremap <Leader>b :CtrlPBuffer<CR>
 nnoremap <Leader>m :CtrlPMRUFiles<CR>
