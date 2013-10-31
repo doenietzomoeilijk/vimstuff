@@ -50,6 +50,12 @@ noremap <leader>se :Errors<CR>
 " }}}
 
 " UI {{{
+if &term =~ "xterm" 
+    set t_Co=256
+elseif &term =~ "256color"
+    set t_Co=256
+endif
+
 set bg=dark
 colorscheme xoria256
 
