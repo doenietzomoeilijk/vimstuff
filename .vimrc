@@ -18,17 +18,17 @@ set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
 
 " Ctrl-P {{{
 let g:ctrlp_use_caching=1
+let g:ctrlp_clear_cache_on_exit = 0
 let g:ctrlp_cmd='CtrlPMixed'
 let g:ctrlp_working_path_mode='c'
 let g:ctrlp_custom_ignore={
-  \ 'dir':  '\.(git|hg|svn|yardoc)\/',
-  \ 'file': '\.(exe|so|dll)$',
+  \ 'dir':  '\v[\/]\.(git|hg|svn|yardoc)$',
+  \ 'file': '\v\.(exe|so|dll)$',
   \ }
 let g:ctrlp_by_filename=1
 let g:ctrlp_max_files = 20000
-let g:ctrlp_max_depth = 40
+let g:ctrlp_max_depth = 20
 let g:ctrlp_show_hidden = 0
-let g:ctrlp_clear_cache_on_exit = 0
 
 nnoremap <Leader>b :CtrlPBuffer<CR>
 nnoremap <Leader>m :CtrlPMRUFiles<CR>
@@ -249,7 +249,7 @@ let php_folding=0
 let PHP_outdentphpescape=0
 " }}}
 
-set wildignore+=*.so,*.swp,*.zip,*/tmp/*,.git/*
+set wildignore+=*.so,*.swp,*.zip,*/tmp/*,*/.git/*,*.DS_Store/*
 
 " Editing the .vimrc file {{{
 " From http://github.com/devjj/vim-config/blob/master/.vimrc After editing, run
