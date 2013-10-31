@@ -3,6 +3,7 @@
 .vim/.netrwhist
 .hg
 .vim/tags/*
+.vim/bundle/*/doc/tags
 
 olddotvim
 oldgitmodules
