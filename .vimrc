@@ -28,6 +28,7 @@ let g:ctrlp_by_filename=1
 let g:ctrlp_max_files = 20000
 let g:ctrlp_max_depth = 40
 let g:ctrlp_show_hidden = 0
+let g:ctrlp_clear_cache_on_exit = 0
 
 nnoremap <Leader>b :CtrlPBuffer<CR>
 nnoremap <Leader>m :CtrlPMRUFiles<CR>
@@ -64,7 +65,7 @@ hi CursorLine ctermbg=238 cterm=NONE
 
 " A nice EOL guide column.
 if exists("&colorcolumn")
-  set colorcolumn=+1,+21
+  set colorcolumn=+1,+41
   hi ColorColumn ctermbg=237 guibg=#232526
 endif
 
@@ -126,6 +127,7 @@ set nocindent
 set smarttab
 set expandtab
 set shiftround
+set textwidth=80
 " }}}
 
 " Movement {{{

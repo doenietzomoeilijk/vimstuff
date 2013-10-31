@@ -42,3 +42,6 @@
 [submodule ".vim/bundle/vim-ack"]
 	path = .vim/bundle/vim-ack
 	url = https://github.com/mileszs/ack.vim.git
+[submodule ".vim/bundle/vim-argumentative"]
+	path = .vim/bundle/vim-argumentative
+	url = https://github.com/PeterRincker/vim-argumentative
