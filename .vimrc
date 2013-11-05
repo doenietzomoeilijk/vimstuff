@@ -1,5 +1,6 @@
 " vim: set filetype=vim foldmethod=marker foldlevel=1 et tw=78:"{{{
 set encoding=utf-8
+let mapleader=","
 
 " Pathogen {{{
 " runtime ~/.vim/bundle/vim-pathogen/autoload/pathogen.vim
@@ -113,10 +114,6 @@ autocmd VimResized * exe "normal! \<c-w>="
 
 " Toggle invisible chars
 noremap <leader>i :set list!<CR>
-" }}}
-
-" Keys {{{
-let mapleader=","
 " }}}
 
 " Coding defaults {{{
