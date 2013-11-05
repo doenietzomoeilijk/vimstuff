@@ -253,6 +253,7 @@ let PHP_outdentphpescape=0
 " }}}
 
 set wildignore+=*.so,*.swp,*.zip,*/tmp/*,*/.git/*,*.DS_Store/*
+set tags+=~/.vim/tags/php.tags
 
 " Editing the .vimrc file {{{
 " From http://github.com/devjj/vim-config/blob/master/.vimrc After editing, run
