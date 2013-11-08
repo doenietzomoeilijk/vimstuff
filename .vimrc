@@ -1,4 +1,4 @@
-" vim: set filetype=vim foldmethod=marker foldlevel=1 et tw=78:"{{{
+" vim: set filetype=vim foldmethod=marker foldlevel=1 foldcolumn=0 et tw=78:"{{{
 set encoding=utf-8
 let mapleader=","
 
@@ -21,15 +21,20 @@ set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
 let g:ctrlp_use_caching=1
 let g:ctrlp_clear_cache_on_exit = 0
 let g:ctrlp_cmd='CtrlPMixed'
-let g:ctrlp_working_path_mode='c'
+let g:ctrlp_working_path_mode='ra'
 let g:ctrlp_custom_ignore={
   \ 'dir':  '\v[\/]\.(git|hg|svn|yardoc)$',
   \ 'file': '\v\.(exe|so|dll)$',
   \ }
 let g:ctrlp_by_filename=1
-let g:ctrlp_max_files = 20000
-let g:ctrlp_max_depth = 20
-let g:ctrlp_show_hidden = 0
+let g:ctrlp_max_files=20000
+let g:ctrlp_max_depth=20
+let g:ctrlp_show_hidden=0
+
+" If we have Ag present, use that rather than the usual glob.
+if executable("ag")
+    let g:ctrlp_user_command='ag %s -l --nocolor --hidden'
+endif
 
 nnoremap <Leader>b :CtrlPBuffer<CR>
 nnoremap <Leader>m :CtrlPMRUFiles<CR>
@@ -70,22 +75,15 @@ if exists("&colorcolumn")
   hi ColorColumn ctermbg=237 guibg=#232526
 endif
 
-set number
 set ruler
 
-" Allow me to switch between number and relativenumber. Vim >= 7.3
-function! SwitchNumbering()
-  if exists("&relativenumber")
-    if &number && ! &relativenumber
-      set relativenumber
-    elseif ! &number && &relativenumber
-      set number
-    endif
-  else
-    echo "Your VIM doesn't support relativenumber!"
-  endif
-endfunction
-nnoremap <leader>nn :call SwitchNumbering()<CR>
+set number
+nnoremap <leader>nn :set number!<CR>
+
+if exists("&relativenumber")
+    set relativenumber
+    nnoremap <leader>NN :set relativenumber!<CR>
+endif 
 
 set cursorline
 nnoremap <leader>c :set cursorline!<CR>
@@ -179,12 +177,14 @@ augroup FastEscape
   au InsertLeave * set timeoutlen=1000
 augroup END
 
-" Folding
-set foldmethod=indent
-set foldlevel=100
-
 " See :help fo-table for letter meaning
 set formatoptions=lcqn
+" }}}
+
+" Folding {{{
+set foldmethod=syntax
+set foldlevel=100
+set foldopen=all
 " }}}
 
 " Paths and backups {{{
@@ -250,10 +250,17 @@ let php_sql_query=0
 let php_htmlInStrings=0
 let php_folding=0
 let PHP_outdentphpescape=0
+set tags+=~/.vim/tags/php.tags
+" }}}
+
+" Jinja / Twig {{{
+augroup HtmlJinja
+    autocmd!
+    autocmd Filetype htmljinja set commentstring=<!--%s-->
+augroup END
 " }}}
 
 set wildignore+=*.so,*.swp,*.zip,*/tmp/*,*/.git/*,*.DS_Store/*
-set tags+=~/.vim/tags/php.tags
 
 " Editing the .vimrc file {{{
 " From http://github.com/devjj/vim-config/blob/master/.vimrc After editing, run
