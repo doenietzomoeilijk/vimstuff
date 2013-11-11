@@ -167,6 +167,12 @@ nnoremap <Leader>p p'[v']=
 nnoremap <Leader>P P'[v']=
 nnoremap <Leader>pp :set paste!<CR>
 
+" Shortcut for CTRL_X modes, straight from the Vim docs.
+inoremap ^] ^X^]
+inoremap ^F ^X^F
+inoremap ^D ^X^D
+inoremap ^L ^X^L
+
 " If I want help, I'll ask for it (instead of inadvertly hit my F1 when I
 " actually wanted ESC)
 noremap <F1> <Esc>
