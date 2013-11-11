@@ -148,6 +148,9 @@ set incsearch
 
 nnoremap <leader>n :nohlsearch<CR> " Setting it to enter mucked with error windows.
 noremap <leader>h :let @/ = ""<CR> " clear search pattern to disable hlsearch
+
+" Enable matchit.vim to make % even more useful.
+runtime macros/matchit.vim
 " }}}
 
 " Editing {{{
@@ -190,7 +193,7 @@ set formatoptions=lcqn
 " }}}
 
 " Folding {{{
-set foldmethod=syntax
+set foldmethod=indent
 set foldlevel=100
 set foldopen=all
 " }}}
@@ -268,13 +271,14 @@ augroup HtmlJinja
 augroup END
 " }}}
 
-set wildignore+=*.so,*.swp,*.zip,*/tmp/*,*/.git/*,*.DS_Store/*
+set wildignore+=*.so,*.swp,*.zip,*/tmp/*,*.DS_Store/*,*._*
 
 " Editing the .vimrc file {{{
 " From http://github.com/devjj/vim-config/blob/master/.vimrc After editing, run
 augroup Vimrc
   autocmd!
   autocmd BufWritePost $MYVIMRC source $MYVIMRC | exec 'echom "vimrc reloaded after save."'
+  autocmd FileType vim setlocal keywordprg=:help
   " autocmd BufWritePost $MYVIMRC source $MYVIMRC | call Pl#ReloadColorscheme() | exec 'echom "vimrc reloaded after save."'
 augroup END
 
