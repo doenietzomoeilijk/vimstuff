@@ -21,19 +21,21 @@ set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
 let g:ctrlp_use_caching=1
 let g:ctrlp_clear_cache_on_exit = 0
 let g:ctrlp_cmd='CtrlPMixed'
-let g:ctrlp_working_path_mode='ra'
-let g:ctrlp_custom_ignore={
-  \ 'dir':  '\v[\/]\.(git|hg|svn|yardoc)$',
-  \ 'file': '\v\.(exe|so|dll)$',
-  \ }
-let g:ctrlp_by_filename=1
-let g:ctrlp_max_files=20000
+let g:ctrlp_working_path_mode='cr'
+let g:ctrlp_by_filename=0
 let g:ctrlp_max_depth=20
-let g:ctrlp_show_hidden=0
 
 " If we have Ag present, use that rather than the usual glob.
 if executable("ag")
     let g:ctrlp_user_command='ag %s -l --nocolor --hidden'
+else
+    " These only work if ctrlp_user_command is not set.
+    let g:ctrlp_show_hidden=0
+    let g:ctrlp_custom_ignore={
+      \ 'dir':  '\v[\/]\.(git|hg|svn|yardoc)$',
+      \ 'file': '\v\.(exe|so|dll)$',
+      \ }
+    let g:ctrlp_max_files=20000
 endif
 
 nnoremap <Leader>b :CtrlPBuffer<CR>
