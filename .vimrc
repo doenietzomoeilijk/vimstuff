@@ -114,6 +114,9 @@ autocmd VimResized * exe "normal! \<c-w>="
 
 " Toggle invisible chars
 noremap <leader>i :set list!<CR>
+
+" Oh, wait, we have a mouse.
+set mouse=a
 " }}}
 
 " Coding defaults {{{
