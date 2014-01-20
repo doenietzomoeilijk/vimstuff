@@ -122,6 +122,9 @@ noremap <leader>i :set list!<CR>
 
 " Oh, wait, we have a mouse.
 set mouse=a
+
+" Who uses ex mode anyway?
+nnoremap Q @q
 " }}}
 
 " Coding defaults {{{
