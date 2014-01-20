@@ -13,8 +13,10 @@ let g:UltiSnipsEditSplit="vertical"
 " }}}
 
 " Powerline {{{
-let g:Powerline_symbols="fancy"
-set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
+if (exists(':PowerlineReloadColorscheme'))
+    let g:Powerline_symbols="fancy"
+    set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
+endif
 " }}}
 
 " Ctrl-P {{{
@@ -283,6 +285,11 @@ augroup Vimrc
   autocmd BufWritePost $MYVIMRC source $MYVIMRC | exec 'echom "vimrc reloaded after save."'
   autocmd FileType vim setlocal keywordprg=:help
   " autocmd BufWritePost $MYVIMRC source $MYVIMRC | call Pl#ReloadColorscheme() | exec 'echom "vimrc reloaded after save."'
+
+  if (exists(':PowerlineReloadColorscheme'))
+      " Reloading vimrc throws the Powerline theme. Reload it.
+      PowerlineReloadColorscheme
+  endif
 augroup END
 
 noremap <Leader>vv :vsplit $MYVIMRC<CR>
