@@ -111,6 +111,9 @@ set equalalways
 set eadirection=hor
 set splitright
 
+" Allow us to switch away from buffers with changes in them.
+set hidden
+
 " Resize windows on metawindow resize
 autocmd VimResized * exe "normal! \<c-w>="
 
