@@ -63,3 +63,9 @@
 [submodule ".vim/bundle/delimitMate"]
 	path = .vim/bundle/delimitMate
 	url = https://github.com/Raimondi/delimitMate.git
+[submodule ".vim/bundle/vim-vinegar"]
+	path = .vim/bundle/vim-vinegar
+	url = https://github.com/tpope/vim-vinegar.git
+[submodule ".vim/bundle/LearnVimL"]
+	path = .vim/bundle/LearnVimL
+	url = git@github.com:doenietzomoeilijk/LearnVimL.git
