@@ -13,8 +13,8 @@ let g:UltiSnipsEditSplit="vertical"
 " }}}
 
 " Powerline {{{
+let g:Powerline_symbols = 'fancy'
 if (exists(':PowerlineReloadColorscheme'))
-    let g:Powerline_symbols="fancy"
     set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
 endif
 " }}}
