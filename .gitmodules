@@ -69,3 +69,9 @@
 [submodule ".vim/bundle/LearnVimL"]
 	path = .vim/bundle/LearnVimL
 	url = git@github.com:doenietzomoeilijk/LearnVimL.git
+[submodule ".vim/bundle/unite"]
+	path = .vim/bundle/unite
+	url = https://github.com/Shougo/unite.vim.git
+[submodule ".vim/bundle/vim-fanfingtastic"]
+	path = .vim/bundle/vim-fanfingtastic
+	url = https://github.com/dahu/vim-fanfingtastic.git

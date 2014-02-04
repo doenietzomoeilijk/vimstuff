@@ -13,8 +13,10 @@ let g:UltiSnipsEditSplit="vertical"
 " }}}
 
 " Powerline {{{
-let g:Powerline_symbols="fancy"
-set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
+let g:Powerline_symbols = 'fancy'
+if (exists(':PowerlineReloadColorscheme'))
+    set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
+endif
 " }}}
 
 " Ctrl-P {{{
@@ -109,6 +111,9 @@ set equalalways
 set eadirection=hor
 set splitright
 
+" Allow us to switch away from buffers with changes in them.
+set hidden
+
 " Resize windows on metawindow resize
 autocmd VimResized * exe "normal! \<c-w>="
 
@@ -117,6 +122,9 @@ noremap <leader>i :set list!<CR>
 
 " Oh, wait, we have a mouse.
 set mouse=a
+
+" Who uses ex mode anyway?
+nnoremap Q @q
 " }}}
 
 " Coding defaults {{{
@@ -283,6 +291,11 @@ augroup Vimrc
   autocmd BufWritePost $MYVIMRC source $MYVIMRC | exec 'echom "vimrc reloaded after save."'
   autocmd FileType vim setlocal keywordprg=:help
   " autocmd BufWritePost $MYVIMRC source $MYVIMRC | call Pl#ReloadColorscheme() | exec 'echom "vimrc reloaded after save."'
+
+  if (exists(':PowerlineReloadColorscheme'))
+      " Reloading vimrc throws the Powerline theme. Reload it.
+      PowerlineReloadColorscheme
+  endif
 augroup END
 
 noremap <Leader>vv :vsplit $MYVIMRC<CR>
