@@ -75,3 +75,6 @@
 [submodule ".vim/bundle/vim-fanfingtastic"]
 	path = .vim/bundle/vim-fanfingtastic
 	url = https://github.com/dahu/vim-fanfingtastic.git
+[submodule ".vim/bundle/vim-eunuch"]
+	path = .vim/bundle/vim-eunuch
+	url = git://github.com/tpope/vim-eunuch.git
